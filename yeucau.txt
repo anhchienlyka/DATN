@@ -1,0 +1,7 @@
+- Thêm chức năng thống kê
+- Thêm chức năng chát trực tuyến
+- Thêm chức năng xác nhận mail khi đăng ký
+- xác nhận đặt hàng thành công
+- Thêm thông tin cho sản phẩm(Máy ảnh)
+- add dụng mã code gửi cho khách hàng
+- xếp hạng rank cho khách hàng
