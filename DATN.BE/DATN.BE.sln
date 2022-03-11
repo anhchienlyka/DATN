@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "Presen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTesting", "UnitTesting", "{30A977A6-9BD2-4F9D-8651-6C947D9CA373}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DANTN.ApplicationLayer", "DANTN.ApplicationLayer\DANTN.ApplicationLayer.csproj", "{2B5C168A-6E88-49DF-8EAB-A4322944368F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DANTN.ApplicationLayer", "DANTN.ApplicationLayer\DANTN.ApplicationLayer.csproj", "{2B5C168A-6E88-49DF-8EAB-A4322944368F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATN.DataAccessLayer.EF", "DATN.DataAccessLayer.EF\DATN.DataAccessLayer.EF.csproj", "{AFBDF410-A624-4117-B31A-0714A9D1D300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DATN.DataAccessLayer.EF", "DATN.DataAccessLayer.EF\DATN.DataAccessLayer.EF.csproj", "{AFBDF410-A624-4117-B31A-0714A9D1D300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATN.Data", "DATN.Data\DATN.Data.csproj", "{0B9D29B9-0BE8-40F9-9BE6-61BD1F3900C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DATN.Data", "DATN.Data\DATN.Data.csproj", "{0B9D29B9-0BE8-40F9-9BE6-61BD1F3900C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATN.InfrastructureLayer", "DATN.InfrastructureLayer\DATN.InfrastructureLayer.csproj", "{EF83D0A9-0B1B-4A34-B71D-9DA0D0F070B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DATN.InfrastructureLayer", "DATN.InfrastructureLayer\DATN.InfrastructureLayer.csproj", "{EF83D0A9-0B1B-4A34-B71D-9DA0D0F070B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATN.API", "DATN.API\DATN.API.csproj", "{1B85936B-72AE-4AC4-96A9-D2C374EEA808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DATN.API", "DATN.API\DATN.API.csproj", "{1B85936B-72AE-4AC4-96A9-D2C374EEA808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
