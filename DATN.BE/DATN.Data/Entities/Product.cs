@@ -1,9 +1,5 @@
 ﻿using DATN.Data.BaseEntities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DATN.Data.Entities
 {
@@ -14,14 +10,20 @@ namespace DATN.Data.Entities
         public decimal Price { get; set; }
         public int Sale { get; set; }
         public int Inventory { get; set; }
-        public byte[] Picture { get; set; }
         public int Insurance { get; set; }
         public string Accessory { get; set; }
+        public string Sensor { get; set; }
+        public string ImageProcessor { get; set; }
+        public float Screen { get; set; }
+        public string ISO { get; set; }
+        public string ShutterSpeed { get; set; }
         public string ProductSummary { get; set; }
         public int CategoryId { get; set; }
-        public int PupplierId { get; set; }
+        public int SupplierId { get; set; }
         public Category Category { get; set; }
         public Supplier Supplier { get; set; }
-
+        public IEnumerable<Comment> Comments { get; set; }
+        public IEnumerable<Picture> Pictures { get; set; }
+        public IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

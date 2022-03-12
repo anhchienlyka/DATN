@@ -1,12 +1,13 @@
-﻿using System;
+﻿using DATN.Data.BaseEntities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DATN.Data.Entities
 {
-   public class Payment
+    public class Payment : EntityBase
     {
+        public int Id { get; set; }
+        public short PaymentType { get; set; }
+        public bool Allowed { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

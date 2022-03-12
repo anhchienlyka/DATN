@@ -1,0 +1,12 @@
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.deps.json
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.dll
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.AssemblyReference.cache
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfoInputs.cache
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfo.cs
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.CoreCompileInputs.cache
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.dll
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
+D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.pdb

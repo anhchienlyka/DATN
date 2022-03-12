@@ -1,0 +1,14 @@
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\DATN.Data.deps.json
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\DATN.Data.dll
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\ref\DATN.Data.dll
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\DATN.Data.pdb
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\DATN.InfrastructureLayer.dll
+D:\DATN\DATN.BE\DATN.Data\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.csproj.AssemblyReference.cache
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.AssemblyInfoInputs.cache
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.AssemblyInfo.cs
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.csproj.CoreCompileInputs.cache
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.dll
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\ref\DATN.Data.dll
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.pdb

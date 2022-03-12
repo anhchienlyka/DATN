@@ -1,16 +1,15 @@
+using DATN.Data.MappingProfiles;
+using DATN.DataAccessLayer.EF;
+using DATN.DataAccessLayer.EF.SeedData;
+using DATN.DataAccessLayer.EF.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DATN.API
 {
@@ -26,12 +25,28 @@ namespace DATN.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<DATNDBContex>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"));
+                options.LogTo(Console.WriteLine);
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DATN.API", Version = "v1" });
             });
+
+            services.AddHttpContextAccessor();
+
+            //Seed data
+            services.AddTransient<SeeDatas>();
+
+            //Auto mapper
+            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            //repository
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
