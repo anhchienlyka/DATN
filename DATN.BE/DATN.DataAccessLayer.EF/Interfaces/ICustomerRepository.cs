@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DATN.DataAccessLayer.EF.Interfaces
 {
-    public interface IUserRepository
+    public interface ICustomerRepository
     {
     }
 }

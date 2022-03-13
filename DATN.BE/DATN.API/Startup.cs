@@ -1,5 +1,9 @@
+using DANTN.ApplicationLayer.Implement;
+using DANTN.ApplicationLayer.Interface;
 using DATN.Data.MappingProfiles;
 using DATN.DataAccessLayer.EF;
+using DATN.DataAccessLayer.EF.Implementations;
+using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.SeedData;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
@@ -46,6 +50,31 @@ namespace DATN.API
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             //repository
+            services.AddTransient<ICategoryRepository,CategoryRepository>();
+            services.AddTransient<IOrderRepository,OrderRepository>();
+            services.AddTransient<ICommentRepository,CommentRepository>();
+            services.AddTransient<IPaymentRepository,PaymentRepository>();
+            services.AddTransient<IOrderDetailRepository,OrderDetailRepository>();
+            services.AddTransient<IPictureRepository,PictureRepository>();
+            services.AddTransient<IProductRepository,ProductRepository>();
+            services.AddTransient<ISaleCodeRepository,SaleCodeRepository>();
+            services.AddTransient<ISupplierRepository,SupplierRepository>();
+            services.AddTransient<ICustomerRepository,CustomerRepository>();
+            services.AddTransient<IEmployeeRepository,EmployeeRepository>();
+            services.AddTransient<IRoleRepository,RoleRepository>();
+            //Service
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<IPaymentService, PaymentService>();
+            services.AddTransient<IOrderDetailService, OrderDetailService>();
+            services.AddTransient<IPictureService, PictureService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISaleCodeService, SaleCodeService>();
+            services.AddTransient<ISupplierService, SupplierService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+           
 
         }
 

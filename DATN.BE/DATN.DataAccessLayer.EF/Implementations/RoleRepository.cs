@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DATN.DataAccessLayer.EF.Implementations
 {
-    public class UserRoleRepository : IUserRoleRepository
+    public class RoleRepository : IRoleRepository
     {
 
     }

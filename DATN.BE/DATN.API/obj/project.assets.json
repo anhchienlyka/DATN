@@ -1702,6 +1702,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "DANTN.ApplicationLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DATN.Data": "1.0.0",
+          "DATN.DataAccessLayer.EF": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DANTN.ApplicationLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DANTN.ApplicationLayer.dll": {}
+        }
+      },
       "DATN.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6272,6 +6286,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "DANTN.ApplicationLayer/1.0.0": {
+      "type": "project",
+      "path": "../DANTN.ApplicationLayer/DANTN.ApplicationLayer.csproj",
+      "msbuildProject": "../DANTN.ApplicationLayer/DANTN.ApplicationLayer.csproj"
+    },
     "DATN.Data/1.0.0": {
       "type": "project",
       "path": "../DATN.Data/DATN.Data.csproj",
@@ -6291,6 +6310,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
+      "DANTN.ApplicationLayer >= 1.0.0",
       "DATN.DataAccessLayer.EF >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.12",
@@ -6326,6 +6346,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj": {
+              "projectPath": "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj"
+            },
             "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
               "projectPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
             }

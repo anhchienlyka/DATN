@@ -12,3 +12,4 @@ D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.csproj.CoreCompileInputs.ca
 D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.dll
 D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\ref\DATN.Data.dll
 D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.pdb
+D:\DATN\DATN.BE\DATN.Data\obj\Debug\net5.0\DATN.Data.csproj.CopyComplete

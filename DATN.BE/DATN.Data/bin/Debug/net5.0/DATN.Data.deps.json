@@ -8,11 +8,23 @@
     ".NETCoreApp,Version=v5.0": {
       "DATN.Data/1.0.0": {
         "dependencies": {
+          "AutoMapper": "11.0.1",
           "DATN.InfrastructureLayer": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.12"
         },
         "runtime": {
           "DATN.Data.dll": {}
+        }
+      },
+      "AutoMapper/11.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.1.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/5.0.12": {
@@ -46,6 +58,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.EntityFrameworkCore/5.0.12": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "5.0.12",
@@ -232,6 +245,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/11.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WIadGC1pIwbnyTubvI577p3F++Bsj9q2Q3OaAc1I0QS+JhupN1xkdrPBhI9bPIeg63zM81tZplUNYkqU1HE5jQ==",
+      "path": "automapper/11.0.1",
+      "hashPath": "automapper.11.0.1.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/5.0.12": {
       "type": "package",
       "serviceable": true,
@@ -252,6 +272,13 @@
       "sha512": "sha512-2eIJAGT+Fal2QAQK0mDmIRUOonXhVuY2I8qthHD9KUkzfDI0JSuZNPfa3EHR9r5fbSiPO9+bPiocy4vw9UgcrQ==",
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/5.0.12",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.5.0.12.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/5.0.12": {
       "type": "package",

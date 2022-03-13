@@ -14,7 +14,7 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly DbContext _db;
+        private readonly DATNDBContex _db;
 
         protected IGenericRepository<Category> _categoryGenericRepository;
         protected IGenericRepository<Comment> _commentGenericRepository;
@@ -29,7 +29,7 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         protected IGenericRepository<Customer> _customerGenericRepository;
         protected IGenericRepository<Role> _roleGenericRepository;
 
-        public UnitOfWork(DbContext db)
+        public UnitOfWork(DATNDBContex db)
         {
             _db = db;
 

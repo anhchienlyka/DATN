@@ -21,7 +21,6 @@ D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.MvcApplicationPartsAssemblyIn
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\scopedcss\bundle\DATN.API.styles.css
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\staticwebassets\DATN.API.StaticWebAssets.Manifest.cache
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.RazorTargetAssemblyInfo.cache
-D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.csproj.CopyComplete
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\ref\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.pdb
@@ -69,3 +68,11 @@ D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.Data.pdb
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Humanizer.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\AutoMapper.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DANTN.ApplicationLayer.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DANTN.ApplicationLayer.pdb

@@ -20,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\DANTN.ApplicationLayer\DANTN.ApplicationLayer.csproj" />
     <ProjectReference Include="..\DATN.DataAccessLayer.EF\DATN.DataAccessLayer.EF.csproj" />
   </ItemGroup>
 

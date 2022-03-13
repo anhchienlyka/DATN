@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DATN.DataAccessLayer.EF.Implementations
 {
-    public class UserRepository : IUserRepository
+    public class CustomerRepository : ICustomerRepository
     {
 
     }

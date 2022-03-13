@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DATN.Data.Entities;
+using DATN.Data.Viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,10 @@ namespace DATN.Data.MappingProfiles
 {
     public class MappingProfile : Profile
     {
+        public MappingProfile()
+        {
+            //category
+            CreateMap<Category, CategoryVM>().ReverseMap();
+        }
     }
 }
