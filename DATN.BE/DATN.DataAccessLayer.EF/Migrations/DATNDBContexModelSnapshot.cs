@@ -65,26 +65,14 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<DateTime>("CommnetTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -385,6 +373,9 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<DateTime>("UpdatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ViewProduct")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

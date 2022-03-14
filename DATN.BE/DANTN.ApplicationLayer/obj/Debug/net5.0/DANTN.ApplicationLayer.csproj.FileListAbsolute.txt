@@ -16,4 +16,3 @@ D:\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DATN.InfrastructureLayer
 D:\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DATN.DataAccessLayer.EF.pdb
 D:\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DATN.Data.pdb
 D:\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
-D:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.csproj.CopyComplete

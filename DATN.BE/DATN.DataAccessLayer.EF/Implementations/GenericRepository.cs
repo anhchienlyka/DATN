@@ -11,9 +11,9 @@ namespace DATN.DataAccessLayer.EF.Implementations
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
 
-        private readonly DbSet<T> _dbSet;
-        private readonly DbContext _dbContext;
-        public GenericRepository(DbContext dbContext)
+        protected readonly DbSet<T> _dbSet;
+        protected readonly DATNDBContex _dbContext;
+        public GenericRepository(DATNDBContex dbContext)
         {
             _dbContext = dbContext;
             _dbSet = dbContext.Set<T>();

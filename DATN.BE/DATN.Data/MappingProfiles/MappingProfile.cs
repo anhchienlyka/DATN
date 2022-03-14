@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using DATN.Data.Entities;
 using DATN.Data.Viewmodel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DATN.Data.Viewmodel.Comment;
+using DATN.Data.Viewmodel.Product;
 
 namespace DATN.Data.MappingProfiles
 {
@@ -15,6 +12,17 @@ namespace DATN.Data.MappingProfiles
         {
             //category
             CreateMap<Category, CategoryVM>().ReverseMap();
+            CreateMap<Category, CategoryAddVM>().ReverseMap();
+            CreateMap<Category, CategoryUpdateVM>().ReverseMap();
+
+            //cooment
+            CreateMap<Comment, CommentVM>().ReverseMap();
+            CreateMap<Comment, CommentAddVM>().ReverseMap();
+            CreateMap<Comment, CommentUpdateVM>().ReverseMap();
+            //cooment
+            CreateMap<Product, ProductVM>().ReverseMap();
+            CreateMap<Product, ProductAddVM>().ReverseMap();
+            CreateMap<Product, ProductUpdateVM>().ReverseMap();
         }
     }
 }

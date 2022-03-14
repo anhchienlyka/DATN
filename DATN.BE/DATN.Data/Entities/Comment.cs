@@ -3,7 +3,7 @@ using System;
 
 namespace DATN.Data.Entities
 {
-    public class Comment : EntityBase
+    public class Comment 
     {
         public int Id { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using DATN.Data.Entities;
 using DATN.DataAccessLayer.EF.Interfaces;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,9 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         IGenericRepository<Role> RoleGenericRepository { get; }
 
 
-
+        Task<int> CommitAsync();
+        int Commit();
+        Task<IDbContextTransaction> BeginTransactionAsync();
 
 
 

@@ -26,8 +26,12 @@ namespace DATN.DataAccessLayer.EF.SeedData
                 new Category(){CategoryName = "Đồng hồ",Active=false},
                 new Category(){CategoryName = "Đồ Công Nghệ Khác",Active=true},
             };
-            _contex.Categories.AddRange(categories);
-            _contex.SaveChanges();
+            if (_contex.Categories.ToList()==null)
+            {
+                _contex.SaveChanges();
+                _contex.Categories.AddRange(categories);
+            }
+          
         }
     }
 }

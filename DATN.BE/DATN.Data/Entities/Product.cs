@@ -20,6 +20,7 @@ namespace DATN.Data.Entities
         public string ProductSummary { get; set; }
         public int CategoryId { get; set; }
         public int SupplierId { get; set; }
+        public int ViewProduct { get; set; }
         public Category Category { get; set; }
         public Supplier Supplier { get; set; }
         public IEnumerable<Comment> Comments { get; set; }
