@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DATN.Data.Entities
 {
-    public class Order : EntityBase
+    public class Order 
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }
@@ -14,7 +14,7 @@ namespace DATN.Data.Entities
         public DateTime ShipDate { get; set; }
         public int EmployeeId { get; set; }
         public Employee Employee { get; set; }
-        public short TransacStatus { get; set; }
+        public DeliveryStatus TransacStatus { get; set; }
         public DateTime PaymentDate { get; set; }
         public int PaymentId { get; set; }
         public Payment Payment { get; set; }

@@ -2,7 +2,7 @@
 
 namespace DATN.Data.Entities
 {
-    public class SaleCode : EntityBase
+    public class SaleCode 
     {
         public int Id { get; set; }
 

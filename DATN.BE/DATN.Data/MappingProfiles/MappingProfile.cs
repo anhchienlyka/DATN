@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using DATN.Data.CategoryViewModel;
 using DATN.Data.Entities;
-using DATN.Data.Viewmodel;
-using DATN.Data.Viewmodel.Comment;
-using DATN.Data.Viewmodel.Order;
-using DATN.Data.Viewmodel.Product;
+using DATN.Data.Viewmodel.CommentViewModel;
+using DATN.Data.Viewmodel.CustomerViewModel;
+using DATN.Data.Viewmodel.OrderDetailViewModel;
+using DATN.Data.Viewmodel.OrderViewModel;
+using DATN.Data.Viewmodel.ProductViewModel;
 
 namespace DATN.Data.MappingProfiles
 {
@@ -27,6 +29,13 @@ namespace DATN.Data.MappingProfiles
             //order
             CreateMap<Order, OrderVM>().ReverseMap();
             CreateMap<Order, OrderAddVM>().ReverseMap();
+
+            //orderDetail
+            CreateMap<OrderDetail, OrderDetailAddVM>().ReverseMap();
+            CreateMap<OrderDetail, OrderDetailVM>().ReverseMap();
+
+            //customer
+            CreateMap<Customer, CustomerVM>().ReverseMap();
         }
     }
 }

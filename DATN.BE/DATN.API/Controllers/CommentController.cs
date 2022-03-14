@@ -1,10 +1,6 @@
 ﻿using DANTN.ApplicationLayer.Interface;
-using DATN.Data.Viewmodel.Comment;
-using Microsoft.AspNetCore.Http;
+using DATN.Data.Viewmodel.CommentViewModel;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DATN.API.Controllers
@@ -14,10 +10,12 @@ namespace DATN.API.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;
+
         public CommentController(ICommentService commentService)
         {
             _commentService = commentService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAllComment()
         {

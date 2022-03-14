@@ -2,7 +2,7 @@
 
 namespace DATN.Data.Entities
 {
-    public class OrderDetail : EntityBase
+    public class OrderDetail 
     {
         public int Id { get; set; }
         public int OrderId { get; set; }

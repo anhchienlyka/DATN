@@ -35,3 +35,4 @@ E:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.c
 E:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.dll
 E:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\ref\DANTN.ApplicationLayer.dll
 E:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.pdb
+D:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.csproj.CopyComplete

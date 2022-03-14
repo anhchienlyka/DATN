@@ -1,12 +1,8 @@
 ﻿using DATN.Data.Entities;
 using DATN.DataAccessLayer.EF.Implementations;
 using DATN.DataAccessLayer.EF.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,7 +28,6 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         public UnitOfWork(DATNDBContex db)
         {
             _db = db;
-
         }
 
         public IGenericRepository<Category> CategoryGenericRepository
@@ -43,7 +38,6 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         public IGenericRepository<Comment> CommentGenericRepository
         {
             get => _commentGenericRepository ?? new GenericRepository<Comment>(_db);
-
         }
 
         public IGenericRepository<Customer> CustomerGenericRepository
@@ -56,7 +50,6 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
             get => _orderGenericRepository ?? new GenericRepository<Order>(_db);
         }
 
-
         public IGenericRepository<OrderDetail> OrderDetailGenericRepository
         {
             get => _orderDetailGenericRepository ?? new GenericRepository<OrderDetail>(_db);
@@ -67,15 +60,18 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
             get => __paymentGenericRepository ?? new GenericRepository<Payment>(_db);
         }
 
-        public IGenericRepository<Picture> PictureGenericRepository {
+        public IGenericRepository<Picture> PictureGenericRepository
+        {
             get => _pictureyGenericRepository ?? new GenericRepository<Picture>(_db);
         }
 
-        public IGenericRepository<Product> ProductGenericRepository {
+        public IGenericRepository<Product> ProductGenericRepository
+        {
             get => _productGenericRepository ?? new GenericRepository<Product>(_db);
         }
 
-        public IGenericRepository<SaleCode> SaleCodeGenericRepository {
+        public IGenericRepository<SaleCode> SaleCodeGenericRepository
+        {
             get => _saleCodeGenericRepository ?? new GenericRepository<SaleCode>(_db);
         }
 
@@ -84,11 +80,13 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
             get => _employeeGenericRepository ?? new GenericRepository<Employee>(_db);
         }
 
-        public IGenericRepository<Supplier> SupplierGenericRepository {
+        public IGenericRepository<Supplier> SupplierGenericRepository
+        {
             get => _supplierGenericRepository ?? new GenericRepository<Supplier>(_db);
         }
 
-        public IGenericRepository<Role> RoleGenericRepository {
+        public IGenericRepository<Role> RoleGenericRepository
+        {
             get => _roleGenericRepository ?? new GenericRepository<Role>(_db);
         }
 
@@ -96,10 +94,12 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         {
             return _db.SaveChanges();
         }
+
         public async Task<int> CommitAsync()
         {
             return await _db.SaveChangesAsync(new CancellationToken());
         }
+
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -113,6 +113,7 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
             }
             this.disposed = true;
         }
+
         public void Dispose()
         {
             Dispose(true);

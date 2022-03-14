@@ -17,7 +17,6 @@ D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.Data.dll
 D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.InfrastructureLayer.dll
 D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.Data.pdb
 D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
-D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\obj\Debug\net5.0\DATN.DataAccessLayer.EF.csproj.CopyComplete
 E:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.DataAccessLayer.EF.deps.json
 E:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.DataAccessLayer.EF.runtimeconfig.json
 E:\DATN\DATN.BE\DATN.DataAccessLayer.EF\bin\Debug\net5.0\DATN.DataAccessLayer.EF.runtimeconfig.dev.json

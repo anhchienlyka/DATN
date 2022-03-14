@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
 using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
+using DATN.Data.CategoryViewModel;
 using DATN.Data.Entities;
-using DATN.Data.Viewmodel;
-using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Constants;
 using DATN.InfrastructureLayer.Enums;
@@ -27,7 +26,7 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> Add(CategoryAddVM category)
         {
             var data = _mapper.Map<Category>(category);
-            data.CreatedOn = DateTime.Now;
+            //data.CreatedOn = DateTime.Now;
             await _unitOfWork.CategoryGenericRepository.AddAsync(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, Messages.ADDSUCCESS, null);
@@ -35,13 +34,12 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Delete(int Id)
         {
-
             var data = await _unitOfWork.CategoryGenericRepository.GetAsync(Id);
-            if (data == null || data.IsDeleted == true)
+            if (data == null /*|| data.IsDeleted == true*/)
             {
                 return new Response(SystemCode.Error, "Delete Category Fail", null);
             }
-            data.IsDeleted = true;
+           // data.IsDeleted = true;
             _unitOfWork.CategoryGenericRepository.Update(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Delete Success", data);
@@ -62,7 +60,7 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> GetById(int Id)
         {
             var data = await _unitOfWork.CategoryGenericRepository.GetAsync(Id);
-            if (data == null || data.IsDeleted == true)
+            if (data == null /*|| data.IsDeleted == true*/)
             {
                 return new Response(SystemCode.Warning, "Can not find Category", null);
             }
@@ -75,18 +73,18 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> Update(CategoryUpdateVM category)
         {
             var data = await _unitOfWork.CategoryGenericRepository.GetAsync(category.Id);
-            if (data == null || data.IsDeleted == true)
+            if (data == null /*|| data.IsDeleted == true*/)
             {
                 return new Response(SystemCode.Warning, "Can not find Category", null);
             }
-            if (data.IsDeleted == true)
-            {
-                return new Response(SystemCode.Warning, "Category is Deleted", null);
-            }
+            //if (data.IsDeleted == true)
+            //{
+            //    return new Response(SystemCode.Warning, "Category is Deleted", null);
+            //}
             else
             {
                 var categoryData = _mapper.Map<Category>(category);
-                categoryData.UpdatedOn = DateTime.Now;
+              // categoryData.UpdatedOn = DateTime.Now;
                 _unitOfWork.CategoryGenericRepository.Update(categoryData);
                 await _unitOfWork.CommitAsync();
                 return new Response(SystemCode.Success, "Update Success", categoryData);

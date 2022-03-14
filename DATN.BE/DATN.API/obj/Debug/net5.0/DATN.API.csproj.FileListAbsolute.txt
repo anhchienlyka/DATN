@@ -76,7 +76,6 @@ D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DANTN.ApplicationLayer.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DANTN.ApplicationLayer.pdb
-D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.csproj.CopyComplete
 E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\appsettings.Development.json
 E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\appsettings.json
 E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.exe
@@ -157,3 +156,5 @@ E:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.dll
 E:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\ref\DATN.API.dll
 E:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.pdb
 E:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.genruntimeconfig.cache
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.StaticWebAssets.xml
+D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.csproj.CopyComplete

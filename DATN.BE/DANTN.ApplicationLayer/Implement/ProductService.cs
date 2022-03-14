@@ -2,7 +2,7 @@
 using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
 using DATN.Data.Entities;
-using DATN.Data.Viewmodel.Product;
+using DATN.Data.Viewmodel.ProductViewModel;
 using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Enums;
@@ -15,12 +15,14 @@ namespace DANTN.ApplicationLayer.Implement
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
+
         public ProductService(IUnitOfWork unitOfWork, IMapper mapper, IProductRepository productRepository)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _productRepository = productRepository;
         }
+
         public async Task<Response> Add(ProductAddVM product)
         {
             var category = await _unitOfWork.CategoryGenericRepository.GetAsync(product.CategoryId);
@@ -47,7 +49,7 @@ namespace DANTN.ApplicationLayer.Implement
             {
                 return new Response(SystemCode.Error, "Cannot find Product", null);
             }
-            data.IsDeleted = true;
+            //data.IsDeleted = true;
             _unitOfWork.ProductGenericRepository.Update(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Delete is Success", data);
@@ -93,14 +95,13 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Update(ProductUpdateVM product)
         {
-
             var data = await _unitOfWork.ProductGenericRepository.GetAsync(product.Id);
-            if (data == null || data.IsDeleted == true)
+            if (data == null/* || data.IsDeleted == true*/)
             {
                 return new Response(SystemCode.Warning, "Cannot find Product", null);
             }
             var category = await _unitOfWork.CategoryGenericRepository.GetAsync(product.CategoryId);
-            if (category==null)
+            if (category == null)
             {
                 return new Response(SystemCode.Warning, "Category not exits", null);
             }
@@ -114,7 +115,6 @@ namespace DANTN.ApplicationLayer.Implement
             _unitOfWork.ProductGenericRepository.Update(dataNew);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Update Product Success", dataNew);
-
         }
     }
 }

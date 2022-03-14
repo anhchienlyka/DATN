@@ -2,7 +2,7 @@
 using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
 using DATN.Data.Entities;
-using DATN.Data.Viewmodel.Comment;
+using DATN.Data.Viewmodel.CommentViewModel;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Enums;
 using System.Threading.Tasks;
@@ -13,11 +13,13 @@ namespace DANTN.ApplicationLayer.Implement
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
         public CommentService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
+
         public async Task<Response> Add(CommentAddVM comment)
         {
             var checkCustomer = await _unitOfWork.CustomerGenericRepository.GetAsync(comment.CustomerId);
@@ -39,7 +41,6 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Delete(int Id)
         {
-
             var data = await _unitOfWork.CommentGenericRepository.GetAsync(Id);
             if (data == null)
             {

@@ -2,20 +2,21 @@
 using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
 using DATN.Data.Entities;
-using DATN.Data.Viewmodel.Order;
+using DATN.Data.Viewmodel.OrderViewModel;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DANTN.ApplicationLayer.Implement
 {
-
     public class OrderService : IOrderService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
         public OrderService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
@@ -45,6 +46,7 @@ namespace DANTN.ApplicationLayer.Implement
                 item.OrderId = data.Id;
                 await _unitOfWork.OrderDetailGenericRepository.AddAsync(item);
             }
+            data.OrderNumber = data.OrderDetails.Count();
             await _unitOfWork.OrderGenericRepository.AddAsync(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Add Order Success", data.Id);
@@ -57,12 +59,11 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> GetAll()
         {
-
-            var data = await _unitOfWork.OrderDetailGenericRepository.GetAllAsync();
+            var data = await _unitOfWork.OrderGenericRepository.GetAllAsync();
             var dataNew = new List<OrderVM>();
             foreach (var item in data)
             {
-                var itemNew = _mapper.Map<OrderVM>(item);            
+                var itemNew = _mapper.Map<OrderVM>(item);
                 dataNew.Add(itemNew);
             }
             return new Response(SystemCode.Error, "Get all success", dataNew);

@@ -32,18 +32,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
@@ -95,11 +83,8 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<short?>("CustomerRank")
-                        .HasColumnType("smallint");
+                    b.Property<int?>("CustomerRank")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -107,20 +92,11 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -137,19 +113,10 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<int?>("CoutOrder")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("DateOfBirth")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -160,9 +127,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<decimal?>("Salary")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
@@ -179,20 +143,11 @@ namespace DATN.DataAccessLayer.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderNumber")
                         .HasColumnType("int");
@@ -208,9 +163,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<int>("TransacStatus")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -230,15 +182,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
@@ -250,9 +193,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -273,20 +213,8 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<bool>("Allowed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<short>("PaymentType")
-                        .HasColumnType("smallint");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("PaymentType")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -326,9 +254,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("ISO")
                         .HasColumnType("nvarchar(max)");
 
@@ -341,13 +266,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<int>("Inventory")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -370,9 +289,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<int>("SupplierId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("ViewProduct")
                         .HasColumnType("int");
@@ -402,8 +318,8 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<short>("TypeRole")
-                        .HasColumnType("smallint");
+                    b.Property<int>("TypeRole")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -421,18 +337,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<string>("CodeName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -461,23 +365,11 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("ContactTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedOn")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

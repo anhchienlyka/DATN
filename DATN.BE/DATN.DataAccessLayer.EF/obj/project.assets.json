@@ -6017,19 +6017,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chien\\.nuget\\packages\\": {}
+    "C:\\Users\\PCC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
+      "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
       "projectName": "DATN.DataAccessLayer.EF",
-      "projectPath": "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
-      "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-      "outputPath": "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\obj\\",
+      "projectPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
+      "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+      "outputPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6043,8 +6043,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
-              "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
+            "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+              "projectPath": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
             }
           }
         }
@@ -6099,7 +6099,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -18,13 +18,13 @@ namespace DATN.DataAccessLayer.EF.Implementations
 
         public async Task<IEnumerable<Product>> GetProductByName(string name)
         {
-            var listProductByVew = await _dbContext.Products.Where(x => x.Name.Contains(name) && x.IsDeleted == false).ToListAsync();
+            var listProductByVew = await _dbContext.Products.Where(x => x.Name.Contains(name)).ToListAsync();
             return listProductByVew;
         }
 
         public async Task<IEnumerable<Product>> GetProductByView()
         {
-            var listProductByVew = await _dbContext.Products.Where(x => x.IsDeleted == false).OrderByDescending(x => x.ViewProduct).Take(5).ToListAsync();
+            var listProductByVew = await _dbContext.Products.OrderByDescending(x => x.ViewProduct).Take(5).ToListAsync();
             return listProductByVew;
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DATN.Data.Entities
 {
-    public class Employee : EntityBase
+    public class Employee 
     {
         public int Id { get; set; }
         public string FullName { get; set; }

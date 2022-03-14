@@ -1,11 +1,8 @@
 ﻿using DANTN.ApplicationLayer.Interface;
-using DATN.Data.Viewmodel;
+using DATN.Data.CategoryViewModel;
 using DATN.InfrastructureLayer.Constants;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -16,10 +13,10 @@ namespace DATN.API.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
+
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
-
         }
 
         [HttpGet]
@@ -42,6 +39,7 @@ namespace DATN.API.Controllers
             var reponse = await _categoryService.Delete(id);
             return Ok(reponse);
         }
+
         [HttpPost]
         public async Task<IActionResult> UpdateCategory(CategoryUpdateVM category)
         {
@@ -52,7 +50,6 @@ namespace DATN.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryAddVM category)
         {
-           
             try
             {
                 var reponse = await _categoryService.Add(category);
@@ -60,10 +57,8 @@ namespace DATN.API.Controllers
             }
             catch (Exception e)
             {
-
                 return StatusCode((int)HttpStatusCode.InternalServerError, Messages.Error);
             }
         }
-
     }
 }
