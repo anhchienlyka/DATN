@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DATN.Data.Viewmodel.Customer
+namespace DATN.Data.Viewmodel.EmployeeVM
 {
-    class CustomerVM
+    class EmployeeAddVM
     {
     }
 }

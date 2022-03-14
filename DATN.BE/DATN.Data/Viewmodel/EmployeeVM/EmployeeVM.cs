@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DATN.Data.Viewmodel.Employee
+namespace DATN.Data.Viewmodel.EmployeeVM
 {
     class EmployeeVM
     {

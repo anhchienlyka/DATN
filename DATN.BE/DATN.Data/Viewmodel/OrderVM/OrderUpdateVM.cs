@@ -1,13 +1,14 @@
-﻿using DATN.Data.BaseEntities;
-using DATN.InfrastructureLayer.Enums;
+﻿using DATN.Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DATN.Data.Entities
+namespace DATN.Data.Viewmodel.Order
 {
-    public class Order : EntityBase
+    public class OrderUpdateVM
     {
-        public int Id { get; set; }
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
         public int OrderNumber { get; set; }

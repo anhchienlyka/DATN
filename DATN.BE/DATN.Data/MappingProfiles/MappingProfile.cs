@@ -2,6 +2,7 @@
 using DATN.Data.Entities;
 using DATN.Data.Viewmodel;
 using DATN.Data.Viewmodel.Comment;
+using DATN.Data.Viewmodel.Order;
 using DATN.Data.Viewmodel.Product;
 
 namespace DATN.Data.MappingProfiles
@@ -19,10 +20,13 @@ namespace DATN.Data.MappingProfiles
             CreateMap<Comment, CommentVM>().ReverseMap();
             CreateMap<Comment, CommentAddVM>().ReverseMap();
             CreateMap<Comment, CommentUpdateVM>().ReverseMap();
-            //cooment
+            //product
             CreateMap<Product, ProductVM>().ReverseMap();
             CreateMap<Product, ProductAddVM>().ReverseMap();
             CreateMap<Product, ProductUpdateVM>().ReverseMap();
+            //order
+            CreateMap<Order, OrderVM>().ReverseMap();
+            CreateMap<Order, OrderAddVM>().ReverseMap();
         }
     }
 }

@@ -66,8 +66,7 @@ namespace DATN.API
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ICommentService, CommentService>();
-            services.AddTransient<IPaymentService, PaymentService>();
-            services.AddTransient<IOrderDetailService, OrderDetailService>();
+            services.AddTransient<IPaymentService, PaymentService>();     
             services.AddTransient<IPictureService, PictureService>();
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ISaleCodeService, SaleCodeService>();
