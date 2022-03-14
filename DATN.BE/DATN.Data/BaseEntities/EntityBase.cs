@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DATN.Data.BaseEntities
 {
@@ -15,6 +11,5 @@ namespace DATN.Data.BaseEntities
         public DateTime UpdatedOn { get; set; }
 
         public DateTime CreatedOn { get; set; }
-
     }
 }

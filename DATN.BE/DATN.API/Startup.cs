@@ -1,16 +1,19 @@
+using DANTN.ApplicationLayer.Implement;
+using DANTN.ApplicationLayer.Interface;
+using DATN.Data.MappingProfiles;
+using DATN.DataAccessLayer.EF;
+using DATN.DataAccessLayer.EF.Implementations;
+using DATN.DataAccessLayer.EF.Interfaces;
+using DATN.DataAccessLayer.EF.SeedData;
+using DATN.DataAccessLayer.EF.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DATN.API
 {
@@ -26,12 +29,53 @@ namespace DATN.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<DATNDBContex>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"));
+                options.LogTo(Console.WriteLine);
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DATN.API", Version = "v1" });
             });
+
+            services.AddHttpContextAccessor();
+
+            //Seed data
+            services.AddTransient<SeeDatas>();
+
+            //Auto mapper
+            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            //repository
+            services.AddTransient<ICategoryRepository,CategoryRepository>();
+            services.AddTransient<IOrderRepository,OrderRepository>();
+            services.AddTransient<ICommentRepository,CommentRepository>();
+            services.AddTransient<IPaymentRepository,PaymentRepository>();
+            services.AddTransient<IOrderDetailRepository,OrderDetailRepository>();
+            services.AddTransient<IPictureRepository,PictureRepository>();
+            services.AddTransient<IProductRepository,ProductRepository>();
+            services.AddTransient<ISaleCodeRepository,SaleCodeRepository>();
+            services.AddTransient<ISupplierRepository,SupplierRepository>();
+            services.AddTransient<ICustomerRepository,CustomerRepository>();
+            services.AddTransient<IEmployeeRepository,EmployeeRepository>();
+            services.AddTransient<IRoleRepository,RoleRepository>();
+            //Service
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<IPaymentService, PaymentService>();
+            services.AddTransient<IOrderDetailService, OrderDetailService>();
+            services.AddTransient<IPictureService, PictureService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISaleCodeService, SaleCodeService>();
+            services.AddTransient<ISupplierService, SupplierService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
