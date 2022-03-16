@@ -9,8 +9,7 @@ namespace DATN.Data.Viewmodel.CommentViewModel
     public class CommentUpdateVM
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public int EmployeeId { get; set; }
+        public int UserId { get; set; }
         public int ProductId { get; set; }
         public string CommentHeader { get; set; }
         public string CommnentText { get; set; }

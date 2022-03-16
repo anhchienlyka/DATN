@@ -23,14 +23,14 @@ namespace DATN.DataAccessLayer.EF
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<Customer> Customers { get; set; }
+        public DbSet<User>  Users { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<SaleCode> SaleCodes { get; set; }
-        public DbSet<Employee> Employees { get; set; }
+
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Role> Roles { get; set; }
 
@@ -57,20 +57,16 @@ namespace DATN.DataAccessLayer.EF
             {
                 supplier.HasKey(x => x.Id);
             });
-            modelBuilder.Entity<Employee>(employee =>
-            {
-                employee.HasKey(x => x.Id);
-            });
-            modelBuilder.Entity<Customer>(customer =>
+
+            modelBuilder.Entity<User>(customer =>
             {
                 customer.HasKey(x => x.Id);
             });
             modelBuilder.Entity<Comment>(comment =>
             {
                 comment.HasKey(x => x.Id);
-                comment.HasOne(k => k.Customer).WithMany(k => k.Comments).HasForeignKey(k => k.CustomerId);
+                comment.HasOne(k => k.User).WithMany(k => k.Comments).HasForeignKey(k => k.UserId);
                 comment.HasOne(x => x.Product).WithMany(x => x.Comments).HasForeignKey(x => x.ProductId);
-                comment.HasOne(x => x.Employee).WithMany(x => x.Comments).HasForeignKey(x => x.EmployeeId);
             });
 
             modelBuilder.Entity<Product>(product =>
@@ -91,7 +87,7 @@ namespace DATN.DataAccessLayer.EF
             modelBuilder.Entity<Order>(order =>
             {
                 order.HasKey(x => x.Id);
-                order.HasOne(x => x.Employee).WithMany(x => x.Orders).HasForeignKey(x => x.EmployeeId);
+                order.HasOne(x => x.User).WithMany(x => x.Orders).HasForeignKey(x => x.UserId);
                 order.HasOne(x => x.Payment).WithMany(x => x.Orders).HasForeignKey(x => x.PaymentId);
             });
             modelBuilder.Entity<Payment>(payment =>
@@ -110,7 +106,7 @@ namespace DATN.DataAccessLayer.EF
             modelBuilder.Entity<Role>(role =>
             {
                 role.HasKey(x => x.Id);
-                role.HasOne(x => x.Employee).WithMany(x => x.Roles).HasForeignKey(x => x.EmployeeId);
+                role.HasOne(x => x.User).WithMany(x => x.Roles).HasForeignKey(x => x.UserId);
             });
 
 
