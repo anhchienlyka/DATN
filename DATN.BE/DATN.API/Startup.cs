@@ -59,8 +59,8 @@ namespace DATN.API
             services.AddTransient<IProductRepository,ProductRepository>();
             services.AddTransient<ISaleCodeRepository,SaleCodeRepository>();
             services.AddTransient<ISupplierRepository,SupplierRepository>();
-            services.AddTransient<ICustomerRepository,CustomerRepository>();
-            services.AddTransient<IEmployeeRepository,EmployeeRepository>();
+            services.AddTransient<IUserRepository,UserRepository>();
+            //services.AddTransient<IEmployeeRepository,EmployeeRepository>();
             services.AddTransient<IRoleRepository,RoleRepository>();
             //Service
             services.AddTransient<ICategoryService, CategoryService>();
@@ -71,8 +71,8 @@ namespace DATN.API
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ISaleCodeService, SaleCodeService>();
             services.AddTransient<ISupplierService, SupplierService>();
-            services.AddTransient<ICustomerService, CustomerService>();
-            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IUserService, UserService>();
+            //services.AddTransient<IEmployeeService, EmployeeService>();
            
 
         }

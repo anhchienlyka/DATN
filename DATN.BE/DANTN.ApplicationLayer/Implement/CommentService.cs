@@ -22,14 +22,11 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Add(CommentAddVM comment)
         {
-            var checkCustomer = await _unitOfWork.CustomerGenericRepository.GetAsync(comment.CustomerId);
-            var checkEmployee = await _unitOfWork.EmployeeGenericRepository.GetAsync(comment.EmployeeId);
+            var checkUser = await _unitOfWork.UserGenericRepository.GetAsync(comment.UserId);
+           
             var checkProduct = await _unitOfWork.ProductGenericRepository.GetAsync(comment.ProductId);
-            if (checkCustomer == null && checkEmployee == null && checkProduct == null)
-            {
-                return new Response(SystemCode.Error, "Add comment Fail", null);
-            }
-            if (checkCustomer != null && checkEmployee != null)
+            
+            if (checkUser != null || checkProduct != null)
             {
                 return new Response(SystemCode.Error, "Add comment Fail", null);
             }

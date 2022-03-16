@@ -25,17 +25,13 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Add(OrderAddVM order)
         {
-            var customer = await _unitOfWork.CustomerGenericRepository.GetAsync(order.CustomerId);
-            var employee = await _unitOfWork.EmployeeGenericRepository.GetAsync(order.EmployeeId);
-            if (customer == null)
+            var user = await _unitOfWork.UserGenericRepository.GetAsync(order.UserId);
+             if (user == null)
             {
-                return new Response(SystemCode.Error, "Customer not exits", null);
+                return new Response(SystemCode.Error, "User not exits", null);
             }
 
-            if (employee == null)
-            {
-                return new Response(SystemCode.Error, "Employee not exits", null);
-            }
+           
 
             var data = _mapper.Map<Order>(order);
             foreach (var item in data.OrderDetails)
