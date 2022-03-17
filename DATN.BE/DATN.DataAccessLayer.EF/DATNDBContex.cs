@@ -32,8 +32,7 @@ namespace DATN.DataAccessLayer.EF
         public DbSet<SaleCode> SaleCodes { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Role> Roles { get; set; }
-
+      
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -103,21 +102,7 @@ namespace DATN.DataAccessLayer.EF
                 img.HasKey(x => x.Id);
                 img.HasOne(x => x.Product).WithMany(x => x.Pictures).HasForeignKey(x => x.ProductId);
             });
-            modelBuilder.Entity<Role>(role =>
-            {
-                role.HasKey(x => x.Id);
-                role.HasOne(x => x.User).WithMany(x => x.Roles).HasForeignKey(x => x.UserId);
-            });
 
-
-
-            //foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-            //{
-            //    var tableName = entityType.GetTableName(); if (tableName.StartsWith("AspNet"))
-            //    {
-            //        entityType.SetTableName(tableName.Substring(6));
-            //    }
-            //}
         }
     }
 }

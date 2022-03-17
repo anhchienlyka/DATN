@@ -229,32 +229,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("DATN.Data.Entities.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TypeRole")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("DATN.Data.Entities.SaleCode", b =>
                 {
                     b.Property<int>("Id")
@@ -336,6 +310,9 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Roles")
+                        .HasColumnType("int");
 
                     b.Property<decimal?>("Salary")
                         .HasColumnType("decimal(18,2)");
@@ -435,17 +412,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("DATN.Data.Entities.Role", b =>
-                {
-                    b.HasOne("DATN.Data.Entities.User", "User")
-                        .WithMany("Roles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("DATN.Data.Entities.Category", b =>
                 {
                     b.Navigation("Products");
@@ -480,8 +446,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("Orders");
-
-                    b.Navigation("Roles");
                 });
 #pragma warning restore 612, 618
         }

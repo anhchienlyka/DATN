@@ -19,6 +19,6 @@ namespace DATN.Data.Dtos
         public string Phone { get; set; }
         public string Password { get; set; }
         public bool IsDeleted { get; set; }
-        public IEnumerable<Role> Roles { get; set; }
+        public TypeRole Roles { get; set; }
     }
 }

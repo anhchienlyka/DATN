@@ -15,10 +15,10 @@ namespace DATN.Data.Viewmodel.UserViewModel
         public DateTime? DateOfBirth { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
-       // public decimal? Salary { get; set; }
+        public decimal? Salary { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
         public bool IsDeleted { get; set; }
-        //public IEnumerable<Role> Roles { get; set; }
+        public TypeRole Roles { get; set; }
     }
 }

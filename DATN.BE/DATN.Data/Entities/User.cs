@@ -21,6 +21,6 @@ namespace DATN.Data.Entities
         public bool IsDeleted { get; set; }
         public IEnumerable<Comment> Comments { get; set; }
         public IEnumerable<Order> Orders { get; set; }
-        public IEnumerable<Role> Roles { get; set; }
+        public TypeRole Roles { get; set; }
     }
 }
