@@ -20,10 +20,8 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         protected IGenericRepository<Picture> _pictureyGenericRepository;
         protected IGenericRepository<Product> _productGenericRepository;
         protected IGenericRepository<SaleCode> _saleCodeGenericRepository;
-     
         protected IGenericRepository<Supplier> _supplierGenericRepository;
         protected IGenericRepository<User> _userGenericRepository;
-        protected IGenericRepository<Role> _roleGenericRepository;
 
         public UnitOfWork(DATNDBContex db)
         {
@@ -80,11 +78,6 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         public IGenericRepository<Supplier> SupplierGenericRepository
         {
             get => _supplierGenericRepository ?? new GenericRepository<Supplier>(_db);
-        }
-
-        public IGenericRepository<Role> RoleGenericRepository
-        {
-            get => _roleGenericRepository ?? new GenericRepository<Role>(_db);
         }
 
         public int Commit()

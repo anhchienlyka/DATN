@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj": {}
+    "D:\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj": {
+    "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
+        "projectUniqueName": "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
         "projectName": "DANTN.ApplicationLayer",
-        "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\obj\\",
+        "projectPath": "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
+              "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
               },
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
+              "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
               }
             }
           }
@@ -46,6 +46,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,21 +67,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj": {
+    "D:\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
+        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
         "projectName": "DATN.API",
-        "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\obj\\",
+        "projectPath": "D:\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "D:\\DATN\\DATN.BE\\DATN.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,11 +95,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj"
+              "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj"
               },
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
+              "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
               }
             }
           }
@@ -155,21 +161,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
+    "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
+        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
         "projectName": "DATN.DataAccessLayer.EF",
-        "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\obj\\",
+        "projectPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,8 +189,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
+              "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
               }
             }
           }
@@ -239,21 +245,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+    "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
         "projectName": "DATN.Data",
-        "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\obj\\",
+        "projectPath": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "D:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,8 +273,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
-                "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
+              "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+                "projectPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
               }
             }
           }
@@ -307,21 +313,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+    "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
         "projectName": "DATN.InfrastructureLayer",
-        "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
+        "projectPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -346,6 +352,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -361,7 +377,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

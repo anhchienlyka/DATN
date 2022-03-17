@@ -22,7 +22,7 @@ namespace DATN.DataAccessLayer.EF.UnitOfWorks
         IGenericRepository<SaleCode> SaleCodeGenericRepository { get; }
         
         IGenericRepository<Supplier> SupplierGenericRepository { get; }
-        IGenericRepository<Role> RoleGenericRepository { get; }
+
 
 
         Task<int> CommitAsync();
