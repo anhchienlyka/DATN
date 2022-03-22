@@ -121,6 +121,8 @@ namespace DATN.API
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IAuthenticationServices, AuthenticationServices>();
 
+
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.Configure<ForwardedHeadersOptions>(options =>
             {
                 options.ForwardedHeaders =

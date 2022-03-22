@@ -26,23 +26,19 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> Add(OrderAddVM order)
         {
             var user = await _unitOfWork.UserGenericRepository.GetAsync(order.UserId);
-             if (user == null)
-            {
-                return new Response(SystemCode.Error, "User not exits", null);
-            }
-
-           
-
+            if (user == null) return new Response(SystemCode.Error, "User not exits", null);
             var data = _mapper.Map<Order>(order);
             foreach (var item in data.OrderDetails)
             {
-                var product = _unitOfWork.ProductGenericRepository.GetAsync(item.ProductId);
+                var product = await _unitOfWork.ProductGenericRepository.GetAsync(item.ProductId);
                 if (product == null) return new Response(SystemCode.Error, "Product is not exits", null);
-
                 item.OrderId = data.Id;
+                product.Inventory -= item.Quantity;
+                _unitOfWork.ProductGenericRepository.Update(product);
                 await _unitOfWork.OrderDetailGenericRepository.AddAsync(item);
             }
             data.OrderNumber = data.OrderDetails.Count();
+            data.TransacStatus = DeliveryStatus.PENDING;
             await _unitOfWork.OrderGenericRepository.AddAsync(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Add Order Success", data.Id);
@@ -76,6 +72,11 @@ namespace DANTN.ApplicationLayer.Implement
         }
 
         public Task<Response> Update(OrderUpdateVM order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response> UpdateStatusOrder(OrderStatusUpdateVM orderStatus)
         {
             throw new NotImplementedException();
         }

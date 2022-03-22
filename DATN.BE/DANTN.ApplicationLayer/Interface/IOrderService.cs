@@ -17,6 +17,8 @@ namespace DANTN.ApplicationLayer.Interface
 
         public Task<Response> GetById(int id);
 
+        public Task<Response> UpdateStatusOrder(OrderStatusUpdateVM orderStatus);
+
         public Task<Response> GetRevenueStatistic(DateTime startDate, DateTime endDate);
     }
 }

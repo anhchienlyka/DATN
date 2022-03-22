@@ -2,6 +2,7 @@
 using DATN.Data.CategoryViewModel;
 using DATN.Data.Dtos;
 using DATN.Data.Entities;
+using DATN.Data.Viewmodel.AccountViewModel;
 using DATN.Data.Viewmodel.CommentViewModel;
 using DATN.Data.Viewmodel.OrderDetailViewModel;
 using DATN.Data.Viewmodel.OrderViewModel;
@@ -30,6 +31,7 @@ namespace DATN.Data.MappingProfiles
             //order
             CreateMap<Order, OrderVM>().ReverseMap();
             CreateMap<Order, OrderAddVM>().ReverseMap();
+            CreateMap<Order, OrderStatusUpdateVM>().ReverseMap();
 
             //orderDetail
             CreateMap<OrderDetail, OrderDetailAddVM>().ReverseMap();
@@ -40,6 +42,10 @@ namespace DATN.Data.MappingProfiles
             CreateMap<User, UserAddVM>().ReverseMap();
             CreateMap<User, UserUpdateVM>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<ActivatingUserModel, User>()
+                 .ForMember(x => x.Id, options => options.MapFrom(k => k.UserId))
+                 .ForMember(x => x.UserName, options => options.MapFrom(k => k.UserName))
+                 .ForMember(x => x.Roles, options => options.MapFrom(k => k.Role));
 
         }
     }

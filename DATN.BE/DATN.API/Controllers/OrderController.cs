@@ -1,5 +1,8 @@
 ﻿using DANTN.ApplicationLayer.Interface;
 using DATN.Data.Viewmodel.OrderViewModel;
+using DATN.InfrastructureLayer.Constants;
+using DATN.InfrastructureLayer.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -23,10 +26,20 @@ namespace DATN.API.Controllers
             return Ok(response);
         }
 
+        [Authorize(Roles = Permission.CUSTOMER)]
         [HttpPost]
         public async Task<IActionResult> AddOrder(OrderAddVM order)
         {
             var response = await _orderService.Add(order);
+            return Ok(response);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = Permission.SHIPPER)]
+        [Authorize(Roles = Permission.CUSTOMER)]
+        public async Task<IActionResult> UpdateStatusOrder(OrderStatusUpdateVM order)
+        {
+            var response = await _orderService.UpdateStatusOrder(order);
             return Ok(response);
         }
     }

@@ -112,7 +112,6 @@ C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Identity
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -239,3 +238,6 @@ D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\ref\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.pdb
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.genruntimeconfig.cache
+C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
