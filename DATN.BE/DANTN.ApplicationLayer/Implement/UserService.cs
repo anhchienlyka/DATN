@@ -29,6 +29,10 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Add(UserAddVM user)
         {
+            if (await _userRepository.GetUserByUserName(user.UserName) != null)
+            {
+                return new Response(SystemCode.Error, "UserName is Exist", null);
+            }
             var data = _mapper.Map<User>(user);
             data.CustomerRank = RANK.A;
             await _unitOfWork.UserGenericRepository.AddAsync(data);
@@ -53,9 +57,21 @@ namespace DANTN.ApplicationLayer.Implement
             return new Response(SystemCode.Success, "Check User Success", user);
         }
 
-        public Task<Response> Delete(int id)
+        public async Task<Response> Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var userData = await _unitOfWork.UserGenericRepository.GetAsync(id);
+            if (userData == null)
+            {
+                return new Response(SystemCode.Error, "User not Exits", null);
+            }
+            if (userData.IsDeleted == true)
+            {
+                return new Response(SystemCode.Error, "User is Deleted", null);
+            }
+            userData.IsDeleted = true;
+            _unitOfWork.UserGenericRepository.Update(userData);
+            await _unitOfWork.CommitAsync();
+            return new Response(SystemCode.Success, "Delete User Success", userData.Id);
         }
 
         public async Task<Response> GetAll()
@@ -71,9 +87,21 @@ namespace DANTN.ApplicationLayer.Implement
             return new Response(SystemCode.Success, "Get All Success", listData);
         }
 
-        public Task<Response> Update(UserUpdateVM user)
+        public async Task<Response> Update(UserUpdateVM user)
         {
-            throw new System.NotImplementedException();
+            var userData = await _unitOfWork.UserGenericRepository.GetAsync(user.Id);
+            if (userData == null)
+            {
+                return new Response(SystemCode.Error, "User not Exits", null);
+            }
+            if (userData.IsDeleted == true)
+            {
+                return new Response(SystemCode.Error, "User is Deleted", null);
+            }
+            var data = _mapper.Map<User>(user);
+            _unitOfWork.UserGenericRepository.Update(data);
+            await _unitOfWork.CommitAsync();
+            return new Response(SystemCode.Success, "Update User Success", user.Id);
         }
     }
 }
