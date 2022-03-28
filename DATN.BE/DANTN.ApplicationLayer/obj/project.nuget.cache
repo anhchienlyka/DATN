@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1f1O7yMUxhrkmlfWYXHO6niVyn6Dl2fDuhtJOc8inxm60jfIa9+cE8mm+2MHwHF87bT+231WOR4js8bFcU+bKA==",
+  "dgSpecHash": "FfEpxuOcR5WWnjFEskVaE7YqyzZ3uj42+TGhMcnFpTN7ddFo0up4Eo9CAUQM0mw07t8n7DwqjGmD8rD+XRtWRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
+  "projectFilePath": "E:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chien\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\chien\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.13\\microsoft.aspnetcore.authentication.jwtbearer.5.0.13.nupkg.sha512",

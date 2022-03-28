@@ -35,5 +35,13 @@ namespace DATN.API.Controllers
             return Ok(respone);
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> Login(UserInfor user)
+        {
+            var responseUser = await _userService.LoginUser(user);
+            return Ok(responseUser);
+        }
+
     }
 }

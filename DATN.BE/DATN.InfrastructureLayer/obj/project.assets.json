@@ -157,11 +157,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+      "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
       "projectName": "DATN.InfrastructureLayer",
-      "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+      "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
       "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
+      "outputPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",

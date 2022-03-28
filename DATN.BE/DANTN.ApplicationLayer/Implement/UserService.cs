@@ -3,6 +3,7 @@ using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
 using DATN.Data.Dtos;
 using DATN.Data.Entities;
+using DATN.Data.Viewmodel.AccountViewModel;
 using DATN.Data.Viewmodel.UserViewModel;
 using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
@@ -85,6 +86,25 @@ namespace DANTN.ApplicationLayer.Implement
                 listData.Add(userVm);
             }
             return new Response(SystemCode.Success, "Get All Success", listData);
+        }
+
+        public async Task<Response> LoginUser(UserInfor user)
+        {
+            var userData = await _userRepository.GetUserByUserName(user.UserName);
+            if (userData==null)
+            {
+                return new Response(SystemCode.Error, "User not Exits", null);
+            }
+            if (userData.IsDeleted == true)
+            {
+                return new Response(SystemCode.Error, "User is Deleted", null);
+            }
+            if (userData.UserName==user.UserName&&userData.Password==user.PassWord)
+            {
+                return new Response(SystemCode.Success, "Login Success", userData);
+
+            }
+            return new Response(SystemCode.Error, "Login False", user);
         }
 
         public async Task<Response> Update(UserUpdateVM user)

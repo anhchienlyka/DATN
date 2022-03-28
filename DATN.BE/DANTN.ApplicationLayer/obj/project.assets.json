@@ -5600,11 +5600,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
+      "projectUniqueName": "E:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
       "projectName": "DANTN.ApplicationLayer",
-      "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
+      "projectPath": "E:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\DANTN.ApplicationLayer.csproj",
       "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\obj\\",
+      "outputPath": "E:\\DATN\\DATN.BE\\DANTN.ApplicationLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5621,11 +5621,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
-              "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
+            "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj": {
+              "projectPath": "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj"
             },
-            "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
-              "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
+            "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+              "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
             }
           }
         }

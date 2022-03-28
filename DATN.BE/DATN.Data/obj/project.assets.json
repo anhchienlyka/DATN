@@ -948,11 +948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+      "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
       "projectName": "DATN.Data",
-      "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+      "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
       "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.Data\\obj\\",
+      "outputPath": "E:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -969,8 +969,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
-              "projectPath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
+            "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+              "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
             }
           }
         }

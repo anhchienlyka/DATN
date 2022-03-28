@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nTV+a7lWPkQkqWiqmJEdeu55PUm/V0D3ifw0DZGqaky5ACStmyq85kdBvGi3ZNHcj+kqU4+Km8WU6tHGsK57Sw==",
+  "dgSpecHash": "0qWMHJDDj+aoai+Iyz79sbY9TtnHLIC9tgFvN+nY4zCLSxDaadQUMl5hp9EvWCszdqF25cCnuud+iwQDDzn9Sg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chien\\Desktop\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
+  "projectFilePath": "E:\\DATN\\DATN.BE\\DATN.API\\DATN.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chien\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\chien\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
