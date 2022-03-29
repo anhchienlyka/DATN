@@ -22,7 +22,7 @@
                                     <input class="form-control" type="text" placeholder="First Name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Last Name"</label>
+                                    <label>Last Name</label>
                                     <input class="form-control" type="text" placeholder="Last Name">
                                 </div>
                                 <div class="col-md-6">
@@ -50,13 +50,14 @@
                     <div class="col-lg-6">
                         <div class="login-form">
                             <div class="row">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
                                 <div class="col-md-6">
-                                    <label>E-mail / Username</label>
-                                    <input class="form-control" type="text" placeholder="E-mail / Username">
+                                    <label>Username</label>
+                                    <input class="form-controlLogin" type="text" placeholder="Username"formControlName="username">
                                 </div>
                                 <div class="col-md-6">
                                     <label>Password</label>
-                                    <input class="form-control" type="text" placeholder="Password">
+                                    <input class="form-controlLogin" type="text" placeholder="Password" formControlName="password">
                                 </div>
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
@@ -67,6 +68,7 @@
                                 <div class="col-md-12">
                                     <button class="btn">Submit</button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,8 @@
+.form-controlLogin, .custom-select {
+    width: 300%;
+    height: 36px;
+    padding: 0 15px;
+    color: #999999;
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+}

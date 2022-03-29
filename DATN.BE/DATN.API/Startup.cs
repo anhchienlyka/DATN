@@ -165,7 +165,7 @@ namespace DATN.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DATN.API v1"));
             }
-
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().WithExposedHeaders("*"));
             app.UseHttpsRedirection();
 
             app.UseRouting();

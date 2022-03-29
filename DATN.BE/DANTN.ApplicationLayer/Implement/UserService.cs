@@ -104,7 +104,7 @@ namespace DANTN.ApplicationLayer.Implement
                 return new Response(SystemCode.Success, "Login Success", userData);
 
             }
-            return new Response(SystemCode.Error, "Login False", user);
+            return new Response(SystemCode.Error, "Login False", null);
         }
 
         public async Task<Response> Update(UserUpdateVM user)

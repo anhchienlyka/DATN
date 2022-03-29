@@ -43,7 +43,12 @@ import { ContactusComponent } from './body/contactus/contactus.component';
 import { BodyComponent } from './body/body.component';
 import { BottomComponent } from './bottom/bottom.component';
 import { TopComponent } from './top/top.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -89,10 +94,17 @@ import { TopComponent } from './top/top.component';
     BodyComponent,
     BottomComponent,
     TopComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
