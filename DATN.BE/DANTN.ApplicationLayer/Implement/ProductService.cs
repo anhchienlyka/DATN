@@ -82,6 +82,12 @@ namespace DANTN.ApplicationLayer.Implement
             return new Response(SystemCode.Success, "Get Product Success", data);
         }
 
+        public  async Task<Response> GetFeaturedProduct()
+        {
+            var data = await _productRepository.GetFeaturedProduct();
+            return new Response(SystemCode.Success, "Get Featured Product  Success", data);
+        }
+
         public async Task<Response> GetProductByView()
         {
             var data = await _productRepository.GetProductByView();
@@ -91,6 +97,12 @@ namespace DANTN.ApplicationLayer.Implement
                 return new Response(SystemCode.Warning, "Cannot find Product", null);
             }
             return new Response(SystemCode.Success, "Get Product Success", data);
+        }
+
+        public async Task<Response> GetRecentProduct()
+        {
+            var data = await _productRepository.GetRecentProduct();
+            return new Response(SystemCode.Success, "Get Recent Product  Success", data);
         }
 
         public async Task<Response> Update(ProductUpdateVM product)

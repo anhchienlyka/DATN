@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top/top-bar/top-bar.component';
 import { NavComponent } from './top/nav/nav.component';
-import { BottomBarComponent } from './bottom/bottom-bar/bottom-bar.component';
+import { BottomBarComponent } from './top/bottom-bar/bottom-bar.component';
 import { MainBannerComponent } from './body/main-banner/main-banner.component';
 import { NavBarComponent } from './top/nav-bar/nav-bar.component';
 import { BannerComponent } from './body/banner/banner.component';

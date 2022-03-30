@@ -43,6 +43,18 @@ namespace DATN.API.Controllers
             var reponse = await _productService.GetProductByView();
             return Ok(reponse);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetFeaturedProduct()
+        {
+            var reponse = await _productService.GetFeaturedProduct();
+            return Ok(reponse);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetRecentProduct()
+        {
+            var reponse = await _productService.GetRecentProduct();
+            return Ok(reponse);
+        }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteProduct(int id)

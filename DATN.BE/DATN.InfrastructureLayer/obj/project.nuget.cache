@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "bYlC6n/3bel76EMyBPmo43MLf3/hbptqavMjPOmR1LGMmEKexldKbvPoyJFfrMsHOBj4tRiYwrM1vCX15mZPDQ==",
+  "dgSpecHash": "LaZzlUjuE5LbUgivTI+w0nnGpGdX1dbRk3g8IjRSw16B4FQW+cU4TTtxae7GOb3Pqho/8uzbs9wOpcY5IprbIg==",
   "success": true,
-  "projectFilePath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+  "projectFilePath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\chien\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\chien\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
-    "C:\\Users\\chien\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\chien\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\PCC\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\PCC\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
+    "C:\\Users\\PCC\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\PCC\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

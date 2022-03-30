@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {}
+    "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {}
   },
   "projects": {
-    "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+    "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "projectUniqueName": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
         "projectName": "DATN.Data",
-        "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "E:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
+        "projectPath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
-                "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
+              "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+                "projectPath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+    "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "projectUniqueName": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
         "projectName": "DATN.InfrastructureLayer",
-        "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
-        "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
+        "projectPath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "packagesPath": "C:\\Users\\PCC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PCC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PCC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

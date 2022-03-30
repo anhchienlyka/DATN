@@ -16,6 +16,12 @@ namespace DATN.DataAccessLayer.EF.Implementations
 
         }
 
+        public async Task<IEnumerable<Product>> GetFeaturedProduct()
+        {
+            var listProductByVew = await _dbContext.Products.OrderByDescending(x => x.Sale).Take(4).ToListAsync();
+            return listProductByVew;
+        }
+
         public async Task<IEnumerable<Product>> GetProductByName(string name)
         {
             var listProductByVew = await _dbContext.Products.Where(x => x.Name.Contains(name)).ToListAsync();
@@ -25,6 +31,12 @@ namespace DATN.DataAccessLayer.EF.Implementations
         public async Task<IEnumerable<Product>> GetProductByView()
         {
             var listProductByVew = await _dbContext.Products.OrderByDescending(x => x.ViewProduct).Take(5).ToListAsync();
+            return listProductByVew;
+        }
+
+        public async Task<IEnumerable<Product>> GetRecentProduct()
+        {
+            var listProductByVew = await _dbContext.Products.OrderByDescending(x => x.Id).Take(4).ToListAsync();
             return listProductByVew;
         }
     }

@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
@@ -12,7 +12,13 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) { }
 //https://localhost:44311/api/Category/GetAllCategory
   getCategories():Observable<HttpResponse<Category[]>>{
-    return this.httpClient.get<Category[]>(this.apiUrl+'Category/GetAllCategory',{observe: 'response'});
+    var options = {
+      headers: new HttpHeaders({
+        'Content-Type':'application/json'
+      }),
+      responseType:'text' as const
+    };
+    return this.httpClient.get<Category[]>(this.apiUrl+'Category/GetAllCategory',{observe: 'response' });
   }
 
 

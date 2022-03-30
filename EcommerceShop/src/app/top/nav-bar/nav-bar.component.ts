@@ -19,8 +19,11 @@ export class NavBarComponent implements OnInit {
 
   getListCategory()
   {
+    let datas : any;
      this.categoryService.getCategories().subscribe(res=>{
-      this.categories = res
+      datas= res.body;
+      this.categories = datas.data
+      console.log("ressss",this.categories)
     })
   }
 }
