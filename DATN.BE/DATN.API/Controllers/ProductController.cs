@@ -29,7 +29,13 @@ namespace DATN.API.Controllers
             var reponse = await _productService.GetById(id);
             return Ok(reponse);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> GetProductByCategoryId(int id)
+        {
+            var reponse = await _productService.GetProductByCategoryId(id);
+            return Ok(reponse);
+        }
+        
         [HttpGet]
         public async Task<IActionResult> GetProductByName(string name)
         {
@@ -41,6 +47,18 @@ namespace DATN.API.Controllers
         public async Task<IActionResult> GetProductByView()
         {
             var reponse = await _productService.GetProductByView();
+            return Ok(reponse);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetFeaturedProduct()
+        {
+            var reponse = await _productService.GetFeaturedProduct();
+            return Ok(reponse);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetRecentProduct()
+        {
+            var reponse = await _productService.GetRecentProduct();
             return Ok(reponse);
         }
 

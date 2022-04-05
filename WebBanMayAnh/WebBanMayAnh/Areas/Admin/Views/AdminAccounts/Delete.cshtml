@@ -1,0 +1,50 @@
+﻿@model WebBanMayAnh.Models.Account
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index" class="breadcrumb-item">Danh sách tài khoản truy cập</a>
+                <span class="breadcrumb-item active">Xóa tài khoản truy cập</span>
+            </nav>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Thông tin tài khoản truy cập</h4>
+            <div class="table-responsive">
+                <table class="product-info-table m-t-20">
+                    <tbody>
+                        <tr>
+                            <td>ID :</td>
+                            <td>@Model.AccountID</td>
+                        </tr>
+                        <tr>
+                            <td> Tên tài khoản truy cập :</td>
+                            <td>@Model.FullName</td>
+                        </tr>
+                        <tr>
+                            <td>Quyền truy cập :</td>
+                            <td>@Model.Role.RoleName</td>
+                        </tr>
+                        <tr>
+                            <td>Xác nhận xóa :</td>
+                            <td>
+                                <form asp-action="Delete" asp-route-id="@Model.AccountID">
+                                    <input type="hidden" asp-for="AccountID" />
+                                    <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

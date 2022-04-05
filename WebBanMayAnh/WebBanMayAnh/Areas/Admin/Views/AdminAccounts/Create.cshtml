@@ -1,0 +1,75 @@
+﻿@model WebBanMayAnh.Models.Account
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item">Danh sách tài khoản</a>
+                <span class="breadcrumb-item active">Tạo mới tài khoản</span>
+            </nav>
+        </div>
+    </div>
+    <form asp-action="Create">
+        <div class="page-header no-gutters has-tab">
+            <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+                <div class="media align-items-center m-b-15">
+                    <div class="avatar avatar-image rounded" style="height: 70px; width: 70px">
+                        <img src="~/assets/images/others/thumb-16.jpg" alt="">
+                    </div>
+                    <div class="m-l-15">
+                        @*<h4 class="m-b-0">Skinny Men Blazer</h4>
+                            <p class="text-muted m-b-0">Code: #5325</p>*@
+                    </div>
+                </div>
+                <div class="m-b-15">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="anticon anticon-save"></i>
+                        <span>Save</span>
+                    </button>
+                </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">Thêm mới</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content m-t-15">
+            <div class="tab-pane fade show active" id="product-edit-basic">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productName">Họ Tên</label>
+                            <input type="text" asp-for="FullName" class="form-control" placeholder="Họ tên">
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productPrice">Email</label>
+                            <input asp-for="Email" type="text" class="form-control" id="productPrice" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productPrice">Điện thoại</label>
+                            <input asp-for="Phone" type="text" class="form-control" id="productPrice" placeholder="Điện thoại">
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productCategory">Quyền truy cập</label>
+                            <select class="custom-select" asp-for="RoleID" asp-items="ViewBag.RoleID">
+                                <option  disabled selected>Chọn quyền truy cập</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productBrand">Mật khẩu</label>
+                            <input type="password" asp-for="Password" class="form-control" id="productBrand" placeholder="Mật khẩu" >
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

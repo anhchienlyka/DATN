@@ -1,0 +1,47 @@
+﻿@model WebBanMayAnh.Models.Role
+
+@{
+    ViewData["Title"] = "Chi tiết";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a  asp-area="Admin"  asp-controller="AdminRoles" asp-action="Index"class="breadcrumb-item" >Danh sách quyền truy cập</a>
+                <span class="breadcrumb-item active">Chi tiết quyền truy cập</span>
+            </nav>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Thông tin Quyền truy cập</h4>
+            <div class="table-responsive">
+                <table class="product-info-table m-t-20">
+                    <tbody>
+                        <tr>
+                            <td>ID :</td>
+                            <td class="text-dark font-weight-semibold"> @Html.DisplayFor(model => model.RoleID)</td>
+                        </tr>
+                        <tr>
+                            <td> Tên quyền truy cập :</td>
+                            <td class="text-dark font-weight-semibold"> @Html.DisplayFor(model => model.RoleName)</td>
+                        </tr>
+                        <tr>
+                            <td>Mô tả :</td>
+                            <td>@Html.DisplayFor(model => model.Description)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a class="btn btn-primary btn-tone m-r-5" asp-action="Edit" asp-route-id="@Model.RoleID"> Sửa</a>
+        <a class="btn btn-secondary btn-tone m-r-5" asp-action="Index">Trở về</a>
+</div>

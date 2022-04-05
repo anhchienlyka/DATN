@@ -1,0 +1,69 @@
+﻿@model WebBanMayAnh.Models.Account
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index" class="breadcrumb-item">Danh sách tài khoản</a>
+                <span class="breadcrumb-item active">Chi tiết tài khoản truy cập</span>
+            </nav>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Thông tin Tài khoản truy cập</h4>
+            <div class="table-responsive">
+                <table class="product-info-table m-t-20">
+                    <tbody>
+                        <tr>
+                            <td>ID :</td>
+                            <td class="text-dark font-weight-semibold"> @Html.DisplayFor(model => model.AccountID)</td>
+                        </tr>
+                        <tr>
+                            <td> Tên tài khoản :</td>
+                            <td class="text-dark font-weight-semibold"> @Html.DisplayFor(model => model.FullName)</td>
+                        </tr>
+                        <tr>
+                            <td>Email :</td>
+                            <td>@Html.DisplayFor(model => model.Email)</td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại :</td>
+                            <td>@Html.DisplayFor(model => model.Phone)</td>
+                        </tr>
+                        <tr>
+                            <td>Quyền truy cập :</td>
+                            <td>@Html.DisplayFor(model => model.Role.RoleName)</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian đăng nhập :</td>
+                            <td>@Html.DisplayFor(model => model.LastLogin)</td>
+                        </tr>
+                        <tr>
+                            <td>Trạng thái :</td>
+                            @if (Model.Active)
+                            {
+
+                                <td>Active</td>
+                            }
+                            else
+                            {
+                                <td class="badge badge-success badge-dot m-r-10">Block</td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a class="btn btn-primary btn-tone m-r-5" asp-action="Edit" asp-route-id="@Model.AccountID"> Sửa</a>
+    <a class="btn btn-secondary btn-tone m-r-5" asp-action="Index">Trở về</a>
+</div>

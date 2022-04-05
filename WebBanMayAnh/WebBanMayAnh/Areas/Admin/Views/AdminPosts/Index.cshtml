@@ -1,0 +1,95 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<WebBanMayAnh.Models.Post>
+@{
+    int currentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            @*<a class="breadcrumb-item" href="#">Apps</a>*@
+            <span class="breadcrumb-item active">Danh sách bài viết</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+               
+            </div>
+            <div class="col-lg-4 text-right">
+                <a asp-controller="AdminPosts" asp-action="Create" asp-area="Admin" class="btn btn-primary">
+                    <i class="anticon anticon-plus-circle m-r-5"></i>
+                    <span>Tạo mới bài viết</span>
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tiêu đề bài viết</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.PostID
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                        <h6 class="m-b-0 m-l-10">@item.Title</h6>
+                                    </div>
+                                </td>
+                                <td>
+                                    @if (item.Published)
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>Active</div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-warning badge-dot m-r-10"></div>
+                                            <div>Block</div>
+                                        </div>
+                                    }
+                                </td>
+                                <td class="text-right">
+                                    <a asp-action="Details" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                        <i class="anticon anticon-info"></i>
+                                    </a>
+                                    <a asp-action="Edit" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                        <i class="anticon anticon-edit"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                        <i class="anticon anticon-delete"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div aria-label="Page navigation example">
+            <ul class="pagination">
+                <pager class="page-container" list="@Model" asp-area="Admin" asp-controller="AdminPost" asp-action="Index" />
+            </ul>
+        </div>
+    </div>
+</div>

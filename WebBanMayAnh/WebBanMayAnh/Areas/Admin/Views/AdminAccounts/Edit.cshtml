@@ -1,0 +1,63 @@
+﻿@model WebBanMayAnh.Models.Account
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index" class="breadcrumb-item">Danh sách tài khoản truy cập</a>
+                <span class="breadcrumb-item active">Chỉnh sửa tài khoản truy cập</span>
+            </nav>
+        </div>
+    </div>
+
+    <form asp-action="Edit">
+        <div class="card">
+            <div class="card-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="AccountID" />
+                <div class="form-group">
+                    <label class="font-weight-semibold" asp-for="FullName"></label>
+                    <input type="text" class="form-control" asp-for="FullName" placeholder="Full Name">
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productPrice">Email</label>
+                    <input asp-for="Email" type="text" class="form-control" id="productPrice" placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productPrice">Điện thoại</label>
+                    <input asp-for="Phone" type="text" class="form-control" id="productPrice" placeholder="Điện thoại">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productCategory">Quyền truy cập</label>
+                    <select asp-for="RoleID" class="form-control" asp-items="ViewBag.RoleID"></select>
+                    <span asp-validation-for="RoleID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productCategory">Trạng thái :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                    <span asp-validation-for="Active" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-semibold" for="productBrand">Mật khẩu</label>
+                    <input type="text" asp-for="Password" class="form-control" id="productBrand" placeholder="Mật khẩu">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success m-r-5"><i class="anticon anticon-save"></i> Lưu</button>
+            <a class="btn btn-secondary btn-tone m-r-5" asp-action="Index">Trở về</a>
+        </div>
+    </form>
+
+</div>
+

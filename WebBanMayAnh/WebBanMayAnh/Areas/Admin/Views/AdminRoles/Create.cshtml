@@ -1,0 +1,36 @@
+﻿@model WebBanMayAnh.Models.Role
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a asp-area="Admin" asp-controller="AdminRoles" asp-action="Index" class="breadcrumb-item">Danh sách quyền truy cập</a>
+            <span class="breadcrumb-item active">Thêm mới quyền truy cập</span>
+        </nav>
+    </div>
+</div>
+
+<div >
+    <form  asp-action="Create">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Tên quyền truy cập</label>
+            <input type="text" class="form-control" asp-for="RoleName" placeholder="Tên quyền truy cập">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Mô tả</label>
+            <input type="text" asp-for="Description" class="form-control" id="formGroupExampleInput2" placeholder="Mô tả">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Tạo mới" class="btn btn-primary btn-tone m-r-5" />
+            <a class="btn btn-secondary btn-tone m-r-5" asp-action="Index">Trở về</a>
+        </div>
+    </form>
+    
+</div>
+
+

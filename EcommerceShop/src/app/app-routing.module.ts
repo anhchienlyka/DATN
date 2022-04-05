@@ -22,6 +22,9 @@ const routes: Routes = [
   {path:'register',component:LoginComponent},
   {path:'contact',component:ContactusComponent},
   {path:'admin',component:AdminComponent},
+  {path: 'GetProductByName/:name',component: ProductsComponent},
+  {path: 'GetProductByCategoryId/:id',component: ProductsComponent},
+  {path: 'detail/:id',component: ProductDetailComponent},
 ];
 
 @NgModule({

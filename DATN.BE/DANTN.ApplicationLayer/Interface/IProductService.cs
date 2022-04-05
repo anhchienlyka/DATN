@@ -19,5 +19,8 @@ namespace DANTN.ApplicationLayer.Interface
         public Task<Response> Detele(int id);
 
         public Task<Response> GetProductByView();
+        public Task<Response> GetFeaturedProduct();
+        public Task<Response> GetRecentProduct();
+        public Task<Response> GetProductByCategoryId(int categoryId);
     }
 }

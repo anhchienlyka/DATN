@@ -34,3 +34,15 @@ D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLay
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.dll
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.pdb
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.dll
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.pdb
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.deps.json
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.dll
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.AssemblyReference.cache
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfoInputs.cache
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfo.cs
+C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.CoreCompileInputs.cache

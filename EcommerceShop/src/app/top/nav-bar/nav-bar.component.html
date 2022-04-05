@@ -2,9 +2,25 @@
     <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
     </li>
-    
-
-    <li class="nav-item" *ngFor="let item of categories">
-        <a class="nav-link" href="#"><i class="fa fa-microchip"></i>{{item.categoryName}}</a>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/GetProductByCategoryId/1']" routerLinkActive="router-link-active" ><i class="fa fa-camera"></i>Máy ảnh</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-camera"></i>Máy quay</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-camera"></i>Phụ kiện</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-mobile-alt"></i>Thông tin bảo hành</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-icons"></i>Tin tức khuyến mại</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Đồ cũ chất</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Thiế bị làm video</a>
     </li>
 </ul>
