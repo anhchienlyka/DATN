@@ -18,7 +18,8 @@ namespace WebBanMayAnh.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var listProduct = _context.Products.Where(x => x.Active == true).Take(8).OrderByDescending(x=>x.ProductID);
+            return View(listProduct);
         }
         public IActionResult Details(int id)
         {

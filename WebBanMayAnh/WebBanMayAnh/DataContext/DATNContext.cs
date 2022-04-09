@@ -35,6 +35,7 @@ namespace WebBanMayAnh.DataContext
         public virtual DbSet<TransactStatus> TransactStatuses { get; set; }
         public virtual DbSet<SaleCode>  SaleCodes { get; set; }
         public virtual DbSet<Payment>   Payments { get; set; }
+        public virtual DbSet<Supplier>    Suppliers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -64,11 +65,14 @@ namespace WebBanMayAnh.DataContext
             {
                 entity.HasKey(e => e.CatID);  
             });
+            modelBuilder.Entity<Supplier>(entity =>
+            {
+                entity.HasKey(e => e.SupplierID);
+            });
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(x => x.CustomerID);
                 entity.HasOne(x => x.Location).WithMany(x => x.Customers).HasForeignKey(x => x.LocationID);
-
             });
             modelBuilder.Entity<Location>(entity =>
             {
@@ -102,6 +106,7 @@ namespace WebBanMayAnh.DataContext
             {
                 entity.HasKey(x => x.ProductID);
                 entity.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CatID);
+                entity.HasOne(x => x.Supplier).WithMany(x => x.Products).HasForeignKey(x => x.SupplierID);
 
             });
             modelBuilder.Entity<Advertisement>(entity =>
@@ -120,7 +125,7 @@ namespace WebBanMayAnh.DataContext
             modelBuilder.Entity<Post>(entity =>
             {
                 entity.HasKey(x => x.PostID);
-                entity.HasOne(x => x.Category).WithMany(x => x.Posts).HasForeignKey(x => x.CatID);
+                //entity.HasOne(x => x.Category).WithMany(x => x.Posts).HasForeignKey(x => x.CatID);
                 entity.HasOne(x => x.Account).WithMany(x => x.Posts).HasForeignKey(x => x.AccountID);
 
             });

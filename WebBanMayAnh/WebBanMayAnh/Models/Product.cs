@@ -25,17 +25,19 @@ namespace WebBanMayAnh.Models
         public float Screen { get; set; }
         public string ISO { get; set; }
         public string ShutterSpeed { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateModified { get; set; }
-        public bool BestSellers { get; set; }
-        public bool HomeFlag { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateModified { get; set; }
+        //public bool HomeFlag { get; set; }
         public bool Active { get; set; }
         public string Tags { get; set; }
-        public string Title { get; set; }
+        //public string Title { get; set; }
         public string Alias { get; set; }
         public string MetaDesc { get; set; }
         public string MetaKey { get; set; }
         public int? ViewProduct { get; set; }
+        public int? QuantitySold { get; set; }
+        public int SupplierID { get; set; }
+        public Supplier  Supplier { get; set; }
         public IEnumerable<OrderDetail>  OrderDetails { get; set; }
 
     }

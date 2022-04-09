@@ -7376,11 +7376,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\WebBanMayAnh\\WebBanMayAnh\\WebBanMayAnh.csproj",
+      "projectUniqueName": "E:\\DATN\\WebBanMayAnh\\WebBanMayAnh\\WebBanMayAnh.csproj",
       "projectName": "WebBanMayAnh",
-      "projectPath": "E:\\WebBanMayAnh\\WebBanMayAnh\\WebBanMayAnh.csproj",
+      "projectPath": "E:\\DATN\\WebBanMayAnh\\WebBanMayAnh\\WebBanMayAnh.csproj",
       "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-      "outputPath": "E:\\WebBanMayAnh\\WebBanMayAnh\\obj\\",
+      "outputPath": "E:\\DATN\\WebBanMayAnh\\WebBanMayAnh\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",

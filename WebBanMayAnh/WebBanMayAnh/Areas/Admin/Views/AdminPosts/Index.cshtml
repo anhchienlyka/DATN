@@ -19,7 +19,7 @@
     <div class="card-body">
         <div class="row m-b-30">
             <div class="col-lg-8">
-               
+
             </div>
             <div class="col-lg-4 text-right">
                 <a asp-controller="AdminPosts" asp-action="Create" asp-area="Admin" class="btn btn-primary">
@@ -48,7 +48,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                        @*<img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">*@
                                         <h6 class="m-b-0 m-l-10">@item.Title</h6>
                                     </div>
                                 </td>
@@ -57,27 +57,50 @@
                                     {
                                         <div class="d-flex align-items-center">
                                             <div class="badge badge-success badge-dot m-r-10"></div>
-                                            <div>Active</div>
+                                            <div>Public</div>
                                         </div>
                                     }
                                     else
                                     {
                                         <div class="d-flex align-items-center">
                                             <div class="badge badge-warning badge-dot m-r-10"></div>
-                                            <div>Block</div>
+                                            <div>Non-Public</div>
                                         </div>
                                     }
                                 </td>
                                 <td class="text-right">
-                                    <a asp-action="Details" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <a asp-action="Details" asp-controller="AdminPosts" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded">
                                         <i class="anticon anticon-info"></i>
                                     </a>
-                                    <a asp-action="Edit" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                    <a asp-action="Edit" asp-controller="AdminPosts" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                         <i class="anticon anticon-edit"></i>
                                     </a>
-                                    <a asp-action="Delete" asp-controller="AdminPost" asp-area="Admin" asp-route-id="@item.PostID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded m-r-5" data-toggle="modal" data-target="#myModal" data-id=@item.PostID>
                                         <i class="anticon anticon-delete"></i>
                                     </a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xóa thông tin</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        <i class="anticon anticon-close"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Bạn có muốn xóa <b>@item.Title</b> không ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form asp-controller="AdminPosts" asp-action="Delete" asp-route-id=@item.PostID method="post" class="form-inline" role="form">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                                                        &nbsp;&nbsp;&nbsp;
+                                                        <button type="submit" class="btn btn-primary">Xóa</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         }
@@ -93,3 +116,21 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        loadPartial();
+        $("#ddlCategory").change(loadPartial);
+    });
+
+    function loadPartial() {
+        var companyID = $("#ddlCategory").val();
+        var displayPaid = $("#chkDisplayPaid").is(':checked');
+        var url = '@(Url.Action("Index", "AdminPosts", null, null ))?PostID=' + companyID + '&displayPaid=' + displayPaid;
+        $("#InvoiceList").load(url);
+    }
+    </script>
+}

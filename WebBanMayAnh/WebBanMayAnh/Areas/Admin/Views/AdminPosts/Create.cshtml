@@ -5,100 +5,116 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Post</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SContents" class="control-label"></label>
-                <input asp-for="SContents" class="form-control" />
-                <span asp-validation-for="SContents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label"></label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Thumb" class="control-label"></label>
-                <input asp-for="Thumb" class="form-control" />
-                <span asp-validation-for="Thumb" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Alias" class="control-label"></label>
-                <input asp-for="Alias" class="form-control" />
-                <span asp-validation-for="Alias" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AccountID" class="control-label"></label>
-                <select asp-for="AccountID" class ="form-control" asp-items="ViewBag.AccountID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tags" class="control-label"></label>
-                <input asp-for="Tags" class="form-control" />
-                <span asp-validation-for="Tags" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CatID" class="control-label"></label>
-                <select asp-for="CatID" class ="form-control" asp-items="ViewBag.CatID"></select>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHot" /> @Html.DisplayNameFor(model => model.IsHot)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsNewfeed" /> @Html.DisplayNameFor(model => model.IsNewfeed)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="MetaKey" /> @Html.DisplayNameFor(model => model.MetaKey)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="MetaDesc" /> @Html.DisplayNameFor(model => model.MetaDesc)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Views" class="control-label"></label>
-                <input asp-for="Views" class="form-control" />
-                <span asp-validation-for="Views" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="page-header">
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+                <a asp-controller="AdminPosts" asp-action="Index" asp-area="Admin" class="breadcrumb-item">Danh sách post</a>
+                <span class="breadcrumb-item active">Tạo mới post</span>
+            </nav>
+        </div>
+    </div>
+    <form asp-action="Create" asp-controller="AdminPosts" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="page-header no-gutters has-tab">
+            <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+                <div class="media align-items-center m-b-15">
+                </div>
+                <div class="m-b-15">
+                    <button class="btn btn-primary">
+                        <i class="anticon anticon-save"></i>
+                        <span>Tạo mới post</span>
+                    </button>
+                </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">THÔNG TIN POST</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#product-edit-option">THÔNG TIN SEO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#product-edit-description">MÔ TẢ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content m-t-15">
+            <div class="tab-pane fade show active" id="product-edit-basic">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productName">Tên Post</label>
+                            <input type="text" class="form-control" id="productName" placeholder="Tên Post" asp-for="Title">
+                        </div>
 
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productCategory">Công khai :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input class="form-check-input" asp-for="Published" /> Public
+                            <span asp-validation-for="Published" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productCategory">Hình ảnh post</label>
+                            <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
+                            <span asp-validation-for="Thumb" class="text-danger"></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="product-edit-option">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productName">Nội dung ngắn</label>
+                            <input type="text" class="form-control" id="productName" placeholder="Nội dung ngắn" asp-for="SContents">
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productCategory">Bài viết HOT :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input class="form-check-input" asp-for="IsHot" /> HOT
+                            <span asp-validation-for="IsHot" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="font-weight-semibold" for="productCategory">Bài viết mới :  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            <input class="form-check-input" asp-for="IsNewfeed" /> NEW
+                            <span asp-validation-for="IsNewfeed" class="text-danger"></span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="product-edit-description">
+                <div class="card">
+                    <div class="card-body">
+                        <textarea id="productDescription" asp-for="Contents" rows="100"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
+    <script>
+            ClassicEditor
+                .create(document.querySelector('#productDescription'),
+                    {
+
+                        ckfinder: { uploadUrl: '/images/post' }
+                    })
+                .catch(error => { console.error(error); });
+
+            CKEDITOR.editorConfig = function (config) {
+                config.removeDialogTabs = 'image:advanced;image:Link;link:advanced;link:upload';
+                config.filebrowserImageUploadUrl = '/images/post' //Action for Uploding image
+            };
+    </script>
+    <script src="~/Adminassets/vendors/select2/select2.min.js"></script>
+    <script src="~/Adminassets/vendors/quill/quill.min.js"></script>
+    <script src="~/Adminassets/js/pages/e-commerce-product-edit.js"></script>
+
+}

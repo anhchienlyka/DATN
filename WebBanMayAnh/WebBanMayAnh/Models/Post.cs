@@ -20,14 +20,12 @@ namespace WebBanMayAnh.Models
         public string Author { get; set; }
         public int  AccountID { get; set; }
         public Account  Account { get; set; }
-        public string Tags { get; set; }
-        public int CatID { get; set; }
-        public Category  Category { get; set; }
+        //public string Tags { get; set; }
         public bool IsHot { get; set; }
         public bool IsNewfeed { get; set; }
         public bool MetaKey { get; set; }
         public bool MetaDesc { get; set; }
-        public int Views { get; set; }
+        public int? Views { get; set; }
 
     }
 }

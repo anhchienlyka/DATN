@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
 using WebBanMayAnh.DataContext;
+using WebBanMayAnh.Helpper;
 using WebBanMayAnh.Models;
 
 namespace WebBanMayAnh.Areas.Admin.Controllers
@@ -16,22 +20,21 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
     {
         private readonly DATNContext _context;
 
-        public AdminPostsController(DATNContext context)
+        private readonly INotyfService _notyfService;
+        public AdminPostsController(DATNContext context, INotyfService notyfService)
         {
             _context = context;
+            _notyfService = notyfService;
         }
 
         // GET: Admin/AdminPosts
         public ActionResult Index(int? page)
         {
-            ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatID", "CatName");
-            List<SelectListItem> lsStatus = new List<SelectListItem>();
-            lsStatus.Add(new SelectListItem() { Text = "Active", Value = "1" });
-            lsStatus.Add(new SelectListItem() { Text = "Block", Value = "0" });
-            ViewData["lsStatus"] = lsStatus;
+
+
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var pageSize = 10;
-            var listPost = _context.Posts.AsNoTracking().Include(x => x.Category).OrderByDescending(x => x.PostID);
+            var listPost = _context.Posts.AsNoTracking().Include(x => x.Account).OrderByDescending(x => x.PostID);
             PagedList<Post> models = new PagedList<Post>(listPost, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
             return View(models);
@@ -47,7 +50,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
 
             var post = await _context.Posts
                 .Include(p => p.Account)
-                .Include(p => p.Category)
+
                 .FirstOrDefaultAsync(m => m.PostID == id);
             if (post == null)
             {
@@ -61,7 +64,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID");
-            ViewData["CatID"] = new SelectList(_context.Categories, "CatID", "CatID");
+
             return View();
         }
 
@@ -70,16 +73,29 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PostID,Title,SContents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountID,Tags,CatID,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] Post post)
+        public async Task<IActionResult> Create([Bind("PostID,Title,SContents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountID,IsHot,IsNewfeed,Views")] Post post,IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+                post.AccountID = 2;
+                post.Author = "Chien";
+                post.CreatedDate = DateTime.Now;
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string image = Utilities.SEOUrl(post.Title) + extension;
+                    post.Thumb = await Utilities.UploadFile(fThumb, @"post", image.ToLower());
+                }
+                if (string.IsNullOrEmpty(post.Thumb)) post.Thumb = "default.jpg";
+                post.Alias = Utilities.SEOUrl(post.Title);
+
                 _context.Add(post);
                 await _context.SaveChangesAsync();
+                _notyfService.Success("Thêm mới thành công");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", post.AccountID);
-            ViewData["CatID"] = new SelectList(_context.Categories, "CatID", "CatID", post.CatID);
+
             return View(post);
         }
 
@@ -97,7 +113,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", post.AccountID);
-            ViewData["CatID"] = new SelectList(_context.Categories, "CatID", "CatID", post.CatID);
+
             return View(post);
         }
 
@@ -106,7 +122,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostID,Title,SContents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountID,Tags,CatID,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] Post post)
+        public async Task<IActionResult> Edit(int id, [Bind("PostID,Title,SContents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountID,IsHot,IsNewfeed,Views")] Post post, IFormFile fThumb)
         {
             if (id != post.PostID)
             {
@@ -117,8 +133,18 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string image = Utilities.SEOUrl(post.Title) + extension;
+                        post.Thumb = await Utilities.UploadFile(fThumb, @"post", image.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(post.Thumb)) post.Thumb = "default.jpg";
+                    post.Alias = Utilities.SEOUrl(post.Title);
+
                     _context.Update(post);
                     await _context.SaveChangesAsync();
+                    _notyfService.Success("Chỉnh sửa thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -134,7 +160,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AccountID"] = new SelectList(_context.Accounts, "AccountID", "AccountID", post.AccountID);
-            ViewData["CatID"] = new SelectList(_context.Categories, "CatID", "CatID", post.CatID);
+
             return View(post);
         }
 
@@ -148,7 +174,6 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
 
             var post = await _context.Posts
                 .Include(p => p.Account)
-                .Include(p => p.Category)
                 .FirstOrDefaultAsync(m => m.PostID == id);
             if (post == null)
             {
@@ -166,6 +191,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
             var post = await _context.Posts.FindAsync(id);
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 

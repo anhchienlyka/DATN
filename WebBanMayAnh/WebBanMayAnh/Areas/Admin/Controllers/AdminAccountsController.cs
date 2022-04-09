@@ -6,6 +6,7 @@ using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PagedList.Core;
 using WebBanMayAnh.DataContext;
 using WebBanMayAnh.Models;
 
@@ -23,17 +24,22 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminAccounts
-        public async Task<IActionResult> Index()
+ 
+
+        public ActionResult Index(int? page)
         {
             ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleID", "RoleName");
             List<SelectListItem> lsStatus = new List<SelectListItem>();
             lsStatus.Add(new SelectListItem() { Text = "Active", Value = "1" });
             lsStatus.Add(new SelectListItem() { Text = "Block", Value = "0" });
             ViewData["lsStatus"] = lsStatus;
-            var dATNContext = _context.Accounts.Include(a => a.Role);
-            return View(await dATNContext.ToListAsync());
+            var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+            var pageSize = 10;
+            var listAccount = _context.Accounts.AsNoTracking().Include(x=>x.Role).OrderByDescending(x => x.AccountID);
+            PagedList<Account> models = new PagedList<Account>(listAccount, pageNumber, pageSize);
+            ViewBag.CurrentPage = pageNumber;
+            return View(models);
         }
-
         // GET: Admin/AdminAccounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {

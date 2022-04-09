@@ -1,7 +1,7 @@
 ﻿@using PagedList.Core.Mvc
 @model PagedList.Core.IPagedList<WebBanMayAnh.Models.Customer>
 @{
-    int currentPage = ViewBag.CurrentPage;  
+    int currentPage = ViewBag.CurrentPage;
 
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -62,7 +62,7 @@
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">
+                                        @*<img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">*@
                                         <h6 class="m-b-0 m-l-10">@item.FullName</h6>
                                     </div>
                                 </td>
@@ -80,9 +80,32 @@
                                     <a asp-action="Edit" asp-controller="AdminCustomers" asp-area="Admin" asp-route-id="@item.CustomerID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
                                         <i class="anticon anticon-edit"></i>
                                     </a>
-                                    <a asp-action="Delete" asp-controller="AdminCustomers" asp-area="Admin" asp-route-id="@item.CustomerID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded m-r-5" data-toggle="modal" data-target="#myModal" data-id=@item.CustomerID>
                                         <i class="anticon anticon-delete"></i>
                                     </a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xóa thông tin</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        <i class="anticon anticon-close"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body"style="text-align:left">
+                                                    Bạn có muốn xóa <b>@item.FullName</b> không ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form asp-controller="AdminCustomers" asp-action="Delete" asp-route-id=@item.CustomerID method="post" class="form-inline" role="form">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                                                        &nbsp;&nbsp;&nbsp;
+                                                        <button type="submit" class="btn btn-primary">Xóa</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         }
@@ -98,3 +121,20 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        loadPartial();
+        $("#ddlCategory").change(loadPartial);
+    });
+
+    function loadPartial() {
+        var companyID = $("#ddlCategory").val();
+        var displayPaid = $("#chkDisplayPaid").is(':checked');
+        var url = '@(Url.Action("Index", "AdminCusomters", null, null ))?CustomerID=' + companyID + '&displayPaid=' + displayPaid;
+        $("#InvoiceList").load(url);
+    }
+    </script>
+}

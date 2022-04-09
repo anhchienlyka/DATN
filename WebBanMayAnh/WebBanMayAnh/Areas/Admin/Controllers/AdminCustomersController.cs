@@ -71,6 +71,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
             {
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
+                _notyfService.Success("Tạo mới thành công");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["LocationID"] = new SelectList(_context.Locations, "LocationID", "LocationID", customer.LocationID);
@@ -112,6 +113,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
                 {
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
+                    _notyfService.Success("Chỉnh sửa thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -157,6 +159,7 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
             var customer = await _context.Customers.FindAsync(id);
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 

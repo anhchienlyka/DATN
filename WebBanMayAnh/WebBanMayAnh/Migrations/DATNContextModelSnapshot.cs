@@ -141,43 +141,7 @@ namespace WebBanMayAnh.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Alias")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CatName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Cover")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Levels")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MetaDesc")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MetaKey")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Ordering")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ParentID")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Published")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SchemaMarkup")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Thumb")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CatID");
@@ -227,6 +191,9 @@ namespace WebBanMayAnh.Migrations
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RankCustomer")
+                        .HasColumnType("int");
 
                     b.Property<string>("Salt")
                         .HasColumnType("nvarchar(max)");
@@ -449,9 +416,6 @@ namespace WebBanMayAnh.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CatID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Contents")
                         .HasColumnType("nvarchar(max)");
 
@@ -476,23 +440,18 @@ namespace WebBanMayAnh.Migrations
                     b.Property<string>("SContents")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tags")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Thumb")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Views")
+                    b.Property<int?>("Views")
                         .HasColumnType("int");
 
                     b.HasKey("PostID");
 
                     b.HasIndex("AccountID");
-
-                    b.HasIndex("CatID");
 
                     b.ToTable("Posts");
                 });
@@ -513,26 +472,20 @@ namespace WebBanMayAnh.Migrations
                     b.Property<string>("Alias")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("BestSellers")
-                        .HasColumnType("bit");
-
                     b.Property<int>("CatID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<DateTime?>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<DateTime?>("DateModified")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Discount")
+                    b.Property<int?>("Discount")
                         .HasColumnType("int");
-
-                    b.Property<bool>("HomeFlag")
-                        .HasColumnType("bit");
 
                     b.Property<string>("ISO")
                         .HasColumnType("nvarchar(max)");
@@ -555,6 +508,9 @@ namespace WebBanMayAnh.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("QuantitySold")
+                        .HasColumnType("int");
+
                     b.Property<float>("Screen")
                         .HasColumnType("real");
 
@@ -567,24 +523,23 @@ namespace WebBanMayAnh.Migrations
                     b.Property<string>("ShutterSpeed")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SupplierID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Tags")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Thumb")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Video")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ViewProduct")
+                    b.Property<int?>("ViewProduct")
                         .HasColumnType("int");
 
                     b.HasKey("ProductID");
 
                     b.HasIndex("CatID");
+
+                    b.HasIndex("SupplierID");
 
                     b.ToTable("Products");
                 });
@@ -644,6 +599,21 @@ namespace WebBanMayAnh.Migrations
                     b.HasKey("ShipperID");
 
                     b.ToTable("Shippers");
+                });
+
+            modelBuilder.Entity("WebBanMayAnh.Models.Supplier", b =>
+                {
+                    b.Property<int>("SupplierID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("SupplierName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SupplierID");
+
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("WebBanMayAnh.Models.TransactStatus", b =>
@@ -759,15 +729,7 @@ namespace WebBanMayAnh.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebBanMayAnh.Models.Category", "Category")
-                        .WithMany("Posts")
-                        .HasForeignKey("CatID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Account");
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("WebBanMayAnh.Models.Product", b =>
@@ -778,7 +740,15 @@ namespace WebBanMayAnh.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("WebBanMayAnh.Models.Supplier", "Supplier")
+                        .WithMany("Products")
+                        .HasForeignKey("SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("WebBanMayAnh.Models.Account", b =>
@@ -793,8 +763,6 @@ namespace WebBanMayAnh.Migrations
 
             modelBuilder.Entity("WebBanMayAnh.Models.Category", b =>
                 {
-                    b.Navigation("Posts");
-
                     b.Navigation("Products");
                 });
 
@@ -831,6 +799,11 @@ namespace WebBanMayAnh.Migrations
             modelBuilder.Entity("WebBanMayAnh.Models.Shipper", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("WebBanMayAnh.Models.Supplier", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("WebBanMayAnh.Models.TransactStatus", b =>

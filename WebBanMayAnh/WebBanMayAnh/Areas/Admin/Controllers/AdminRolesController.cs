@@ -6,6 +6,7 @@ using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PagedList.Core;
 using WebBanMayAnh.DataContext;
 using WebBanMayAnh.Models;
 
@@ -23,9 +24,14 @@ namespace WebBanMayAnh.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminRoles
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Roles.ToListAsync());
+        public ActionResult Index(int? page)
+        {    
+            var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+            var pageSize = 10;
+            var listRole = _context.Roles.AsNoTracking().OrderByDescending(x => x.RoleID);
+            PagedList<Role> models = new PagedList<Role>(listRole, pageNumber, pageSize);
+            ViewBag.CurrentPage = pageNumber;
+            return View(models);
         }
 
         // GET: Admin/AdminRoles/Details/5

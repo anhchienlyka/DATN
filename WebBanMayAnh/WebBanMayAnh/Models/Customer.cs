@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using WebBanMayAnh.Enums;
 
 namespace WebBanMayAnh.Models
 {
@@ -25,6 +26,7 @@ namespace WebBanMayAnh.Models
         public string Salt { get; set; }
         public DateTime LastLogin { get; set; }
         public bool Active { get; set; }
+        public RANK  RankCustomer { get; set; }
         public IEnumerable<Order> Orders  { get; set; }
 
 

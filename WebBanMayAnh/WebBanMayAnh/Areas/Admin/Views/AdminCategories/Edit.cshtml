@@ -1,0 +1,33 @@
+﻿@model WebBanMayAnh.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a asp-area="Admin" asp-controller="AdminCategories" asp-action="Index" class="breadcrumb-item">Danh sách nhà cung cấp</a>
+            <span class="breadcrumb-item active">Sửa danh mục sản phẩm</span>
+        </nav>
+    </div>
+</div>
+
+<div>
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="CatID" />
+        <div class="form-group">
+            <label for="formGroupExampleInput">Tên danh mục sản phẩm</label>
+            <input type="text" class="form-control" asp-for="CatName" placeholder="Tên danh mục sản phẩm">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Sửa" class="btn btn-primary btn-tone m-r-5" />
+            <a class="btn btn-secondary btn-tone m-r-5" asp-action="Index">Trở về</a>
+        </div>
+    </form>
+</div>
+

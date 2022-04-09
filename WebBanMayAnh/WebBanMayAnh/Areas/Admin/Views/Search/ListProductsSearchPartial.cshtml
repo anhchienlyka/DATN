@@ -1,0 +1,75 @@
+﻿@model List<WebBanMayAnh.Models.Product>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ProductID
+            </td>
+            <td>
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid rounded" src="@item." style="max-width: 60px" alt="">
+                    <h6 class="m-b-0 m-l-10">@item.ProductName</h6>
+                </div>
+            </td>
+            <td>@item.Category.CatName</td>
+            <td>@item.Price.ToString("#,##0" + " VNĐ")</td>
+            <td>@item.Inventory</td>
+            <td>
+                @if (item.Active)
+                {
+
+
+                    <div class="d-flex align-items-center">
+                        <div class="badge badge-success badge-dot m-r-10"></div>
+                        <div>Active</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex align-items-center">
+                        <div class="badge badge-warning badge-dot m-r-10"></div>
+                        <div>Block</div>
+                    </div>
+
+                }
+            </td>
+            <td class="text-right">
+                <a asp-action="Details" asp-controller="AdminProducts" asp-area="Admin" asp-route-id="@item.ProductID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                    <i class="anticon anticon-info"></i>
+                </a>
+                <a asp-action="Edit" asp-controller="AdminProducts" asp-area="Admin" asp-route-id="@item.ProductID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                    <i class="anticon anticon-edit"></i>
+                </a>
+                <a class="btn btn-icon btn-hover btn-sm btn-rounded m-r-5" data-toggle="modal" data-target="#myModal" data-id=@item.ProductID>
+                    <i class="anticon anticon-delete"></i>
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Xóa thông tin</h5>
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <i class="anticon anticon-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="text-align:left">
+                                Bạn có muốn xóa <b>@item.ProductName</b> không ?
+                            </div>
+                            <div class="modal-footer">
+                                <form asp-controller="AdminProducts" asp-action="Delete" asp-route-id=@item.ProductID method="post" class="form-inline" role="form">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-primary">Xóa</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+}

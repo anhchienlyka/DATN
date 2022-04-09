@@ -1,0 +1,130 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<WebBanMayAnh.Models.Supplier>
+@{
+    int currentPage = ViewBag.CurrentPage;
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <span class="breadcrumb-item active">Danh sách nhà cung cấp</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row m-b-30">
+            <div class="col-lg-8">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" style="min-width: 200px;" asp-items="ViewBag.QuyenTruyCap">
+                            <option value="" disabled selected>Chọn quyền truy cập</option>
+                        </select>
+                    </div>
+                    <div class="m-b-10">
+                        <select class="custom-select" style="min-width: 200px;" asp-items="ViewBag.lsStatus">
+                            <option value="" disabled selected>Trạng thái truy cập</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-right">
+                <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminSuppliers" asp-action="Create">
+                    <i class="anticon anticon-plus-circle m-r-5"></i>
+                    <span>Thêm tài khoản</span>
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên nhà cung cấp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.SupplierID
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        @*<img class="img-fluid rounded" src="~/assets/images/others/thumb-9.jpg" style="max-width: 60px" alt="">*@
+                                        <h6 class="m-b-0 m-l-10">@item.SupplierName</h6>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <a asp-action="Details" asp-controller="AdminSuppliers" asp-area="Admin" asp-route-id="@item.SupplierID" class="btn btn-icon btn-hover btn-sm btn-rounded">
+                                        <i class="anticon anticon-info"></i>
+                                    </a>
+                                    <a asp-action="Edit" asp-controller="AdminSuppliers" asp-area="Admin" asp-route-id="@item.SupplierID" class="btn btn-icon btn-hover btn-sm btn-rounded pull-right">
+                                        <i class="anticon anticon-edit"></i>
+                                    </a>
+                                    <a class="btn btn-icon btn-hover btn-sm btn-rounded m-r-5" data-toggle="modal" data-target="#myModal" data-id=@item.SupplierID>
+                                        <i class="anticon anticon-delete"></i>
+                                    </a>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xóa thông tin</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        <i class="anticon anticon-close"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body" style="text-align:left">
+                                                    Bạn có muốn xóa <b>@item.SupplierName</b> không ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <form asp-controller="AdminSuppliers" asp-action="Delete" asp-route-id=@item.SupplierID method="post" class="form-inline" role="form">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Không</button>
+                                                        &nbsp;&nbsp;&nbsp;
+                                                        <button type="submit" class="btn btn-primary">Xóa</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div aria-label="Page navigation example">
+    <ul class="pagination">
+        <pager class="page-container" list="@Model" asp-area="Admin" asp-controller="AdminSuppliers" asp-action="Index" />
+    </ul>
+</div>
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        loadPartial();
+        $("#ddlCategory").change(loadPartial);
+    });
+
+    function loadPartial() {
+        var companyID = $("#ddlCategory").val();
+        var displayPaid = $("#chkDisplayPaid").is(':checked');
+        var url = '@(Url.Action("Index", "AdminSuppliers", null, null ))?SupplierID=' + companyID + '&displayPaid=' + displayPaid;
+        $("#InvoiceList").load(url);
+    }
+    </script>
+}
