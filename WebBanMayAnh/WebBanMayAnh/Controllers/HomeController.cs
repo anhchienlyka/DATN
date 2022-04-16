@@ -23,14 +23,15 @@ namespace WebBanMayAnh.Controllers
         public IActionResult Index()
         {
             var listProduct = _context.Products.Where(x => x.Active == true).Take(8).OrderByDescending(x => x.ProductID).ToList();
+            var listProductss = _context.Products.Where(x => x.Active == true).Take(3).OrderByDescending(x => x.Discount).ToList();
+            ViewBag.lisProductSale = listProductss;
+            var listProductsNew = _context.Products.Where(x => x.Active == true).OrderByDescending(x => x.DateCreated).Take(4).ToList();
+            ViewBag.listProductsNew = listProductsNew;
+            var newPost = _context.Posts.Take(3).OrderByDescending(x => x.CreatedDate).ToList();
+            ViewBag.newPost = newPost;
             return View(listProduct);
         }
-        [HttpGet]
-        public IActionResult GetListProductOrderSale()
-        {
-            var listProductss = _context.Products.Where(x => x.Active == true).Take(3).OrderByDescending(x => x.Discount).ToList();
-            return PartialView("GetListProductOrderSale",listProductss);
-        }
+
         public IActionResult Contact()
         {
             return View();

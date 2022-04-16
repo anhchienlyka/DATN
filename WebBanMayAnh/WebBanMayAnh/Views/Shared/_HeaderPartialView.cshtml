@@ -25,7 +25,7 @@
                                 </ul>
                             </li>
                             <li>
-                               Liên hệ với chúng tôi
+                                Liên hệ với chúng tôi
                                 <a href="tel://3965410">3965410</a>
                             </li>
                         </ul>
@@ -44,20 +44,20 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="header-middle-wrap">
-                        <a href="index.html" class="header-logo">
+                        <a href="/" class="header-logo">
                             <img src="assets/images/logo/dark.png" alt="Header Logo">
                         </a>
                         <div class="header-search-area d-none d-lg-block">
                             <form action="#" class="header-searchbox">
-                                <select class="nice-select select-search-category wide">
-                                    <option value="all">All Category</option>
-                                    <option value="product-item">Product Item</option>
-                                    <option value="product-item-2">Product Item 02</option>
-                                    <option value="product-item-3">Product Item 03</option>
-                                    <option value="product-item-4">Product Item 04</option>
-                                    <option value="product-item-5">Product Item 05</option>
-                                </select>
-                                <input class="input-field" type="text" placeholder="Search Products">
+                                @*<select class="nice-select select-search-category wide">
+                                        <option value="all">DANH MÚ</option>
+                                        <option value="product-item">Product Item</option>
+                                        <option value="product-item-2">Product Item 02</option>
+                                        <option value="product-item-3">Product Item 03</option>
+                                        <option value="product-item-4">Product Item 04</option>
+                                        <option value="product-item-5">Product Item 05</option>
+                                    </select>*@
+                                <input class="input-field" type="text" placeholder="Tìm kiếm">
                                 <button class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
                             </form>
                         </div>
@@ -68,8 +68,20 @@
                                         <i class="pe-7s-users"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
-                                        <li><a class="dropdown-item" href="my-account.html">Tài khoản</a></li>
-                                        <li><a class="dropdown-item" href="login-register.html">Đăng nhập | Đăng ký</a></li>
+
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a class="dropdown-item" href="/tai-khoan-cua-toi.html"><b style="color:red">@User.Identity.Name</b></a></li>
+                                          
+
+
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Đăng xuất</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a class="dropdown-item" href="/dang-nhap.html">Đăng nhập</a></li>
+                                            <li><a class="dropdown-item" href="/dang-ky.html">Đăng ký</a></li>
+                                        }
                                     </ul>
                                 </li>
                                 <li class="d-none d-md-block">
@@ -189,7 +201,7 @@
                             <li class="menu-item-has-children">
                                 <a href="#">
                                     <span class="mm-text">
-                                        Trang chủ                                
+                                        Trang chủ
                                     </span>
                                 </a>
                             </li>
@@ -244,7 +256,7 @@
                                         <a href="#">
                                             <span class="mm-text">
                                                 Thông tin tài khoản
-                                               
+
                                             </span>
                                         </a>
 
@@ -254,8 +266,8 @@
                                     <li class="menu-item-has-children">
                                         <a href="#">
                                             <span class="mm-text">
-                                               Đăng ký | Đăng nhập
-                                             
+                                                Đăng ký | Đăng nhập
+
                                             </span>
                                         </a>
 

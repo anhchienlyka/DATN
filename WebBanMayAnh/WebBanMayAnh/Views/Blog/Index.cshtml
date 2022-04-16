@@ -32,10 +32,11 @@
                 {
                     foreach (var item in Model)
                     {
+                        string url = $"/tin-tuc/{item.Alias}-{item.PostID}.html";
                         <div class="col-md-6">
                             <div class="blog-item">
                                 <div class="blog-img img-zoom-effect">
-                                    <a href="blog-detail-left-sidebar.html">
+                                    <a href="@url">
                                         <img class="img-full" src="~/images/post/@item.Thumb" alt="Tin tức">
                                     </a>
                                 </div>

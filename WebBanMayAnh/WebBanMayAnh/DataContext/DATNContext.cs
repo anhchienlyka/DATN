@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebBanMayAnh.Models;
+using WebBanMayAnh.ViewModel;
 
 namespace WebBanMayAnh.DataContext
 {
@@ -141,5 +142,7 @@ namespace WebBanMayAnh.DataContext
             OnModelCreatingPartial(modelBuilder);
         }
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        public DbSet<WebBanMayAnh.ViewModel.RegisterViewModel> RegisterViewModel { get; set; }
+        public DbSet<WebBanMayAnh.ViewModel.LoginViewModel> LoginViewModel { get; set; }
     }
 }

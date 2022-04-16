@@ -1,0 +1,168 @@
+﻿@model WebBanMayAnh.Models.Customer
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Order> lsDonHang = ViewBag.OrDers;
+    WebBanMayAnh.ViewModel.ChangePasswordViewModel changePassword = new WebBanMayAnh.ViewModel.ChangePasswordViewModel();
+}
+
+<!-- Begin Main Content Area -->
+<main class="main-content">
+
+    <div class="account-page-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab" href="#account-dashboard" role="tab" aria-controls="account-dashboard" aria-selected="true">Thông tin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Đơn hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address" role="tab" aria-controls="account-address" aria-selected="false">Địa chỉ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Thay đổi mật khẩu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="account-logout-tab" href="login-register.html" role="tab" aria-selected="false">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
+                        <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
+                            <div class="myaccount-dashboard">
+                                <p>
+                                    Xin chào <b style="color:red">@Model.FullName</b> ( <a style="color:blue" asp-area="" asp-controller="Account" asp-action="Logout">
+                                        Đăng xuất
+                                    </a>)
+                                </p>
+                                <p>
+                                    Từ trang tổng quan tài khoản, bạn có thể xem các đơn đặt hàng gần đây, quản lý địa chỉ giao hàng và thanh toán cũng như chỉnh sửa mật khẩu và chi tiết tài khoản của mình.
+                                </p>
+                                <div class="container mystyle">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="intro-item text-white hinh1">
+                                                <div class="intro-icon mb-5">
+                                                    <img src="assets/images/about/intro/icon/datetime.png" width="80" height="80" alt="Intro Icon">
+                                                </div>
+                                                <div class="intro-content">
+                                                    <b style="color:red">Ngày tham gia</b>
+                                                    <p class="short-desc mb-0" style="color:blue">@Model.CreateDate.ToString("dd/MM/yyyy")</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
+                                            <div class="intro-item text-white hinh2">
+                                                <div class="intro-icon mb-5">
+                                                    <img src="assets/images/about/intro/icon/levemenber.png" width="95" height="80" alt="Intro Icon">
+                                                </div>
+                                                <div class="intro-content">
+                                                    <b style="color:red">Hạng thành viên</b>
+                                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Normal)
+                                                    {
+                                                        <p class="short-desc mb-0" style="color:blue">Thân thiện</p>
+                                                    }
+                                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Pro)
+                                                    {
+                                                        <p class="short-desc mb-0" style="color:blue">Pro</p>
+                                                    }
+                                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Vip)
+                                                    {
+                                                        <p class="short-desc mb-0" style="color:blue">Vip</p>
+                                                    }
+                                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.VipPro)
+                                                    {
+                                                        <p class="short-desc mb-0" style="color:blue">Pro Vip</p>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
+                                            <div class="intro-item text-white hinh3">
+                                                <div class="intro-icon mb-5">
+                                                    <img src="assets/images/about/intro/icon/coin.png" width="80" height="80" alt="Intro Icon">
+                                                </div>
+                                                <div class="intro-content">
+
+                                                    <b style="color:red">Scoin tích lũy</b>
+                                                    <p class="short-desc mb-0 " style="color:blue">Lorem</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div>
+                                    <h4 style="color:red">Ưu đãi của tôi : </h4>
+                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Normal)
+                                    {
+                                        <p>Chưa có ưu đãi</p>
+                                    }
+                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Pro)
+                                    {
+                                        <p>Ưu đãi <b style="color:red">5%</b> cho tổng hóa đơn thanh toán. </p>
+                                    }
+                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.Vip)
+                                    {
+                                        <p>Ưu đãi <b style="color:red">7%</b> cho tổng hóa đơn thanh toán. </p>
+                                    }
+                                    @if (Model.RankCustomer == WebBanMayAnh.Enums.RANK.VipPro)
+                                    {
+                                        <p>Ưu đãi <b style="color:red">10%</b> cho tổng hóa đơn thanh toán. </p>
+                                    }
+
+                                </div>
+                                <br />
+                                <h3 style="color:blue">Điều kiện xếp hạng thành viên</h3>
+                                <p><b style="color:red">&nbsp;&nbsp;- Nhân viên Pro</b> : Tổng số tiền mua hàng tích luỹ đạt từ 1 đến 3 triệu đồng - Ưu đãi <b style="color:red">5%</b> cho tổng hóa đơn hàng</p>
+                                <p><b style="color:red">&nbsp;&nbsp;- Nhân viên Vip</b> : Tổng số tiền mua hàng tích luỹ đạt từ 3 đến 10 triệu đồng - Ưu đãi <b style="color:red">7%</b> cho tổng hóa đơn hàng</p>
+                                <p><b style="color:red">&nbsp;&nbsp;- Nhân viên Pro Vip</b> : Tổng số tiền mua hàng tích luỹ đạt trên 10 triệu đồng - Ưu đãi <b style="color:red">10%</b>cho tổng hóa đơn hàng</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
+                            <div class="myaccount-orders">
+                                <h4 class="small-title">Đơn hàng của tôi</h4>
+                                @if (lsDonHang.Count > 0)
+                                {
+                                    @await Html.PartialAsync("_DonHangPartialView", lsDonHang)
+                                }
+                                else
+                                { <p>Chưa có đơn hàng</p>}
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
+                            <div class="myaccount-address">
+                                <p>The following addresses will be used on the checkout page by default.</p>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="small-title">BILLING ADDRESS</h4>
+                                        <address>
+                                            1234 Heaven Stress, Beverly Hill OldYork UnitedState of Lorem
+                                        </address>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="small-title">SHIPPING ADDRESS</h4>
+                                        <address>
+                                            1234 Heaven Stress, Beverly Hill Old York UnitedState of Lorem
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
+                            @await Html.PartialAsync("_ChangerPasswordPartialView", changePassword)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Main Content Area End Here -->
