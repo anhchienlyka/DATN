@@ -33,9 +33,11 @@
                                             {
                                                 <tr>
                                                     <td class="product_remove">
-                                                        <a href="javascript:void(0)">
+                                                        @*<a href="javascript:void(0)">
                                                             <i class="pe-7s-close" title="Remove"></i>
-                                                        </a>
+                                                        </a>*@
+
+                                                        <input type="button" value="X" class="removecart btn btn-primary" data-mahh="@item.Product.ProductID"  />
                                                     </td>
                                                     <td class="product-thumbnail">
                                                         <a href="javascript:void(0)">
@@ -46,10 +48,10 @@
                                                     <td class="product-price"><span class="amount">@item.Product.Price.ToString("#,##0" + " VNĐ")</span></td>
                                                     <td class="quantity">
                                                         <div class="cart-plus-minus">
-                                                            <input class="cart-plus-minus-box" value="1" type="text">
+                                                           <input data-mahh="@item.Product.ProductID" data-dongia="@item.Product.Price" class="cartItem cart-plus-minus-box" value="" />
                                                         </div>
                                                     </td>
-                                                    <td class="product-subtotal"><span class="amount">@item.TotalMoney</span></td>
+                                                    <td class="product-subtotal"><span class="amount">@item.TotalMoney.ToString("#,##0" + " VNĐ")</span></td>
                                                 </tr>
                                             }
 
@@ -94,3 +96,18 @@
     </div>
 </main>
 <!-- Main Content Area End Here -->
+@section Scripts{
+    <script>
+        $(function () {
+            function loadHeaderCart() {
+                $("#miniCart").load("/AjaxContent/HeaderCart");
+                $("#numberCart").load("/AjaxContent/NumberCart");
+            }
+            $(".removecart").click(function () {
+
+            });
+            $(function)
+
+        })
+    </script>
+}

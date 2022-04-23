@@ -24,15 +24,7 @@ namespace WebBanMayAnh.Controllers
         [Route("cart.html",Name ="Cart")]
         public IActionResult Index()
         {
-            List<int> lsProductID = new List<int>();
-            var lsGioHang = GioHang;
-            //foreach (var item in lsGioHang)
-            //{
-            //    lsProductID.Add(item.Product.ProductID);
-            //}
-            //List<Product> lsProducts = _context.Products.OrderByDescending(x => x.ProductID)
-            //    .Where(x => x.Active == true && !lsProductID.Contains(x.ProductID)).Take(6).ToList();
-            //ViewBag.lsSanPham = lsProducts;
+         
             return View(GioHang);
         }
 
@@ -93,7 +85,12 @@ namespace WebBanMayAnh.Controllers
             }
         }
 
-
+        /*
+         1. Thêm mới sản phẩm
+        2.Cập nhật sản phẩm
+        3.xóa sản phẩm trong giỏ hàng
+        4.xóa luôn giỏ hàng
+         */
         [HttpPost]
         [Route("api/cart/remove")]
         public IActionResult Remove(int productId)
@@ -122,7 +119,34 @@ namespace WebBanMayAnh.Controllers
         }
 
 
+        [HttpPost]
+        [Route("api/cart/update")]
+        public IActionResult UpdateCart(int productID, int? amount)
+        {
+            //lay gio hang ra de xu ly
+            var cart = HttpContext.Session.Get<List<CartItemViewModel>>("GioHang");
+            try
+            {
+                if (cart!=null)
+                {
+                    CartItemViewModel item = cart.SingleOrDefault(x => x.Product.ProductID == productID);
+                    if (item!=null && amount.HasValue)// da co --> cap nhat so luong
+                    {
+                        item.Amount = amount.Value;
+                    }
+                  
+                }
+                //luu lai vao session
+                HttpContext.Session.Set<List<CartItemViewModel>>("GioHang", cart);
+                _notyfService.Success("Cập nhật gỏ hàng thành công");
+                return Json(new { sucess = true });
+            }
+            catch (Exception)
+            {
 
+                return Json(new { sucess = false });
+            }
+        }
 
 
 
