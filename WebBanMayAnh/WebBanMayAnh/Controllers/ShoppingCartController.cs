@@ -12,15 +12,16 @@ using WebBanMayAnh.ViewModel;
 
 namespace WebBanMayAnh.Controllers
 {
-    public class ShopingCartController : Controller
+    public class ShoppingCartController : Controller
     {
         private readonly DATNContext _context;
         private readonly INotyfService _notyfService;
-        public ShopingCartController(DATNContext context, INotyfService notyfService)
+        public ShoppingCartController(DATNContext context, INotyfService notyfService)
         {
             _context = context;
             _notyfService = notyfService;
         }
+        [Route("cart.html",Name ="Cart")]
         public IActionResult Index()
         {
             List<int> lsProductID = new List<int>();

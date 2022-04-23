@@ -968,3 +968,6 @@ E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Account\Login.csh
 E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Account\Dashboard.cshtml.g.cs
 E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Account\_DonHangPartialView.cshtml.g.cs
 E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Account\_ChangerPasswordPartialView.cshtml.g.cs
+E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Shared\Components\HeaderCart\Default.cshtml.g.cs
+E:\DATN\WebBanMayAnh\WebBanMayAnh\obj\Debug\net5.0\Razor\Views\Shared\Components\NumberCart\Default.cshtml.g.cs
