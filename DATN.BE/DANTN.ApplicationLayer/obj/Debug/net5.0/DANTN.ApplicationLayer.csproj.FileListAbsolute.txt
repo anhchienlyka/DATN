@@ -73,3 +73,4 @@ C:\Users\PCC\Desktop\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DANTN.
 C:\Users\PCC\Desktop\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DANTN.ApplicationLayer.dll
 C:\Users\PCC\Desktop\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\ref\DANTN.ApplicationLayer.dll
 C:\Users\PCC\Desktop\DATN\DATN.BE\DANTN.ApplicationLayer\bin\Debug\net5.0\DANTN.ApplicationLayer.pdb
+D:\DATN\DATN.BE\DANTN.ApplicationLayer\obj\Debug\net5.0\DANTN.ApplicationLayer.csproj.CopyComplete

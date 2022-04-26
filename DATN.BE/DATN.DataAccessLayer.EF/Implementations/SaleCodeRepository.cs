@@ -17,7 +17,7 @@ namespace DATN.DataAccessLayer.EF.Implementations
         }
         public Task<SaleCode> GetSaleCode(string saleCodeName)
         {
-            return _dbContext.SaleCodes.FirstOrDefaultAsync(x => x.CodeName == saleCodeName);
+            return _dbContext.SaleCodes.AsNoTracking().FirstOrDefaultAsync(x => x.CodeName == saleCodeName);
         }
     }
 }

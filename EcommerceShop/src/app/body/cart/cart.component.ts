@@ -4,9 +4,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ProductOrder } from 'src/app/model/cart.model';
 import { Product } from 'src/app/model/product.model';
+import { Salecode } from 'src/app/model/salecode';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { CartService } from 'src/app/Services/cart.service';
 import { ProductService } from 'src/app/Services/product.service';
+import { SalecodeService } from 'src/app/Services/salecode.service';
 
 @Component({
   selector: 'app-cart',
@@ -19,6 +21,7 @@ export class CartComponent implements OnInit {
   maKhuyenMai: string = '';
   sanitizer: DomSanitizer;
   productDetail: Product;
+  salecodeName: Salecode
   ngOnInit(): void {
     this.productsInCart = this.cartService.getProductInCart();
   }
@@ -28,7 +31,8 @@ export class CartComponent implements OnInit {
     private route: Router,
     sanitizer: DomSanitizer,
     private notificationSevice: NotificationService,
-    private productService: ProductService
+    private productService: ProductService,
+    private salecodeService: SalecodeService
   ) {
     this.sanitizer = sanitizer;
   }
@@ -45,12 +49,25 @@ export class CartComponent implements OnInit {
   }
 
   addKhuyenMai(capoun: any) {
-    this.maKhuyenMai = capoun.value;
-    console.log('makhuyen mai', this.maKhuyenMai);
+    let maKm;
+    let dateTime = new Date()
+    this.salecodeService.getSaleCodeByCodeName(capoun.value).subscribe(res => {
+      maKm = res.body;
+      this.salecodeName = maKm;
+      if (this.salecodeName != null) {
+        if (this.salecodeName.startDateCode <= dateTime && this.salecodeName.endDateCode >= dateTime) {
+            this.maKhuyenMai=this.salecodeName.codeName;
+        }
+      }
+      else{
+        
+      }
+    });
+
+    console.log('makhuyen mai', maKm);
   }
-  huyKhuyenMai()
-  {
-    this.maKhuyenMai='';
+  huyKhuyenMai() {
+    this.maKhuyenMai = '';
   }
 
 }

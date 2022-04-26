@@ -31,7 +31,14 @@ namespace DATN.API.Controllers
         public async Task<IActionResult> AddSaleCode(SaleCodeAddViewModel salecode)
         {
             var reponse = await _saleCodeService.AddSaleCode(salecode);
-            return Ok(Response);
+            return Ok(reponse);
+        }
+        [HttpGet]
+
+        public async Task<IActionResult> GetCodeByCodeName(string name)
+        {
+            var reponse = await _saleCodeService.GetSaleCode(name);
+            return Ok(reponse);
         }
 
         [HttpDelete]

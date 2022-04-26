@@ -158,7 +158,6 @@ C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.pdb
 C:\Users\chien\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.genruntimeconfig.cache
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\appsettings.Development.json
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\appsettings.json
-D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.StaticWebAssets.xml
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.exe
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.deps.json
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\DATN.API.runtimeconfig.json
@@ -324,3 +323,5 @@ C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\scopedcss\bundle\DAT
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\staticwebassets\DATN.API.StaticWebAssets.Manifest.cache
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.RazorTargetAssemblyInfo.cache
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.genruntimeconfig.cache
+D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\staticwebassets\DATN.API.StaticWebAssets.xml
+D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.csproj.CopyComplete

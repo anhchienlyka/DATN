@@ -1,4 +1,4 @@
-export interface salecode {
+export interface Salecode {
   id: number;
   codeName: string;
   valueCode: null;

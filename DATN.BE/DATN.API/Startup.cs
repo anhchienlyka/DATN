@@ -53,6 +53,7 @@ namespace DATN.API
                 options.LogTo(Console.WriteLine);
             });
             services.AddControllers();
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DATN.API", Version = "v1" });

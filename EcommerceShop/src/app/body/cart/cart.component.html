@@ -95,7 +95,7 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-12" *ngIf="maKhuyenMai != ''">
-              <b class="myKhuyenMai alert-success">{{ maKhuyenMai }}</b>
+              <b class="myKhuyenMai alert-success">{{ maKhuyenMai | uppercase }}</b>
               &nbsp;
               <a (click)="huyKhuyenMai()" style="color: blue;" type="button">Hủy</a>
             </div>
