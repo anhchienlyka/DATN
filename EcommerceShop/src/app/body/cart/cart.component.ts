@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
   maKhuyenMai: string = '';
   sanitizer: DomSanitizer;
   productDetail: Product;
-  salecodeName: Salecode
+  salecodeName: Salecode;
   ngOnInit(): void {
     this.productsInCart = this.cartService.getProductInCart();
   }
@@ -49,27 +49,52 @@ export class CartComponent implements OnInit {
   }
 
   addKhuyenMai(capoun: any) {
-    let maKm;
-    let dateTime = new Date()
-    this.salecodeService.getSaleCodeByCodeName(capoun.value).subscribe(res => {
-      maKm = res.body;
-      this.salecodeName = maKm;
-      if (this.salecodeName != null) {
-        if (this.salecodeName.startDateCode <= dateTime && this.salecodeName.endDateCode >= dateTime) {
-            this.maKhuyenMai=this.salecodeName.codeName;
+    let maKm: any;
+    let dateTime = new Date();
+    this.salecodeService
+      .getSaleCodeByCodeName(capoun.value)
+      .subscribe((res) => {
+        console.log('ressss', res.body);
+        maKm = res.body;
+        this.salecodeName = maKm.data;
+        if (this.salecodeName != null) {
+          if (
+            formatDate(this.salecodeName.startDateCode) <=
+              formatDate(dateTime) &&
+            formatDate(this.salecodeName.endDateCode) >= formatDate(dateTime)
+          ) {
+            this.maKhuyenMai = this.salecodeName.codeName;
+          }
+        } else {
+          this.notificationSevice.showWarning(
+            'Mã khuyến mại không tồn tại',
+            'Thông báo'
+          );
         }
-      }
-      else{
-        
-      }
-    });
-
-    console.log('makhuyen mai', maKm);
+      });
   }
   huyKhuyenMai() {
     this.maKhuyenMai = '';
   }
+}
 
+function padTo2Digits(num: number) {
+  return num.toString().padStart(2, '0');
+}
+function formatDate(date: Date) {
+  return (
+    [
+      date.getFullYear(),
+      padTo2Digits(date.getMonth() + 1),
+      padTo2Digits(date.getDate()),
+    ].join('-') +
+    ' ' +
+    [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getMinutes()),
+      padTo2Digits(date.getSeconds()),
+    ].join(':')
+  );
 }
 
 export class Cart {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {}
+    "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {}
   },
   "projects": {
-    "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
+    "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
         "projectName": "DATN.Data",
-        "projectPath": "D:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+        "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
         "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "D:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
+        "outputPath": "E:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
-                "projectPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
+              "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+                "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+    "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
         "projectName": "DATN.InfrastructureLayer",
-        "projectPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+        "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
         "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
-        "outputPath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
+        "outputPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
