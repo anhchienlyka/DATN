@@ -239,6 +239,18 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("CodeName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("EndDateCode")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDateCode")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ValueCode")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("SaleCodes");

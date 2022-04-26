@@ -1,4 +1,4 @@
 admin: quản lý sản phẩm, phần thống kê doanh số,phần order(tình trạng đơn hàng)
-login+register(uauthen+author)(cho khách hàng)
+login+register(uauthen+author)(cho khách hàng) (lam phan nay ddaauf tien)
 admin(lay template Ecomer - bỏ Sales Statistics,Customers,Recent Orders)
 seed Data 1 user(chủ shop)

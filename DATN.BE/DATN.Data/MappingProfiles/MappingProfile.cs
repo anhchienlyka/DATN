@@ -7,6 +7,7 @@ using DATN.Data.Viewmodel.CommentViewModel;
 using DATN.Data.Viewmodel.OrderDetailViewModel;
 using DATN.Data.Viewmodel.OrderViewModel;
 using DATN.Data.Viewmodel.ProductViewModel;
+using DATN.Data.Viewmodel.SaleCodeViewModel;
 using DATN.Data.Viewmodel.UserViewModel;
 
 namespace DATN.Data.MappingProfiles
@@ -46,6 +47,9 @@ namespace DATN.Data.MappingProfiles
                  .ForMember(x => x.Id, options => options.MapFrom(k => k.UserId))
                  .ForMember(x => x.UserName, options => options.MapFrom(k => k.UserName))
                  .ForMember(x => x.Roles, options => options.MapFrom(k => k.Role));
+
+            //saleCode
+            CreateMap<SaleCode, SaleCodeAddViewModel>().ReverseMap();
 
         }
     }

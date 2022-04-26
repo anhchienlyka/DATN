@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DATN.DataAccessLayer.EF.Migrations
 {
     [DbContext(typeof(DATNDBContex))]
-    [Migration("20220316125830_asdasd")]
-    partial class asdasd
+    [Migration("20220425065549_asssasdasddf")]
+    partial class asssasdasddf
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -240,6 +240,18 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<string>("CodeName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDateCode")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDateCode")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ValueCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
