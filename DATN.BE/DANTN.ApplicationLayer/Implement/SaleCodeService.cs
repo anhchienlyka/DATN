@@ -6,6 +6,7 @@ using DATN.Data.Viewmodel.SaleCodeViewModel;
 using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Enums;
+using System;
 using System.Threading.Tasks;
 
 namespace DANTN.ApplicationLayer.Implement
@@ -25,6 +26,10 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> AddSaleCode(SaleCodeAddViewModel saleCode)
         {
+            if (saleCode.EndDateCode<saleCode.StartDateCode)
+            {
+                return new Response(SystemCode.Error, "EndDate cant not less StartDate", null);
+            }
             var saleCodeNew = _mapper.Map<SaleCode>(saleCode);
             await _unitOfWork.SaleCodeGenericRepository.AddAsync(saleCodeNew);
             await _unitOfWork.CommitAsync();
@@ -56,6 +61,11 @@ namespace DANTN.ApplicationLayer.Implement
             if (data == null)
             {
                 return new Response(SystemCode.Error, "Get data is null", null);
+            }
+            var dateNow = DateTime.Now;
+            if (data.StartDateCode >= dateNow || data.EndDateCode <= dateNow)
+            {
+                return new Response(SystemCode.Error, "Ma Khuyen Mai khong ton tai, hoac da bi xoa", null);
             }
             return new Response(SystemCode.Success, "Get data is success", data);
         }

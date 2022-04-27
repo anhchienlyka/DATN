@@ -68,7 +68,7 @@
                     }}
                   </td>
                   <td>
-                    <button><i class="fa fa-trash"></i></button>
+                    <button (click)="delete(item)"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
               </tbody>
@@ -95,7 +95,7 @@
               </div>
             </div>
             <div class="col-lg-4 col-md-12" *ngIf="maKhuyenMai != ''">
-              <b class="myKhuyenMai alert-success">{{ maKhuyenMai | uppercase }}</b>
+              <b class="myKhuyenMai alert-success">{{ maKhuyenMai | uppercase }} - Giảm {{valueSale}}%</b>
               &nbsp;
               <a (click)="huyKhuyenMai()" style="color: blue;" type="button">Hủy</a>
             </div>
@@ -105,13 +105,13 @@
               <div class="cart-summary">
                 <div class="cart-content">
                   <h1>Thông tin thanh toán</h1>
-                  <p>Tổng số<span>$99</span></p>
-                  <p>Phí vận chuyển<span>$1</span></p>
-                  <h2>Tổng thanh toán<span>$100</span></h2>
+                  <p>Tổng số<span>{{totalPrice |  currency: "VND"}}</span></p>
+                  <p>Phí vận chuyển<span>30,000 VNĐ</span></p>
+                  <h2>Tổng thanh toán<span>{{totalCost |  currency: "VND"}}</span></h2>
                 </div>
                 <div class="cart-btn">
-                  <button>Cập nhật giỏ hàng[</button>
-                  <button>Thanh toán</button>
+                  <button>Cập nhật giỏ hàng</button>
+                  <button><a href="">Thanh toán</a></button>
                 </div>
               </div>
             </div>

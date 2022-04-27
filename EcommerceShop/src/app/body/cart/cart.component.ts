@@ -22,6 +22,7 @@ export class CartComponent implements OnInit {
   sanitizer: DomSanitizer;
   productDetail: Product;
   salecodeName: Salecode;
+  valueSale: number = 0;
   ngOnInit(): void {
     this.productsInCart = this.cartService.getProductInCart();
   }
@@ -35,6 +36,17 @@ export class CartComponent implements OnInit {
     private salecodeService: SalecodeService
   ) {
     this.sanitizer = sanitizer;
+  }
+  get totalPrice(): number {
+    return this.productsInCart.reduce((acc, cur) => acc + cur.price * cur.quantity * (100 - cur.sale) / 100, 0);
+  }
+
+  get totalCost(): number {
+    if (this.valueSale > 0) {
+
+      return this.totalPrice - (this.valueSale * this.totalPrice) / 100 + 30000;
+    }
+    return this.totalPrice + 30000;
   }
 
   clickMinus(quantity: number = 1) {
@@ -58,13 +70,9 @@ export class CartComponent implements OnInit {
         maKm = res.body;
         this.salecodeName = maKm.data;
         if (this.salecodeName != null) {
-          if (
-            formatDate(this.salecodeName.startDateCode) <=
-              formatDate(dateTime) &&
-            formatDate(this.salecodeName.endDateCode) >= formatDate(dateTime)
-          ) {
-            this.maKhuyenMai = this.salecodeName.codeName;
-          }
+          this.maKhuyenMai = this.salecodeName.codeName;
+          this.valueSale = this.salecodeName.valueCode;
+          this.notificationSevice.showSuccess("Thêm mã khuyến mại thành công", "Thông báo")
         } else {
           this.notificationSevice.showWarning(
             'Mã khuyến mại không tồn tại',
@@ -75,27 +83,26 @@ export class CartComponent implements OnInit {
   }
   huyKhuyenMai() {
     this.maKhuyenMai = '';
+    this.valueSale = 0;
   }
+
+
+  delete(item: any) {
+    this.cartService.removeCartItem(item);
+    this.productsInCart = this.cartService.getProductInCart();
+    Cart.callBack.emit();
+  }
+
+
+
+
+
+
+
+
 }
 
-function padTo2Digits(num: number) {
-  return num.toString().padStart(2, '0');
-}
-function formatDate(date: Date) {
-  return (
-    [
-      date.getFullYear(),
-      padTo2Digits(date.getMonth() + 1),
-      padTo2Digits(date.getDate()),
-    ].join('-') +
-    ' ' +
-    [
-      padTo2Digits(date.getHours()),
-      padTo2Digits(date.getMinutes()),
-      padTo2Digits(date.getSeconds()),
-    ].join(':')
-  );
-}
+
 
 export class Cart {
   static callBack = new EventEmitter();
