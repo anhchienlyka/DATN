@@ -40,13 +40,13 @@ export class LoginComponent implements OnInit {
      if(obj.code==1)
      {
        this.userData = obj.data
-       localStorage.setItem('userInfor',JSON.stringify( this.userData));
+       localStorage.setItem('userInfor',JSON.stringify(this.userData));
        if(this.userData.roles==2)
        {
         this.route.navigateByUrl('/');
         this.notificationSevice.showSuccess("Success","Login Successfully");
        }
-       else{
+       else if(this.userData.roles==1){
         this.route.navigateByUrl('/admin');
         this.notificationSevice.showSuccess("Success","Login Successfully");
        }

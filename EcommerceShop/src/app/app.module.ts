@@ -48,9 +48,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminComponent } from './admin/admin.component';
 import { ProductInHomeComponent } from './body/product-in-home/product-in-home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AdminModule } from './admin/admin.module';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
 
 
 @NgModule({
@@ -96,9 +97,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BodyComponent,
     BottomComponent,
     TopComponent,
-    AdminComponent,
     ProductInHomeComponent,
-    
+    UserLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,7 +109,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RouterModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

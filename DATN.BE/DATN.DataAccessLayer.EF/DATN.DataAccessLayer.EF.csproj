@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DATN.Data\DATN.Data.csproj" />
+    <ProjectReference Include="..\DATN.InfrastructureLayer\DATN.InfrastructureLayer.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,1 +1,72 @@
-<p>register works!</p>
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Register</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
+        <!-- Login Start -->
+        <div class="login">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">    
+                        <div class="register-form">
+                            <div class="row">
+                                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-md-12">
+                                    <div class="col-md-6">
+                                        <label>Full Name</label>
+                                        <input class="form-control" type="text" placeholder="Full Name" formControlName="fullname">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>E-mail</label>
+                                        <input class="form-control" type="text" placeholder="E-mail" formControlName="email">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Mobile</label>
+                                        <input class="form-control" type="text" placeholder="Mobile" formControlName="mobile">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>User Name</label>
+                                        <input class="form-control" type="text" placeholder="User Name" formControlName="username">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Password</label>
+                                        <input class="form-control" type="text" placeholder="Password" formControlName="password">
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <label>Retype Password</label>
+                                        <input class="form-control" type="text" placeholder="Password">
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        <button class="btn">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-6">
+                        <div class="login-form">
+                            <div class="row">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+                                <div class="col-md-6">
+                                    <label>Username</label>
+                                    <input class="form-controlLogin" type="text" placeholder="Username" formControlName="username">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Password</label>
+                                    <input class="form-controlLogin" type="text" placeholder="Password" formControlName="password">
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn">Login</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>

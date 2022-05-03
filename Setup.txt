@@ -1,0 +1,3 @@
+* Open package manager console 
++, Change sql server name in forlder PresentationLayer, project DATN.API, appsettings.json
++, update-database

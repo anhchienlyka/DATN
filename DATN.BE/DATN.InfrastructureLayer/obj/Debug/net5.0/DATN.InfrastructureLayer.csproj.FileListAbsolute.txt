@@ -46,3 +46,15 @@ C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfoInputs.cache
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfo.cs
 C:\Users\PCC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.CoreCompileInputs.cache
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.deps.json
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.dll
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\bin\Debug\net5.0\DATN.InfrastructureLayer.pdb
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.AssemblyReference.cache
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfoInputs.cache
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.AssemblyInfo.cs
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.CoreCompileInputs.cache
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.dll
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\refint\DATN.InfrastructureLayer.dll
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.pdb
+C:\Users\Trinh6299_PC\Desktop\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
