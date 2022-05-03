@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = DATN.DataAccessLayer.EF
-build_property.ProjectDir = D:\DATN\DATN.BE\DATN.DataAccessLayer.EF\
+build_property.ProjectDir = E:\DATN\DATN.BE\DATN.DataAccessLayer.EF\

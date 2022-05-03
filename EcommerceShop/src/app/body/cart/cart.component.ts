@@ -16,11 +16,11 @@ import { SalecodeService } from 'src/app/Services/salecode.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  productsInCart: ProductOrder[];
+  productsInCart?: ProductOrder[];
   values: any;
   maKhuyenMai: string = '';
   sanitizer: DomSanitizer;
-  productDetail: Product;
+  productDetail?: Product;
   salecodeName: Salecode;
   valueSale: number = 0;
   ngOnInit(): void {
@@ -38,12 +38,16 @@ export class CartComponent implements OnInit {
     this.sanitizer = sanitizer;
   }
   get totalPrice(): number {
-    return this.productsInCart.reduce((acc, cur) => acc + cur.price * cur.quantity * (100 - cur.sale) / 100, 0);
+    let totalPrices= this.productsInCart?.reduce(
+      (acc, cur) => acc + (cur.price * cur.quantity * (100 - cur.sale)) / 100,
+      0
+    );
+    if(totalPrices>0)return totalPrices;
+    return 0;
   }
 
   get totalCost(): number {
     if (this.valueSale > 0) {
-
       return this.totalPrice - (this.valueSale * this.totalPrice) / 100 + 30000;
     }
     return this.totalPrice + 30000;
@@ -72,7 +76,10 @@ export class CartComponent implements OnInit {
         if (this.salecodeName != null) {
           this.maKhuyenMai = this.salecodeName.codeName;
           this.valueSale = this.salecodeName.valueCode;
-          this.notificationSevice.showSuccess("Thêm mã khuyến mại thành công", "Thông báo")
+          this.notificationSevice.showSuccess(
+            'Thêm mã khuyến mại thành công',
+            'Thông báo'
+          );
         } else {
           this.notificationSevice.showWarning(
             'Mã khuyến mại không tồn tại',
@@ -86,23 +93,38 @@ export class CartComponent implements OnInit {
     this.valueSale = 0;
   }
 
-
   delete(item: any) {
     this.cartService.removeCartItem(item);
     this.productsInCart = this.cartService.getProductInCart();
     Cart.callBack.emit();
   }
 
-
-
-
-
-
-
-
+  checkOut() {
+    var products = this.cartService.getProductInCart();
+    if (products.length > 0) {
+      products.forEach((product) => {
+        let sanpham: any;
+        this.productService
+          .findProductsById(product.productId)
+          .subscribe((res) => {
+            sanpham = res.body;
+            this.productDetail = sanpham.data;
+            if (product.quantity > this.productDetail.inventory!) {
+              this.route.navigateByUrl('/cart');
+              this.notificationSevice.showError(
+                'Sản phẩm trong giỏ hàng không đủ',
+                'Thông báo'
+              );
+            }
+          });
+      });
+      this.route.navigateByUrl('/cart/checkout');
+    } else {
+      this.route.navigateByUrl('/cart');
+      this.notificationSevice.showWarning('Warning', 'Shopping cart is empty');
+    }
+  }
 }
-
-
 
 export class Cart {
   static callBack = new EventEmitter();
