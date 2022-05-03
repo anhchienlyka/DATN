@@ -9,6 +9,7 @@
       "DATN.DataAccessLayer.EF/1.0.0": {
         "dependencies": {
           "DATN.Data": "1.0.0",
+          "DATN.InfrastructureLayer": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.12",
           "Microsoft.EntityFrameworkCore": "5.0.12",
           "Microsoft.EntityFrameworkCore.Design": "5.0.12",

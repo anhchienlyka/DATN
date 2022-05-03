@@ -15,8 +15,19 @@ export class AccountService {
       }),
       responseType:'text' as const
     };
-    return this.httpClient.post(this.apiUrl+'Account/Login', formData,options);
+    return this.httpClient.post(this.apiUrl+'account/Login', formData,options);
   }
+
+  register(formData: any){
+    var option={
+      header: new HttpHeaders({
+        'Content-Type':'application/json'
+      }),
+      responseType:'text' as const
+    };
+    return this.httpClient.post(this.apiUrl+'account/register',formData,option);
+  }
+  
 }
 
 

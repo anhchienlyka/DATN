@@ -6089,6 +6089,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "DATN.Data >= 1.0.0",
+      "DATN.InfrastructureLayer >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.12",
       "Microsoft.EntityFrameworkCore >= 5.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.12",
@@ -6125,6 +6126,9 @@
           "projectReferences": {
             "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj": {
               "projectPath": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj"
+            },
+            "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+              "projectPath": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
             }
           }
         }

@@ -9,22 +9,23 @@ import { LoginComponent } from './body/login/login.component';
 import { MyaccountComponent } from './body/myaccount/myaccount.component';
 import { ProductDetailComponent } from './body/product-detail/product-detail.component';
 import { ProductsComponent } from './body/products/products.component';
+import { RegisterComponent } from './body/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'admin',component:AdminComponent},
   { path: 'products', component: ProductsComponent },
   { path: 'product-detail', component: ProductDetailComponent },
-  { path:'cart',component:CartComponent},
-  {path:'my-account',component:MyaccountComponent},
-  {path:'checkout',component:CheckoutComponent},
-  {path:'login',component:LoginComponent},
-  {path:'register',component:LoginComponent},
-  {path:'contact',component:ContactusComponent},
-  {path:'admin',component:AdminComponent},
-  {path: 'GetProductByName/:name',component: ProductsComponent},
-  {path: 'GetProductByCategoryId/:id',component: ProductsComponent},
-  {path: 'detail/:id',component: ProductDetailComponent},
+  { path: 'cart',component:CartComponent},
+  { path: 'my-account',component:MyaccountComponent},
+  { path: 'checkout',component:CheckoutComponent},
+  { path: 'login',component:LoginComponent},
+  { path: 'register',component:RegisterComponent},
+  { path: 'contact',component:ContactusComponent},
+  { path: 'GetProductByName/:name',component: ProductsComponent},
+  { path: 'GetProductByCategoryId/:id',component: ProductsComponent},
+  { path: 'detail/:id',component: ProductDetailComponent},
 ];
 
 @NgModule({
