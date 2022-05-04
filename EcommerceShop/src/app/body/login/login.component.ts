@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/User.model';
+import { User } from 'src/app/model/user.model';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { AccountService } from 'src/app/Services/account.service';
 
@@ -41,20 +41,21 @@ export class LoginComponent implements OnInit {
      {
        this.userData = obj.data
        localStorage.setItem('userInfor',JSON.stringify(this.userData));
+       Login.callBack.emit();
        if(this.userData.roles==2)
        {
-        this.route.navigateByUrl('/');
-        this.notificationSevice.showSuccess("Success","Login Successfully");
+        this.route.navigateByUrl('/home');
+        this.notificationSevice.showSuccess("Đăng nhập thành công","Thông báo");
        }
        else if(this.userData.roles==1){
         this.route.navigateByUrl('/admin');
-        this.notificationSevice.showSuccess("Success","Login Successfully");
+        this.notificationSevice.showSuccess("Đăng nhập thành công","Thông báo");
        }
      
      }
      else{
        this.route.navigateByUrl('/login');
-       this.notificationSevice.showError("False","Login False");
+       this.notificationSevice.showError("Đăng nhập không thành công","Thông báo");
      }
     });
     

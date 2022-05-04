@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/model/User.model';
+import { User } from 'src/app/model/user.model';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { AccountService } from 'src/app/Services/account.service';
 
@@ -21,17 +21,17 @@ export class RegisterComponent implements OnInit {
     private  fb: FormBuilder
   ) { 
     this.registerForm = fb.group({
-      fullname: ['', Validators.required],
+      fullName: ['', Validators.required],
       email: ['', Validators.required],
-      mobile: ['', Validators.required],
-      username: ['', Validators.required],
+      phone: ['', Validators.required],
+      userName: ['', Validators.required],
       password: ['', Validators.required],
+      address: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
     })
   }
-
   ngOnInit(): void {
   }
-
   onSubmit(){
     let formData = this.registerForm.value;
     //Set default value for register
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
       const response = JSON.parse(res);
       if(response.code==1)
      {
-       this.notificationSevice.showSuccess("Success","Register Successfully");
+       this.notificationSevice.showSuccess("Đăng ký thành công","Thông báo");
        this.route.navigateByUrl('/login');
      }
      else{

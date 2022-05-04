@@ -1,5 +1,5 @@
 import { OrderDetail } from "./orderDetail.model"
-import { User } from "./User.model"
+import { User } from "./user.model"
 
 export interface Order{
    

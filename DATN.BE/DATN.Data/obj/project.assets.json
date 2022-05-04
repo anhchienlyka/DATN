@@ -943,19 +943,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Trinh6299_PC\\.nuget\\packages\\": {}
+    "C:\\Users\\chien\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+      "projectUniqueName": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
       "projectName": "DATN.Data",
-      "projectPath": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
-      "packagesPath": "C:\\Users\\Trinh6299_PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.Data\\obj\\",
+      "projectPath": "E:\\DATN\\DATN.BE\\DATN.Data\\DATN.Data.csproj",
+      "packagesPath": "C:\\Users\\chien\\.nuget\\packages\\",
+      "outputPath": "E:\\DATN\\DATN.BE\\DATN.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Trinh6299_PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chien\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -969,8 +969,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
-              "projectPath": "C:\\Users\\Trinh6299_PC\\Desktop\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
+            "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj": {
+              "projectPath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj"
             }
           }
         }
@@ -1009,7 +1009,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

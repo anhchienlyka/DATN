@@ -18,6 +18,7 @@ export class FeaturedProductComponent implements OnInit {
     this.productService.getFeaturedProducts().subscribe((res) => {
       product = res.body;
       this.products = product.data;
+      console.log("resproductFeatured",res.body)
     });
   }
 }

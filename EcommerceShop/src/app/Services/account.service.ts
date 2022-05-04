@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { User } from '../model/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,7 +28,15 @@ export class AccountService {
     };
     return this.httpClient.post(this.apiUrl+'account/register',formData,option);
   }
-  
+
+  logout(){
+    localStorage.removeItem('userInfor');
+    localStorage.removeItem('wallme-cart');
+  }
+  getCurrentUser(){
+    let data: User = JSON.parse(localStorage.getItem('userInfor'));
+    return data;
+  }
 }
 
 

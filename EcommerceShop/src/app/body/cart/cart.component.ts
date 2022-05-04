@@ -121,7 +121,7 @@ export class CartComponent implements OnInit {
       this.route.navigateByUrl('/cart/checkout');
     } else {
       this.route.navigateByUrl('/cart');
-      this.notificationSevice.showWarning('Warning', 'Shopping cart is empty');
+      this.notificationSevice.showWarning('Giỏ hàng rỗng', 'Thông báo');
     }
   }
 }

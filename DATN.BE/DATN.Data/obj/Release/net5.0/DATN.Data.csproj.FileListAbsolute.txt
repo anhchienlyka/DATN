@@ -1,0 +1,15 @@
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\DATN.Data.deps.json
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\DATN.Data.dll
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\ref\DATN.Data.dll
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\DATN.Data.pdb
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\DATN.InfrastructureLayer.dll
+E:\DATN\DATN.BE\DATN.Data\bin\Release\net5.0\DATN.InfrastructureLayer.pdb
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.csproj.AssemblyReference.cache
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.AssemblyInfoInputs.cache
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.AssemblyInfo.cs
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.csproj.CoreCompileInputs.cache
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.csproj.CopyComplete
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.dll
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\ref\DATN.Data.dll
+E:\DATN\DATN.BE\DATN.Data\obj\Release\net5.0\DATN.Data.pdb

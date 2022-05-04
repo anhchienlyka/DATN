@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProductOrder } from 'src/app/model/cart.model';
 import { OrderDetail } from 'src/app/model/orderDetail.model';
-import { User } from 'src/app/model/User.model';
+import { User } from 'src/app/model/user.model';
 import { CartService } from 'src/app/Services/cart.service';
 import { CheckoutService } from 'src/app/Services/checkout.service';
 
@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   total_price?:number;
   totalCost?: number;
   orderDetailsInOrder: OrderDetail[] = [];
-  constructor(private cartService: CartService,private checkoutService:CheckoutService,private notification:Notification) {}
+  constructor(private cartService: CartService,private checkoutService:CheckoutService) {}
   //constructor(private authenticationService: AuthenticationService,private cartService: CartService, private orderService:OrderService) {}
 
   
@@ -32,21 +32,38 @@ export class CheckoutComponent implements OnInit {
   }
 
   currentUserForm = new FormGroup({
-    fullname: new FormControl(''),
-    username: new FormControl(''),
+    fullName: new FormControl(''),
+    userName: new FormControl(''),
     address: new FormControl(''),
-    phoneNumber: new FormControl(''),
+    phone: new FormControl(''),
     email: new FormControl(''),
   });
 
   checkoutAccount() {
-    this.currentUserForm.controls['fullname'].setValue(this.currentUser.fullname);
-    this.currentUserForm.controls['username'].setValue(this.currentUser.username);
+    this.currentUserForm.controls['fullName'].setValue(this.currentUser.fullName);
+    this.currentUserForm.controls['userName'].setValue(this.currentUser.userName);
     this.currentUserForm.controls['address'].setValue(this.currentUser.address);
-    this.currentUserForm.controls['phoneNumber'].setValue(this.currentUser.phoneNumber);
+    this.currentUserForm.controls['phone'].setValue(this.currentUser.phone);
     this.currentUserForm.controls['email'].setValue(this.currentUser.email);
     
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
    myFunction() {
     var element = <HTMLInputElement> document.getElementById("shipto");
     var text = document.getElementById("mytext");
@@ -56,4 +73,25 @@ export class CheckoutComponent implements OnInit {
       text.style.display = "none";
     }
   }
+
+
+  myFunction2() {
+    var element = <HTMLInputElement> document.getElementById("payment-2");
+    var text = document.getElementById("payment-2-show");
+ 
+    if (element.checked == true){
+      text.style.display = "block";
+    }
+  }
+  myFunction3() {
+    var element = <HTMLInputElement> document.getElementById("payment-1");
+    var text = document.getElementById("payment-2-show");
+ 
+    if (element.checked == true){
+      text.style.display = "none";
+   text.style.display = "none";
+    }
+  }
+
+
 }

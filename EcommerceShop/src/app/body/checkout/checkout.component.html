@@ -18,43 +18,48 @@
                 <div class="checkout-inner">
                     <div class="billing-address">
                         <h2>Thông tin thanh toán</h2>
-                        <div class="row">
-                            <form [formGroup]="currentUserForm" (ngSubmit)="onSubmit()">
-                            <div class="col-md-12">
-                                <label>Họ và tên</label>
-                                <input class="form-control" type="text" placeholder="Họ và tên" />
-                            </div>
 
-                            <div class="col-md-6">
-                                <label>E-mail</label>
-                                <input class="form-control" type="text" placeholder="E-mail" />
-                            </div>
-                            <div class="col-md-6">
-                                <label>Số điện thoại</label>
-                                <input class="form-control" type="text" placeholder="Điện thoại" />
-                            </div>
-                            <div class="col-md-12">
-                                <label>Địa chỉ giao hàng</label>
-                                <input class="form-control" type="text" placeholder="Địa chỉ giao hàng" />
-                            </div>
-                            <div class="col-md-12">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="shipto" (click)="myFunction()" />
-                                    <label class="custom-control-label" for="shipto">Chọn địa chỉ giao hàng khác</label>
+                        <form [formGroup]="currentUserForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Họ và tên</label>
+                                    <input class="form-control" type="text" placeholder="Họ và tên" />
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label>E-mail</label>
+                                    <input class="form-control" type="text" placeholder="E-mail" />
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Số điện thoại</label>
+                                    <input class="form-control" type="text" placeholder="Điện thoại" />
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Địa chỉ giao hàng</label>
+                                    <input class="form-control" type="text" placeholder="Địa chỉ giao hàng" />
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="shipto"
+                                            (click)="myFunction()" />
+                                        <label class="custom-control-label" for="shipto">Chọn địa chỉ giao hàng
+                                            khác</label>
+                                    </div>
                                 </div>
                             </div>
-                            </form>
-                        </div>
+                        </form>
+
                     </div>
                     <div id="mytext" class="shipping-address">
                         <h2>Địa chỉ giao hàng</h2>
-                        <div class="row">
-                            <form [formGroup]="currentUserForm" (ngSubmit)="onSubmit()">
+
+                        <form [formGroup]="currentUserForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
                             <div class="col-md-12">
                                 <label>Họ và tên</label>
                                 <input class="form-control" type="text" placeholder="First Name" />
                             </div>
-                           
+
                             <div class="col-md-12">
                                 <label>E-mail</label>
                                 <input class="form-control" type="text" placeholder="E-mail" />
@@ -67,57 +72,52 @@
                                 <label>Địa chỉ</label>
                                 <input class="form-control" type="text" placeholder="Địa chỉ giao hàng" />
                             </div>
-                        </form> 
-                        </div>
                     </div>
+                    </form>
+
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="checkout-inner">
-                    <div class="checkout-summary">
-                        <h1>Thanh toán</h1>
-                        <p class="sub-total">Thành tiền<span>$99</span></p>
-                        <p class="ship-cost">Hạng thành viên<span>$1</span></p>
-                        <p class="ship-cost">Giảm giá<span>$1</span></p>
-                        <h2>Thanh toán tiền<span>$100</span></h2>
-                    </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="checkout-inner">
+                <div class="checkout-summary">
+                    <h1>Thanh toán</h1>
+                    <p class="sub-total">Thành tiền<span>$99</span></p>
+                    <p class="ship-cost">Hạng thành viên<span>$1</span></p>
+                    <p class="ship-cost">Giảm giá<span>$1</span></p>
+                    <h2>Thanh toán tiền<span>$100</span></h2>
+                </div>
 
-                    <div class="checkout-payment">
-                        <div class="payment-methods">
-                            <h1>Phương thức thanh toán</h1>
-                            <div class="payment-method">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="payment-1" name="payment" />
-                                    <label class="custom-control-label" for="payment-1">Thanh toán trực tiếp</label>
-                                </div>
-                                <div class="payment-content" id="payment-1-show">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        Cras tincidunt orci ac eros volutpat maximus lacinia quis
-                                        diam.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="payment-method">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" id="payment-2" name="payment" />
-                                    <label class="custom-control-label" for="payment-2">Chuyển khoản</label>
-                                </div>
-                                <div class="payment-content" id="payment-2-show">
-                                    <p>
-                                       (Nội dung chuyển khoản ghi mã đơn hàng cần thanh toán)
-                                    </p>
-                                </div>
+                <div class="checkout-payment">
+                    <div class="payment-methods">
+                        <h1>Phương thức</h1>
+                        <div class="payment-method">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" (click)="myFunction3()" class="custom-control-input" id="payment-1" name="payment" />
+                                <label class="custom-control-label" for="payment-1">Thanh toán trực tiếp</label>
                             </div>
                             
                         </div>
-                        <div class="checkout-btn">
-                            <button>Đặt hàng</button>
+                        <div class="payment-method">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" (click)="myFunction2()" id="payment-2" name="payment" />
+                                <label class="custom-control-label" for="payment-2">Chuyển khoản</label>
+                            </div>
+                            <div class="payment-content" id="payment-2-show">
+                                <p>
+                                    (Nội dung chuyển khoản ghi mã đơn hàng cần thanh toán)
+                                </p>
+                            </div>
                         </div>
+
+                    </div>
+                    <div class="checkout-btn">
+                        <button>Đặt hàng</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Checkout End -->

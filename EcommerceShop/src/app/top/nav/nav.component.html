@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
                     
-                    <a  routerLink="/home" routerLinkActive="active"class="nav-item nav-link active">Home</a>
+                    <a  routerLink="/home" routerLinkActive="active"class="nav-item nav-link active">Trang chủ</a>
                     <a routerLink="/products" routerLinkActive="active" class="nav-item nav-link">Products</a>
                     <a [routerLink]="['/product-detail']" routerLinkActive="router-link-active"  class="nav-item nav-link">Product Detail</a>
                     <a routerLink="/cart" routerLinkActive="active" class="nav-item nav-link">Cart</a>
@@ -24,12 +24,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="navbar-nav ml-auto">
+                <div *ngIf="currentUser==null" class="navbar-nav ml-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">TÀI KHOẢN</a>
                         <div class="dropdown-menu">
                             <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="dropdown-item">ĐĂNG NHẬP</a>
                             <a [routerLink]="['/register']" routerLinkActive="router-link-active"  class="dropdown-item">ĐĂNG KÝ</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="currentUser!==null" class="navbar-nav ml-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">TÀI KHOẢN</a>
+                        <div class="dropdown-menu">
+                            <a [routerLink]="['/account']" routerLinkActive="router-link-active"  class="dropdown-item"><b style="color: blue;">{{currentUser.fullName}}</b></a>
+                            <a [routerLink]="['/login']" routerLinkActive="router-link-active" (click)="logout()"  class="dropdown-item">ĐĂNG XUẤT</a>
                         </div>
                     </div>
                 </div>
