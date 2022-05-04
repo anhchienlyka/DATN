@@ -20,12 +20,4 @@ export class CategoryService {
     };
     return this.httpClient.get<Category[]>(this.apiUrl+'Category/GetAllCategory',{observe: 'response' });
   }
-
-
-
-
-
-
-
-
 }
