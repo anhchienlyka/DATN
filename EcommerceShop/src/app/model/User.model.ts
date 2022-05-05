@@ -7,4 +7,5 @@ export interface User {
   role: string;
   fullName: string;
   address: string;
+  customerRank: number;
 }

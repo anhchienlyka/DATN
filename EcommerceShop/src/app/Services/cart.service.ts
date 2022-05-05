@@ -33,7 +33,16 @@ export class CartService {
     let data: ProductOrder[] = JSON.parse(localStorage.getItem('wallme-cart'));
     return data;
   }
+  getPriceInCart()
+  {
+    let data: ProductOrder[] = JSON.parse(localStorage.getItem('priceincart'));
+    return data;
+  }
+  setPriceInCart(price : number)
+  {
 
+    localStorage.setItem('priceincart',JSON.stringify(price));
+  }
   calculateTotalPrice(){
     var productsOrder = this.getProductInCart();
     let totalPrice = 0;

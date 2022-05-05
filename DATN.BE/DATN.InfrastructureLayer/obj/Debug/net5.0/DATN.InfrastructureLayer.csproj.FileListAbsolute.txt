@@ -21,3 +21,4 @@ D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLay
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.dll
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\ref\DATN.InfrastructureLayer.dll
 D:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.pdb
+E:\DATN\DATN.BE\DATN.InfrastructureLayer\obj\Debug\net5.0\DATN.InfrastructureLayer.csproj.AssemblyReference.cache

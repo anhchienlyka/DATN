@@ -47,12 +47,17 @@ export class CartComponent implements OnInit {
   }
 
   get totalCost(): number {
+    let consts ;
     if (this.valueSale > 0) {
-      return this.totalPrice - (this.valueSale * this.totalPrice) / 100 + 30000;
+      consts = this.totalPrice - (this.valueSale * this.totalPrice) / 100 + 30000;
+      this.cartService.setPriceInCart(consts);
+      return consts;
     }
-    return this.totalPrice + 30000;
+    consts = this.totalPrice + 30000;
+    this.cartService.setPriceInCart(consts);
+    return consts;
   }
-
+  
   clickMinus(quantity: number = 1) {
     if (quantity >= 0) {
       quantity--;

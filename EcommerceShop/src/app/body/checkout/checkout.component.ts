@@ -18,11 +18,10 @@ export class CheckoutComponent implements OnInit {
   productsInCart: ProductOrder[];
   quantity?: any;
   total_price?: number;
-  totalCost?: number;
+
   orderDetailsInOrder: OrderDetail[] = [];
   constructor(private cartService: CartService, private checkoutService: CheckoutService,private accountService : AccountService) { }
-  //constructor(private authenticationService: AuthenticationService,private cartService: CartService, private orderService:OrderService) {}
-
+  
 
 
   ngOnInit(): void {
@@ -34,6 +33,12 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  get totalCost() : number
+  {
+    let price = this.cartService.getPriceInCart();
+    
+    return 0;
+  }
   currentUserForm = new FormGroup({
     fullName: new FormControl(''),
     userName: new FormControl(''),
