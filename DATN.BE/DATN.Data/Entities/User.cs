@@ -1,11 +1,10 @@
-﻿using DATN.Data.BaseEntities;
-using DATN.InfrastructureLayer.Enums;
+﻿using DATN.InfrastructureLayer.Enums;
 using System;
 using System.Collections.Generic;
 
 namespace DATN.Data.Entities
 {
-    public class User 
+    public class User
     {
         public int Id { get; set; }
         public string FullName { get; set; }
@@ -16,6 +15,7 @@ namespace DATN.Data.Entities
         public string UserName { get; set; }
         public int? CoutOrder { get; set; }
         public string Phone { get; set; }
+        public long TotalPrice { get; set; }
         public string Password { get; set; }
         public bool IsDeleted { get; set; }
         public IEnumerable<Comment> Comments { get; set; }

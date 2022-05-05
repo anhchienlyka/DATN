@@ -33,6 +33,8 @@ export class ProductInHomeComponent implements OnInit {
     
   @Input() product!: Product
   ngOnInit(): void {
+    this.oldPrice= this.product.price;
+    this.newPrice = (this.oldPrice * (100 - this.product.sale)) / 100;
   }
   showToasterWarning(){
     this.notifyService.showWarning("Số lượng hàng không đủ", "Thông báo")

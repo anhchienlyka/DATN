@@ -52,6 +52,7 @@ import { ProductInHomeComponent } from './body/product-in-home/product-in-home.c
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminModule } from './admin/admin.module';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
+import { CompletedComponent } from './body/completed/completed.component';
 
 
 @NgModule({
@@ -99,6 +100,7 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
     TopComponent,
     ProductInHomeComponent,
     UserLayoutComponent,
+    CompletedComponent,
   ],
   imports: [
     BrowserModule,

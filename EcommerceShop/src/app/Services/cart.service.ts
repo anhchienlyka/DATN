@@ -35,7 +35,7 @@ export class CartService {
   }
   getPriceInCart()
   {
-    let data: ProductOrder[] = JSON.parse(localStorage.getItem('priceincart'));
+    let data: number = JSON.parse(localStorage.getItem('priceincart'));
     return data;
   }
   setPriceInCart(price : number)

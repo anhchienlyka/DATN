@@ -20,7 +20,6 @@ export class NavComponent implements OnInit {
   getCurrentUser()
   {
    this.currentUser = this.accountService.getCurrentUser();
-   console.log("Userss",this.currentUser)
   }
   logout(){
     this.accountService.logout();

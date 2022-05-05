@@ -14,7 +14,7 @@
         public float Screen { get; set; }
         public string ISO { get; set; }
         public string ShutterSpeed { get; set; }
-        public string ProductSummary { get; set; }
+        public string Description { get; set; }
         public int CategoryId { get; set; }
         public int SupplierId { get; set; }
     }

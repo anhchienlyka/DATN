@@ -181,7 +181,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Desscription")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ISO")
@@ -325,6 +325,9 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<int>("Roles")
                         .HasColumnType("int");
+
+                    b.Property<long>("TotalPrice")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");

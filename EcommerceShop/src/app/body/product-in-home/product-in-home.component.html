@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="product-price">
-        <h3><span>$</span>{{product.price}}</h3>
+        <h3>{{newPrice| currency: "VND"}}<span *ngIf="oldPrice !== newPrice">{{ oldPrice|  currency: "VND" }}</span></h3>
         <button class="btn " type="button"(click)="addToCart(product)"><i class="fa fa-shopping-cart"></i>Mua ngay</button>
     </div>
 </div>

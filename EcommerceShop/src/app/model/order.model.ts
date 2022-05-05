@@ -1,13 +1,14 @@
 import { OrderDetail } from "./orderDetail.model"
 import { User } from "./user.model"
 
+
 export interface Order{
    
     userId: number,
     orderDate: string,
     totalPrice: number,
-    status: number,
-    payment: boolean,
+    transacStatus: number,
+    paymentId: number,
     orderDetails:OrderDetail[],
     user:User
 }

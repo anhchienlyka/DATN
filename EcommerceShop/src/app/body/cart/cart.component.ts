@@ -48,6 +48,9 @@ export class CartComponent implements OnInit {
 
   get totalCost(): number {
     let consts ;
+    if(this.totalPrice==0){
+      return 0;
+    }
     if (this.valueSale > 0) {
       consts = this.totalPrice - (this.valueSale * this.totalPrice) / 100 + 30000;
       this.cartService.setPriceInCart(consts);
@@ -75,7 +78,6 @@ export class CartComponent implements OnInit {
     this.salecodeService
       .getSaleCodeByCodeName(capoun.value)
       .subscribe((res) => {
-        console.log('ressss', res.body);
         maKm = res.body;
         this.salecodeName = maKm.data;
         if (this.salecodeName != null) {

@@ -39,6 +39,8 @@ namespace DANTN.ApplicationLayer.Implement
             }
             data.OrderNumber = data.OrderDetails.Count();
             data.TransacStatus = DeliveryStatus.PENDING;
+            data.PaymentDate = DateTime.Now;
+            data.ShipDate = DateTime.Now;
             await _unitOfWork.OrderGenericRepository.AddAsync(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Add Order Success", data.Id);
@@ -76,9 +78,19 @@ namespace DANTN.ApplicationLayer.Implement
             throw new NotImplementedException();
         }
 
-        public Task<Response> UpdateStatusOrder(OrderStatusUpdateVM orderStatus)
+        public async Task<Response>  UpdateStatusOrder(OrderStatusUpdateVM orderStatus)
         {
-            throw new NotImplementedException();
+            var user = await _unitOfWork.UserGenericRepository.GetAsync(orderStatus.UserId);
+            if (user==null)
+            {
+                return new Response(SystemCode.Error, "Can not find User", null);
+            }
+            if (user.IsDeleted==true)
+            {
+                return new Response(SystemCode.Error, "User is Deleted", null);
+            }
+
+            return null;
         }
     }
 }

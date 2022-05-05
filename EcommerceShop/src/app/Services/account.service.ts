@@ -32,6 +32,7 @@ export class AccountService {
   logout(){
     localStorage.removeItem('userInfor');
     localStorage.removeItem('wallme-cart');
+    localStorage.removeItem('priceincart');
   }
   getCurrentUser(){
     let data: User = JSON.parse(localStorage.getItem('userInfor'));

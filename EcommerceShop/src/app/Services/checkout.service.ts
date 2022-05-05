@@ -21,7 +21,7 @@ export class CheckoutService {
 
   addOrder(order: Order){
     var data = JSON.stringify(order);
-    var url = this.apiUrl+'order';
+    var url = this.apiUrl+'Order/AddOrder';
     var options = {
           headers: new HttpHeaders({
             'Content-Type': 'application/json'

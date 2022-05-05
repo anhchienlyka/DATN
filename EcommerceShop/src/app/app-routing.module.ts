@@ -6,6 +6,7 @@ import { ListCategoryComponent } from './admin/category-components/list-category
 import { UpdateCategoryComponent } from './admin/category-components/update-category/update-category.component';
 import { CartComponent } from './body/cart/cart.component';
 import { CheckoutComponent } from './body/checkout/checkout.component';
+import { CompletedComponent } from './body/completed/completed.component';
 import { ContactusComponent } from './body/contactus/contactus.component';
 import { HomeComponent } from './body/home/home.component';
 import { LoginComponent } from './body/login/login.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'GetProductByName/:name',component: ProductsComponent},
       { path: 'GetProductByCategoryId/:id',component: ProductsComponent},
       { path: 'detail/:id',component: ProductDetailComponent},
+      {path:'completed',component:CompletedComponent}
   ] },
   { path: 'admin',component: AdminLayoutComponent, children: [
     {path: 'category', children: [

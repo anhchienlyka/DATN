@@ -82,10 +82,10 @@
             <div class="checkout-inner">
                 <div class="checkout-summary">
                     <h1>Thanh toán</h1>
-                    <p class="sub-total">Thành tiền<span>$99</span></p>
-                    <p class="ship-cost">Hạng thành viên<span>$1</span></p>
-                    <p class="ship-cost">Giảm giá<span>$1</span></p>
-                    <h2>Thanh toán tiền<span>$100</span></h2>
+                    <p class="sub-total">Thành tiền<span>{{ total_price | currency: "VND" }}</span></p>
+                    <p class="ship-cost">Hạng thành viên<span>{{customerRank}}</span></p>
+                    <p class="ship-cost" ngif>Giảm giá<span>{{dissCount}}%</span></p>
+                    <h2>Thanh toán tiền<span>{{totalCost| currency: "VND"}}</span></h2>
                 </div>
 
                 <div class="checkout-payment">
@@ -112,7 +112,7 @@
 
                     </div>
                     <div class="checkout-btn">
-                        <button>Đặt hàng</button>
+                        <button (click)="onSubmit()">Đặt hàng</button>
                     </div>
                 </div>
             </div>

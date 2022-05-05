@@ -26,7 +26,6 @@ namespace DATN.API.Controllers
             return Ok(response);
         }
 
-        [Authorize(Roles = Permission.CUSTOMER)]
         [HttpPost]
         public async Task<IActionResult> AddOrder(OrderAddVM order)
         {
@@ -34,9 +33,8 @@ namespace DATN.API.Controllers
             return Ok(response);
         }
 
+
         [HttpPost]
-        [Authorize(Roles = Permission.SHIPPER)]
-        [Authorize(Roles = Permission.CUSTOMER)]
         public async Task<IActionResult> UpdateStatusOrder(OrderStatusUpdateVM order)
         {
             var response = await _orderService.UpdateStatusOrder(order);
