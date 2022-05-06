@@ -16,14 +16,13 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DATN.API
 {
@@ -44,6 +43,7 @@ namespace DATN.API
 
         public IConfiguration Configuration { get; }
         public IWebHostEnvironment environment { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -52,8 +52,8 @@ namespace DATN.API
                 options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase"));
                 options.LogTo(Console.WriteLine);
             });
-            services.AddControllers();
-           
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve); ;
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DATN.API", Version = "v1" });
@@ -86,7 +86,6 @@ namespace DATN.API
                       }
                  });
             });
-
 
             services.AddHttpContextAccessor();
 
@@ -122,7 +121,6 @@ namespace DATN.API
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IAuthenticationServices, AuthenticationServices>();
 
-
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.Configure<ForwardedHeadersOptions>(options =>
             {
@@ -151,10 +149,6 @@ namespace DATN.API
                     ClockSkew = TimeSpan.Zero // remove delay of token when expire
                 };
             });
-
-
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

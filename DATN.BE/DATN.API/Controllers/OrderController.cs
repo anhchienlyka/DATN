@@ -40,5 +40,21 @@ namespace DATN.API.Controllers
             var response = await _orderService.UpdateStatusOrder(order);
             return Ok(response);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOrderByOrderId(int id)
+        {
+
+            var response = await _orderService.GetById(id);
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOrderByUserId(int id)
+        {
+
+            var response = await _orderService.GetOrderByUserId(id);
+            return Ok(response);
+        }
     }
 }

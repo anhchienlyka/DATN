@@ -2,9 +2,9 @@
    <div class="breadcrumb-wrap">
     <div class="container-fluid">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Products</a></li>
-            <li class="breadcrumb-item active">My Account</li>
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Danh sách</a></li>
+            <li class="breadcrumb-item active">Tài khoản của tôi</li>
         </ul>
     </div>
 </div>
@@ -16,59 +16,65 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="dashboard-nav" data-toggle="pill" href="#dashboard-tab" role="tab"><i class="fa fa-tachometer-alt"></i>Dashboard</a>
-                    <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Orders</a>
-                    <a class="nav-link" id="payment-nav" data-toggle="pill" href="#payment-tab" role="tab"><i class="fa fa-credit-card"></i>Payment Method</a>
-                    <a class="nav-link" id="address-nav" data-toggle="pill" href="#address-tab" role="tab"><i class="fa fa-map-marker-alt"></i>address</a>
-                    <a class="nav-link" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i class="fa fa-user"></i>Account Details</a>
-                    <a class="nav-link" href="index.html"><i class="fa fa-sign-out-alt"></i>Logout</a>
+                    <a class="nav-link active" id="dashboard-nav" data-toggle="pill" href="#dashboard-tab" role="tab"><i class="fa fa-tachometer-alt"></i>Thông tin chung</a>
+                    <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Đơn hàng</a>
+                    <a class="nav-link" id="payment-nav" data-toggle="pill" href="#payment-tab" role="tab"><i class="fa fa-credit-card"></i>Phương thức thanh toán</a>
+                    <a class="nav-link" id="address-nav" data-toggle="pill" href="#address-tab" role="tab"><i class="fa fa-map-marker-alt"></i>Địa chỉ</a>
+                    <a class="nav-link" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i class="fa fa-user"></i>Chi tiết tài khoản</a>
+                    <a class="nav-link" href="index.html"><i class="fa fa-sign-out-alt"></i>Đăng xuất</a>
                 </div>
             </div>
             <div class="col-md-9">
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="dashboard-tab" role="tabpanel" aria-labelledby="dashboard-nav">
-                        <h4>Dashboard</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus. Nulla tristique viverra nisl, sit amet bibendum ante suscipit non. Praesent in faucibus tellus, sed gravida lacus. Vivamus eu diam eros. Aliquam et sapien eget arcu rhoncus scelerisque.
-                        </p> 
+                        <h4>Ưu đãi giành cho khách hàng thân thiết</h4>
+
+                            <ul>
+                                <li>Chưa có hạng : <b>(Số tiền mua hàng 0 - 3 triệu)</b></li>
+                                <li>Hạng Đồng : <b>Ưu đãi 3% cho tổng đơn hàng khi thanh toán (Số tiền mua hàng trên 3 - 5 triệu)</b></li>
+                                <li>Hạng Bạc : <b>Ưu đãi 5% cho tổng đơn hàng khi thanh toán (Số tiền mua hàng trên 5 - 10 triệu)</b></li>
+                                <li>Hạng Vàng : <b>Ưu đãi 7% cho tổng đơn hàng khi thanh toán (Số tiền mua hàng trên 10 triệu)</b></li>
+                            </ul>
+                            <h3>Hạng của bạn là :<b style="color: red;"> Hạng Đồng</b></h3>
+                        
                     </div>
                     <div class="tab-pane fade" id="orders-tab" role="tabpanel" aria-labelledby="orders-nav">
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>No</th>
-                                        <th>Product</th>
-                                        <th>Date</th>
-                                        <th>Price</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>STT</th>
+                                        <th>Sản phảm</th>
+                                        <th>Ngày mua hàng</th>
+                                        <th>Giá</th>
+                                        <th>Trạng thái</th>
+                                        <th>Chi tiết đơn hàng</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Product Name</td>
-                                        <td>01 Jan 2020</td>
-                                        <td>$99</td>
-                                        <td>Approved</td>
-                                        <td><button class="btn">View</button></td>
+                                        <td>Máy ảnh CANON</td>
+                                        <td>3/3/2022</td>
+                                        <td>5000000 VNĐ</td>
+                                        <td>Chờ phê duyệt</td>
+                                        <td><button class="btn">Chi tiết</button></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Product Name</td>
-                                        <td>01 Jan 2020</td>
-                                        <td>$99</td>
-                                        <td>Approved</td>
-                                        <td><button class="btn">View</button></td>
+                                        <td>Máy ảnh CANON</td>
+                                        <td>3/3/2022</td>
+                                        <td>5000000 VNĐ</td>
+                                        <td>Chờ phê duyệt</td>
+                                        <td><button class="btn">Chi tiết</button></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Product Name</td>
-                                        <td>01 Jan 2020</td>
-                                        <td>$99</td>
-                                        <td>Approved</td>
-                                        <td><button class="btn">View</button></td>
+                                        <td>Máy ảnh CANON</td>
+                                        <td>3/3/2022</td>
+                                        <td>5000000 VNĐ</td>
+                                        <td>Chờ phê duyệt</td>
+                                        <td><button class="btn">Chi tiết</button></td>
                                     </tr>
                                 </tbody>
                             </table>

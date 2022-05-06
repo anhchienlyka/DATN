@@ -3,6 +3,7 @@ using DANTN.ApplicationLayer.Interface;
 using DATN.Data;
 using DATN.Data.Entities;
 using DATN.Data.Viewmodel.OrderViewModel;
+using DATN.DataAccessLayer.EF.Interfaces;
 using DATN.DataAccessLayer.EF.UnitOfWorks;
 using DATN.InfrastructureLayer.Enums;
 using System;
@@ -17,10 +18,13 @@ namespace DANTN.ApplicationLayer.Implement
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public OrderService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IOrderRepository _orderRepository;
+
+        public OrderService(IUnitOfWork unitOfWork, IMapper mapper, IOrderRepository orderRepository)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _orderRepository = orderRepository;
         }
 
         public async Task<Response> Add(OrderAddVM order)
@@ -63,9 +67,24 @@ namespace DANTN.ApplicationLayer.Implement
             return new Response(SystemCode.Error, "Get all success", dataNew);
         }
 
-        public Task<Response> GetById(int id)
+        public async Task<Response> GetById(int id)
         {
-            throw new NotImplementedException();
+            var data = await _orderRepository.GetOrderByOrderId(id);
+            if (data == null)
+            {
+                return new Response(SystemCode.Error, "Order is null", null);
+            }
+            return new Response(SystemCode.Success, "Get Order Success", data);
+        }
+
+        public async Task<Response> GetOrderByUserId(int userId)
+        {
+            var data = await _orderRepository.GetOrderByUserId(userId);
+            if (data == null)
+            {
+                return new Response(SystemCode.Error, "Order is null", null);
+            }
+            return new Response(SystemCode.Success, "Get Order Success", data);
         }
 
         public Task<Response> GetRevenueStatistic(DateTime startDate, DateTime endDate)
@@ -78,14 +97,14 @@ namespace DANTN.ApplicationLayer.Implement
             throw new NotImplementedException();
         }
 
-        public async Task<Response>  UpdateStatusOrder(OrderStatusUpdateVM orderStatus)
+        public async Task<Response> UpdateStatusOrder(OrderStatusUpdateVM orderStatus)
         {
             var user = await _unitOfWork.UserGenericRepository.GetAsync(orderStatus.UserId);
-            if (user==null)
+            if (user == null)
             {
                 return new Response(SystemCode.Error, "Can not find User", null);
             }
-            if (user.IsDeleted==true)
+            if (user.IsDeleted == true)
             {
                 return new Response(SystemCode.Error, "User is Deleted", null);
             }

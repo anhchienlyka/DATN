@@ -16,6 +16,7 @@ namespace DANTN.ApplicationLayer.Interface
         public Task<Response> GetAll();
 
         public Task<Response> GetById(int id);
+        public Task<Response> GetOrderByUserId(int userId);
 
         public Task<Response> UpdateStatusOrder(OrderStatusUpdateVM orderStatus);
 
