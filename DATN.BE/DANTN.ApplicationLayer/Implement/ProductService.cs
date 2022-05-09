@@ -25,6 +25,10 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Add(ProductAddVM product)
         {
+            if (product.Price<product.PriceInput)
+            {
+                return new Response(SystemCode.Warning, "The selling price must not be lower than the import price", null);
+            }
             var category = await _unitOfWork.CategoryGenericRepository.GetAsync(product.CategoryId);
             if (category == null)
             {
@@ -114,6 +118,10 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> Update(ProductUpdateVM product)
         {
+            if (product.Price < product.PriceInput)
+            {
+                return new Response(SystemCode.Warning, "The selling price must not be lower than the import price", null);
+            }
             var data = await _unitOfWork.ProductGenericRepository.GetAsync(product.Id);
             if (data == null/* || data.IsDeleted == true*/)
             {

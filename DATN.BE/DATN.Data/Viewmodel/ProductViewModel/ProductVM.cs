@@ -5,6 +5,7 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
+        public decimal PriceInput { get; set; }
         public int Sale { get; set; }
         public int Inventory { get; set; }
         public int Insurance { get; set; }

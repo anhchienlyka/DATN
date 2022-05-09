@@ -41,10 +41,17 @@ namespace DANTN.ApplicationLayer.Implement
                 _unitOfWork.ProductGenericRepository.Update(product);
                 await _unitOfWork.OrderDetailGenericRepository.AddAsync(item);
             }
+            if (order.FullName == null && order.Phone == null && order.Address == null && order.Email == null)
+            {
+                data.FullName = user.FullName;
+                data.Email = user.Email;
+                data.Phone = user.Phone;
+                data.Address = user.Address;
+            }
             data.OrderNumber = data.OrderDetails.Count();
             data.TransacStatus = DeliveryStatus.PENDING;
             data.PaymentDate = DateTime.Now;
-            data.ShipDate = DateTime.Now;
+            data.CreateDate = DateTime.Now;
             await _unitOfWork.OrderGenericRepository.AddAsync(data);
             await _unitOfWork.CommitAsync();
             return new Response(SystemCode.Success, "Add Order Success", data.Id);
@@ -70,21 +77,23 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> GetById(int id)
         {
             var data = await _orderRepository.GetOrderByOrderId(id);
-            if (data == null)
+            var dataNew = _mapper.Map<OrderVM>(data);
+            if (dataNew == null)
             {
                 return new Response(SystemCode.Error, "Order is null", null);
             }
-            return new Response(SystemCode.Success, "Get Order Success", data);
+            return new Response(SystemCode.Success, "Get Order Success", dataNew);
         }
 
         public async Task<Response> GetOrderByUserId(int userId)
         {
             var data = await _orderRepository.GetOrderByUserId(userId);
-            if (data == null)
+            var dataNew = _mapper.Map<OrderVM>(data);
+            if (dataNew == null)
             {
                 return new Response(SystemCode.Error, "Order is null", null);
             }
-            return new Response(SystemCode.Success, "Get Order Success", data);
+            return new Response(SystemCode.Success, "Get Order Success", dataNew);
         }
 
         public Task<Response> GetRevenueStatistic(DateTime startDate, DateTime endDate)

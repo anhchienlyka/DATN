@@ -10,7 +10,11 @@ export interface Order{
     transacStatus: number,
     paymentId: number,
     orderDetails:OrderDetail[],
-    user:User
+    fullName? : string;
+    phone?:string;
+    address?:string;
+    email?:string;
+    toltalCost?:number
 }
 
 export interface OrderVms{

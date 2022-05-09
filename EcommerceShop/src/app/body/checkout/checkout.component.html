@@ -53,24 +53,24 @@
                     <div id="mytext" class="shipping-address">
                         <h2>Địa chỉ giao hàng</h2>
 
-                        <form [formGroup]="currentUserForm" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="currentUserForm2" (ngSubmit)="onSubmit()">
                             <div class="row">
                             <div class="col-md-12">
                                 <label>Họ và tên</label>
-                                <input class="form-control" type="text" placeholder="First Name" />
+                                <input class="form-control" type="text" placeholder="Họ Và Tên" formControlName="fullName1" />
                             </div>
 
                             <div class="col-md-12">
                                 <label>E-mail</label>
-                                <input class="form-control" type="text" placeholder="E-mail" />
+                                <input class="form-control" type="text" placeholder="E-mail" formControlName="email1" />
                             </div>
                             <div class="col-md-12">
                                 <label>Số điện thoại No</label>
-                                <input class="form-control" type="text" placeholder="Số điện thoại" />
+                                <input class="form-control" type="text" placeholder="Số điện thoại" formControlName="phone1"/>
                             </div>
                             <div class="col-md-12">
                                 <label>Địa chỉ</label>
-                                <input class="form-control" type="text" placeholder="Địa chỉ giao hàng" />
+                                <input class="form-control" type="text" placeholder="Địa chỉ giao hàng" formControlName="address1" />
                             </div>
                     </div>
                     </form>

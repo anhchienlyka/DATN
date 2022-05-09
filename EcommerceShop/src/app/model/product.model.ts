@@ -2,6 +2,7 @@ export interface Product{
       id: number;
       name: string;
       price: number;
+      priceInput:number;
       sale: number;
       inventory: number;
       insurance: number;

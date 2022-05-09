@@ -162,3 +162,7 @@ D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\ref\DATN.API.dll
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.pdb
 D:\DATN\DATN.BE\DATN.API\obj\Debug\net5.0\DATN.API.genruntimeconfig.cache
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

@@ -8,9 +8,14 @@ namespace DATN.Data.Viewmodel.OrderViewModel
     public class OrderAddVM
     {
         public int UserId { get; set; }
-        public DateTime ShipDate { get; set; }
+        public DateTime CreateDate { get; set; }
         public DateTime PaymentDate { get; set; }
         public int PaymentId { get; set; }
+        public string FullName { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public decimal ToltalCost { get; set; }
         public IEnumerable<OrderDetailAddVM> OrderDetails { get; set; }
     }
 }

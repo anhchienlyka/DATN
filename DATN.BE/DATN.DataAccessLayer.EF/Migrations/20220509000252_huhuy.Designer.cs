@@ -4,14 +4,16 @@ using DATN.DataAccessLayer.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DATN.DataAccessLayer.EF.Migrations
 {
     [DbContext(typeof(DATNDBContex))]
-    partial class DATNDBContexModelSnapshot : ModelSnapshot
+    [Migration("20220509000252_huhuy")]
+    partial class huhuy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

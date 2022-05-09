@@ -4,14 +4,16 @@ using DATN.DataAccessLayer.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DATN.DataAccessLayer.EF.Migrations
 {
     [DbContext(typeof(DATNDBContex))]
-    partial class DATNDBContexModelSnapshot : ModelSnapshot
+    [Migration("20220508225859_huhu")]
+    partial class huhu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,9 +100,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("ToltalCost")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("TransacStatus")
                         .HasColumnType("int");
@@ -215,9 +214,6 @@ namespace DATN.DataAccessLayer.EF.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("PriceInput")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Sale")
