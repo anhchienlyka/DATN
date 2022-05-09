@@ -99,7 +99,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ToltalCost")
+                    b.Property<decimal?>("ToltalCost")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("TransacStatus")

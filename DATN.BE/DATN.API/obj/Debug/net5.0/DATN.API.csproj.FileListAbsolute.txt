@@ -166,3 +166,7 @@ D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\DATN\DATN.BE\DATN.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

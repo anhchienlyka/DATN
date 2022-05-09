@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DATN.DataAccessLayer.EF.Migrations
 {
     [DbContext(typeof(DATNDBContex))]
-    [Migration("20220509000252_huhuy")]
-    partial class huhuy
+    [Migration("20220509014227_koko")]
+    partial class koko
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -101,7 +101,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("ToltalCost")
+                    b.Property<decimal?>("ToltalCost")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("TransacStatus")

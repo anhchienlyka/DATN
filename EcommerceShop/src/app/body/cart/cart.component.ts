@@ -116,7 +116,7 @@ export class CartComponent implements OnInit {
           .subscribe((res) => {
             sanpham = res.body;
             this.productDetail = sanpham.data;
-            if (product.quantity > this.productDetail.inventory!) {
+            if (product.quantity! > this.productDetail.inventory!) {
               this.route.navigateByUrl('/cart');
               this.notificationSevice.showError(
                 'Sản phẩm trong giỏ hàng không đủ',

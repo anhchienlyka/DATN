@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DATN.DataAccessLayer.EF.Migrations
 {
-    public partial class asssasdasddf : Migration
+    public partial class koko : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,8 +84,8 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CoutOrder = table.Column<int>(type: "int", nullable: true),
-                    Salary = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TotalPrice = table.Column<long>(type: "bigint", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     Roles = table.Column<int>(type: "int", nullable: false)
@@ -103,6 +103,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PriceInput = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Sale = table.Column<int>(type: "int", nullable: false),
                     Inventory = table.Column<int>(type: "int", nullable: false),
                     Insurance = table.Column<int>(type: "int", nullable: false),
@@ -112,7 +113,7 @@ namespace DATN.DataAccessLayer.EF.Migrations
                     Screen = table.Column<float>(type: "real", nullable: false),
                     ISO = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ShutterSpeed = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductSummary = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     SupplierId = table.Column<int>(type: "int", nullable: false),
                     ViewProduct = table.Column<int>(type: "int", nullable: false)
@@ -142,10 +143,15 @@ namespace DATN.DataAccessLayer.EF.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     OrderNumber = table.Column<int>(type: "int", nullable: false),
-                    ShipDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TransacStatus = table.Column<int>(type: "int", nullable: false),
                     PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentId = table.Column<int>(type: "int", nullable: false)
+                    PaymentId = table.Column<int>(type: "int", nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ToltalCost = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -2,8 +2,7 @@ import { OrderDetail } from "./orderDetail.model"
 import { User } from "./user.model"
 
 
-export interface Order{
-   
+export interface Order{  
     userId: number,
     orderDate: string,
     totalPrice: number,
