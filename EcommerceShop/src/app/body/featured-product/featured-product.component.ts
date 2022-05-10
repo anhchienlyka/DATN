@@ -11,7 +11,6 @@ export class FeaturedProductComponent implements OnInit {
   products: any;
   ngOnInit(): void {
     this.getProduct();
-    console.log("this.products",this.products)
   }
 
   getProduct() {
