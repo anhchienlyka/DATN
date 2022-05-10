@@ -20,7 +20,7 @@ namespace DATN.Data.Entities
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
-        public decimal? ToltalCost { get; set; }
+        public decimal? TotalCost { get; set; }
         public IEnumerable<OrderDetail> OrderDetails { get; set; }
     }
 }

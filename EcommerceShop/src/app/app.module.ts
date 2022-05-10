@@ -53,6 +53,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminModule } from './admin/admin.module';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { CompletedComponent } from './body/completed/completed.component';
+import { SwiperModule } from "swiper/angular";
 
 
 @NgModule({
@@ -113,6 +114,7 @@ import { CompletedComponent } from './body/completed/completed.component';
     BrowserAnimationsModule,
     NgxPaginationModule,
     AdminModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

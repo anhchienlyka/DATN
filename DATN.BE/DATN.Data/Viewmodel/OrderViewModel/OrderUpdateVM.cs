@@ -20,6 +20,7 @@ namespace DATN.Data.Viewmodel.OrderViewModel
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
+        public decimal TotalCost { get; set; }
         public IEnumerable<OrderDetailVM> OrderDetails { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xUuAlT1xpP6V66ERjl7+IbU+/KG0zuz+eB/xOm1oW+/0iDp/5pfa1TEm5EbUIlvlg+ymWa86LkN7WRkzenr6vQ==",
+  "dgSpecHash": "CLFF27adNQhBuhQvWSZzmmVg0mHqDNrIZeU7dhNVfUzAxXbGE8z4FjCHGIQ/lrnL2xdpHsE988q+xmGBAwqFWA==",
   "success": true,
-  "projectFilePath": "D:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
+  "projectFilePath": "E:\\DATN\\DATN.BE\\DATN.DataAccessLayer.EF\\DATN.DataAccessLayer.EF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chien\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\chien\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

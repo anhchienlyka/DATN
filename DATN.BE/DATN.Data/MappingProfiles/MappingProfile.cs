@@ -8,6 +8,7 @@ using DATN.Data.Viewmodel.OrderDetailViewModel;
 using DATN.Data.Viewmodel.OrderViewModel;
 using DATN.Data.Viewmodel.ProductViewModel;
 using DATN.Data.Viewmodel.SaleCodeViewModel;
+using DATN.Data.Viewmodel.SupplierViewModel;
 using DATN.Data.Viewmodel.UserViewModel;
 
 namespace DATN.Data.MappingProfiles
@@ -50,7 +51,8 @@ namespace DATN.Data.MappingProfiles
 
             //saleCode
             CreateMap<SaleCode, SaleCodeAddViewModel>().ReverseMap();
-
+            //Supplier
+            CreateMap<Supplier, SupplierVM>().ReverseMap();
         }
     }
 }

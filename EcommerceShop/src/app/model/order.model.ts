@@ -13,7 +13,7 @@ export interface Order{
     phone?:string;
     address?:string;
     email?:string;
-    toltalCost?:number
+    totalCost?:number
 }
 
 export interface OrderVms{

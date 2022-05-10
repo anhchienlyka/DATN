@@ -46,7 +46,7 @@ export class CheckoutComponent implements OnInit {
       totalPrice: this.totalCost,
       transacStatus: 1,
       paymentId: this.paymentType,
-      toltalCost: this.totalCost
+      totalCost: this.totalCost
     };
     this.checkoutService.addOrder(order).subscribe();
     let data: string = JSON.stringify(order);
@@ -69,7 +69,7 @@ export class CheckoutComponent implements OnInit {
       email: this.email1.value,
       phone: this.phone1.value,
       address: this.address1.value,
-      toltalCost: this.totalCost
+      totalCost: this.totalCost
     };
     this.checkoutService.addOrder(order).subscribe();
     let data: string = JSON.stringify(order);
