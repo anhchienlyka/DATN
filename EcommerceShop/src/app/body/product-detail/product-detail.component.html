@@ -110,18 +110,18 @@
                   <div class="col-md-6">
                     <ul>
                       <li>Tên sản phẩm : <b>{{product.name}}</b> </li>
-                      <li>Loại sản phẩm : </li>
-                      <li>Hãng sản xuất : </li>
-                      <li>Cảm biến : </li>
+                      <li>Loại sản phẩm : <b>{{product.category.categoryName}}</b> </li>
+                      <li>Hãng sản xuất : <b>{{product.supplier.companyName}}</b></li>
+                      <li>Cảm biến : <b>{{product.sensor}}</b></li>
                      
                     </ul>
                   </div>
                   <div class="col-md-6">
                     <ul>
-                      <li>Màn hình : </li>
-                      <li>ISO : </li>
-                      <li>Tốc độ màn chụp : </li>
-                      <li>Xử lý ảnh : </li>
+                      <li>Màn hình : <b>{{product.screen}}</b></li>
+                      <li>ISO :  <b>{{product.iso}}</b></li>
+                      <li>Tốc độ màn chụp :<b>{{product.shutterSpeed}}</b> </li>
+                      <li>Xử lý ảnh :<b>{{product.imageProcessor}}</b></li>
                     </ul>
                   </div>
                 </div>

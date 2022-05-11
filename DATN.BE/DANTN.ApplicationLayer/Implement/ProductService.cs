@@ -61,13 +61,13 @@ namespace DANTN.ApplicationLayer.Implement
 
         public async Task<Response> GetAll()
         {
-            var data = await _unitOfWork.ProductGenericRepository.GetAllAsync();
+            var data = await _productRepository.GetAllProduct();
             return new Response(SystemCode.Success, "Get All Product Success", data);
         }
 
         public async Task<Response> GetById(int id)
         {
-            var data = await _unitOfWork.ProductGenericRepository.GetAsync(id);
+            var data = await _productRepository.GetProductById(id);
             if (data == null)
             {
                 return new Response(SystemCode.Warning, "Cannot find Product", data);

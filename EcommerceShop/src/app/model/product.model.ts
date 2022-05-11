@@ -1,3 +1,6 @@
+import { Category } from "./category.model";
+import { Supplier } from "./supplier.model";
+
 export interface Product{
       id: number;
       name: string;
@@ -16,4 +19,6 @@ export interface Product{
       categoryId: 1;
       supplierId: 2;
       viewProduct: 0;
+      supplier:Supplier;
+      category:Category
 }

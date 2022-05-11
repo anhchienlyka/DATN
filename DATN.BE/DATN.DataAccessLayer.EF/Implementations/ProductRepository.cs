@@ -16,6 +16,11 @@ namespace DATN.DataAccessLayer.EF.Implementations
 
         }
 
+        public async Task<IEnumerable<Product>> GetAllProduct()
+        {
+            return await _dbContext.Products.AsNoTracking().OrderByDescending(x=>x.Id).Include(x=>x.Supplier).Include(x=>x.Category).ToListAsync();
+        }
+
         public async Task<IEnumerable<Product>> GetFeaturedProduct()
         {
             var listProductByVew = await _dbContext.Products.OrderByDescending(x => x.Sale).Take(4).ToListAsync();
@@ -25,6 +30,11 @@ namespace DATN.DataAccessLayer.EF.Implementations
         public async Task<IEnumerable<Product>> GetProductByCategoryId(int categoryId)
         {
             return await _dbContext.Products.Where(x => x.CategoryId == categoryId).Take(4).ToListAsync();
+        }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            return await _dbContext.Products.AsNoTracking().Include(x => x.Supplier).Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetProductByName(string name)
