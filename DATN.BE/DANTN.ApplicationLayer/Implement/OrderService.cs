@@ -88,12 +88,17 @@ namespace DANTN.ApplicationLayer.Implement
         public async Task<Response> GetOrderByUserId(int userId)
         {
             var data = await _orderRepository.GetOrderByUserId(userId);
-            var dataNew = _mapper.Map<OrderVM>(data);
-            if (dataNew == null)
+            var listData = new List<OrderVM>();
+            foreach (var item in data)
+            {
+                var dataNew = _mapper.Map<OrderVM>(item);
+                listData.Add(dataNew);
+            }
+            if (listData == null)
             {
                 return new Response(SystemCode.Error, "Order is null", null);
             }
-            return new Response(SystemCode.Success, "Get Order Success", dataNew);
+            return new Response(SystemCode.Success, "Get Order Success", listData);
         }
 
         public Task<Response> GetRevenueStatistic(DateTime startDate, DateTime endDate)

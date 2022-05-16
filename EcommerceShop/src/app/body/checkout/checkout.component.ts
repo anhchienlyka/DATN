@@ -9,6 +9,7 @@ import { NotificationService } from 'src/app/notification/notification.service';
 import { AccountService } from 'src/app/Services/account.service';
 import { CartService } from 'src/app/Services/cart.service';
 import { CheckoutService } from 'src/app/Services/checkout.service';
+import { ProductService } from 'src/app/Services/product.service';
 import { Cart } from '../cart/cart.component';
 
 @Component({
@@ -24,8 +25,17 @@ export class CheckoutComponent implements OnInit {
   dissCount: number = 0;
   customerRank: string;
   paymentType: number;
+  maDH : string;
   orderDetailsInOrder: OrderDetail[] = [];
-  constructor(private cartService: CartService, private checkoutService: CheckoutService, private accountService: AccountService, private route: Router, private notification: NotificationService) { }
+  constructor(
+    private cartService: CartService,
+    private checkoutService: CheckoutService,
+    private accountService: AccountService,
+    private route: Router,
+    private notification: NotificationService,
+    private productService:ProductService
+        )
+         { }
 
 
 
@@ -33,6 +43,7 @@ export class CheckoutComponent implements OnInit {
     this.getCurrentUser();
     this.productsInCart = this.cartService.getProductInCart();
     this.checkoutAccount();
+    this.getIdProductMax();
     this.transfer();
 
   }
@@ -45,6 +56,7 @@ export class CheckoutComponent implements OnInit {
       orderDetails: this.orderDetailsInOrder,
       totalPrice: this.totalCost,
       transacStatus: 1,
+      orderCode: this.maDH,
       paymentId: this.paymentType,
       totalCost: this.totalCost
     };
@@ -64,6 +76,7 @@ export class CheckoutComponent implements OnInit {
       orderDetails: this.orderDetailsInOrder,
       totalPrice: this.totalCost,
       transacStatus: 1,
+      orderCode: this.maDH,
       paymentId: this.paymentType,
       fullName: this.fullName1.value,
       email: this.email1.value,
@@ -83,6 +96,17 @@ export class CheckoutComponent implements OnInit {
   get total_price(): number {
 
     return this.cartService.getPriceInCart();
+  }
+
+  getIdProductMax()
+  {
+    let dataId ;
+    let id;
+    this.productService.getIdProductMax().subscribe(res=>{
+      dataId = res.body; 
+      id = dataId.data;
+      this.maDH = 'MDH'+id+1;
+    })
   }
   get totalCost(): number {
     let pricess: number = this.cartService.getPriceInCart();

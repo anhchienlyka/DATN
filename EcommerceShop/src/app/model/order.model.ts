@@ -12,17 +12,14 @@ export interface Order{
     fullName? : string;
     phone?:string;
     address?:string;
+    orderCode?:string;
     email?:string;
     totalCost?:number
 }
 
 export interface OrderVms{
-    oderId: number,
-    userId: number,
     orderDate: string,
-    totalPrice: number,
-    status: number,
-    payment: boolean,
-    fullName: string,
-    address: string
+    transacStatus: number,
+    orderCode?:string;
+    totalCost?:number
 }

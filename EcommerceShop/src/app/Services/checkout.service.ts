@@ -17,7 +17,9 @@ export class CheckoutService {
   getOrders():Observable<HttpResponse<OrderVms[]>>{
     return this.httpClient.get<OrderVms[]>(this.apiUrl+'order',{observe: 'response'});
   }
-
+  getOrdersByUserId(id : any):Observable<HttpResponse<OrderVms[]>>{
+    return this.httpClient.get<OrderVms[]>(this.apiUrl+`order+GetOrderByUserId?id=${id}`,{observe: 'response'});
+  }
 
   addOrder(order: Order){
     var data = JSON.stringify(order);

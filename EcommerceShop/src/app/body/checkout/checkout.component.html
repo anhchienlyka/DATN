@@ -82,12 +82,13 @@
             <div class="checkout-inner">
                 <div class="checkout-summary">
                     <h1>Thanh toán</h1>
+                    <p class="ship-cost">Mã đơn hàng<span style="color:red ;">{{maDH}}</span></p>
                     <p class="sub-total">Thành tiền<span>{{ total_price | currency: "VND" }}</span></p>
                     <p class="ship-cost">Hạng thành viên<span>{{customerRank}}</span></p>
                     <p class="ship-cost" ngif>Giảm giá<span>{{dissCount}}%</span></p>
                     <h2>Thanh toán tiền<span>{{totalCost| currency: "VND"}}</span></h2>
                 </div>
-
+                
                 <div class="checkout-payment">
                     <div class="payment-methods">
                         <h1>Phương thức</h1>

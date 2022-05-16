@@ -9,7 +9,7 @@ namespace DATN.Data.Viewmodel.BenefitViewModel
     public class BenefitVM
     {
         public string Label { get; set; }
-        public List<decimal> Turnover { get; set; }
-        public List<decimal> Profit { get; set; }
+        public decimal Turnover { get; set; }
+        public decimal Profit { get; set; }
     }
 }

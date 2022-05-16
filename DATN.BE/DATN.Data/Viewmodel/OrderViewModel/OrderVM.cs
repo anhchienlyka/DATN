@@ -17,7 +17,7 @@ namespace DATN.Data.Viewmodel.OrderViewModel
         public string Address { get; set; }
         public string Email { get; set; }
         public decimal TotalCost { get; set; }
-
+        public string OrderCode { get; set; }
         public DateTime PaymentDate { get; set; }
         public int PaymentId { get; set; }
     }

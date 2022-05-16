@@ -22,7 +22,11 @@ export class ProductService {
     return this.httpClient.get<Product[]>(this.apiUrl+'Product/GetAllProduct',{observe: 'response' });
   }
 
-
+getIdProductMax()
+{
+  var url = this.apiUrl + `Product/GetIdPorductMax`;
+    return this.httpClient.get(url, {observe: 'response'});
+}
   findProductsByName(name: string){
     var url = this.apiUrl + `Product/GetProductByName?name=${name}`;
     return this.httpClient.get<Product[]>(url, {observe: 'response'});

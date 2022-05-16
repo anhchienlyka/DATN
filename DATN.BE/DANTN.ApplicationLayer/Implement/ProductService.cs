@@ -92,6 +92,13 @@ namespace DANTN.ApplicationLayer.Implement
             return new Response(SystemCode.Success, "Get Featured Product  Success", data);
         }
 
+        public async Task<Response> GetIdProductMax()
+        {
+            var product = await _productRepository.GetIdProductMax();
+            var idProduct = product.Id;
+            return new Response(SystemCode.Success, "Get Id Max Success", idProduct);
+        }
+
         public async Task<Response> GetProductByCategoryId(int categoryId)
         {
             var data = await _productRepository.GetProductByCategoryId(categoryId);

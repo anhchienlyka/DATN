@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O2As6W6P32WSE9ufqHM+dWku1DEavirD0CkxO16r2tc+84VAwtN+q70/9Ms50neebfI22INJpLHCMomnd2Q1rA==",
+  "dgSpecHash": "kRljhPh0eTZjn6qPMIHxZ3a7cMUwgo9p6KvKPlY+j6Bvo/tjhUM4XM9KPmC8vuCLIr71EMIbEysfIveHhRBRLw==",
   "success": true,
-  "projectFilePath": "D:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
+  "projectFilePath": "E:\\DATN\\DATN.BE\\DATN.InfrastructureLayer\\DATN.InfrastructureLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chien\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\chien\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",

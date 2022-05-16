@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Order, OrderVms } from 'src/app/model/order.model';
+import { NotificationService } from 'src/app/notification/notification.service';
+import { CheckoutService } from 'src/app/Services/checkout.service';
 
 @Component({
   selector: 'app-myaccount',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyaccountComponent implements OnInit {
 
-  constructor() { }
+
+  listOrder:OrderVms[]
+
+  constructor(private checkOutService:CheckoutService,private notification:NotificationService) { 
+
+
+  }
 
   ngOnInit(): void {
   }
 
+
+
+  getListOrderByUserId(){
+    
+  }
 }

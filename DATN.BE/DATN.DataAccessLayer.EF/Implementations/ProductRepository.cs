@@ -27,6 +27,11 @@ namespace DATN.DataAccessLayer.EF.Implementations
             return listProductByVew;
         }
 
+        public async Task<Product> GetIdProductMax()
+        {
+            return await _dbContext.Products.OrderByDescending(x => x.Id).FirstOrDefaultAsync();
+        }
+
         public async Task<IEnumerable<Product>> GetProductByCategoryId(int categoryId)
         {
             return await _dbContext.Products.Where(x => x.CategoryId == categoryId).Take(4).ToListAsync();

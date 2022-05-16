@@ -45,6 +45,13 @@ namespace DATN.API.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetIdPorductMax()
+        {
+            var reponse = await _productService.GetIdProductMax();
+            return Ok(reponse);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetProductByView()
         {
             var reponse = await _productService.GetProductByView();

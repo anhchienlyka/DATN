@@ -1,4 +1,5 @@
 ﻿using DATN.Data.Entities;
+using DATN.Data.Viewmodel.BenefitViewModel;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -103,6 +104,29 @@ namespace DATN.DataAccessLayer.EF
                 img.HasOne(x => x.Product).WithMany(x => x.Pictures).HasForeignKey(x => x.ProductId);
             });
 
+
+            modelBuilder.Ignore<BenefitVM>(); //ignore create the table for the stored procedure
+         //   modelBuilder.Query<BenefitVM>();  //register stored procedure.
+        }
+
+        //create a method for the stored procedure.
+        public List<BenefitVM> GetBookAuthors(string sqlQuery)
+        {
+            // Initialization.  
+            List<BenefitVM> lst = new List<BenefitVM>();
+
+            try
+            {
+
+               // lst = this.Query<BenefitVM>().FromSqlRaw<BenefitVM>(sqlQuery).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            // Info.  
+            return lst;
         }
     }
 }
