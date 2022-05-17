@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
-import { CreateCategoryComponent } from './admin/category-components/create-category/create-category.component';
-import { ListCategoryComponent } from './admin/category-components/list-category/list-category.component';
-import { UpdateCategoryComponent } from './admin/category-components/update-category/update-category.component';
 import { CartComponent } from './body/cart/cart.component';
 import { CheckoutComponent } from './body/checkout/checkout.component';
 import { CompletedComponent } from './body/completed/completed.component';
@@ -34,11 +31,7 @@ const routes: Routes = [
       {path:'completed',component:CompletedComponent}
   ] },
   { path: 'admin',component: AdminLayoutComponent, children: [
-    {path: 'category', children: [
-      {path: '', component: ListCategoryComponent},
-      {path: 'create', component: CreateCategoryComponent},
-      {path: 'update/:id', component: UpdateCategoryComponent},
-    ]}
+   
   ]},
   
 ];
